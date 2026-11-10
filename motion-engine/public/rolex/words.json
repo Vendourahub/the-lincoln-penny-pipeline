@@ -1,0 +1,780 @@
+{
+  "duration": 79.22933333333333,
+  "words": [
+    {
+      "word": "Rolex",
+      "start": 0.0,
+      "end": 0.34
+    },
+    {
+      "word": "manufacturers",
+      "start": 0.34,
+      "end": 1.18
+    },
+    {
+      "word": "over",
+      "start": 1.18,
+      "end": 1.52
+    },
+    {
+      "word": "1",
+      "start": 1.52,
+      "end": 1.9
+    },
+    {
+      "word": ".2",
+      "start": 1.9,
+      "end": 2.64
+    },
+    {
+      "word": "million",
+      "start": 2.64,
+      "end": 2.94
+    },
+    {
+      "word": "luxury",
+      "start": 2.94,
+      "end": 3.42
+    },
+    {
+      "word": "watches",
+      "start": 3.42,
+      "end": 4.26
+    },
+    {
+      "word": "every",
+      "start": 4.26,
+      "end": 4.8
+    },
+    {
+      "word": "single",
+      "start": 4.8,
+      "end": 5.18
+    },
+    {
+      "word": "year.",
+      "start": 5.18,
+      "end": 5.56
+    },
+    {
+      "word": "So",
+      "start": 5.96,
+      "end": 6.04
+    },
+    {
+      "word": "why",
+      "start": 6.04,
+      "end": 6.3
+    },
+    {
+      "word": "is",
+      "start": 6.3,
+      "end": 6.5
+    },
+    {
+      "word": "every",
+      "start": 6.5,
+      "end": 6.86
+    },
+    {
+      "word": "authorized",
+      "start": 6.86,
+      "end": 7.48
+    },
+    {
+      "word": "dealer",
+      "start": 7.48,
+      "end": 7.82
+    },
+    {
+      "word": "case",
+      "start": 7.82,
+      "end": 8.06
+    },
+    {
+      "word": "completely",
+      "start": 8.06,
+      "end": 8.58
+    },
+    {
+      "word": "empty?",
+      "start": 8.58,
+      "end": 9.16
+    },
+    {
+      "word": "Most",
+      "start": 9.66,
+      "end": 9.76
+    },
+    {
+      "word": "people",
+      "start": 9.76,
+      "end": 10.14
+    },
+    {
+      "word": "assume",
+      "start": 10.14,
+      "end": 10.6
+    },
+    {
+      "word": "Rolex",
+      "start": 10.6,
+      "end": 10.96
+    },
+    {
+      "word": "watches",
+      "start": 10.96,
+      "end": 11.56
+    },
+    {
+      "word": "are",
+      "start": 11.56,
+      "end": 12.1
+    },
+    {
+      "word": "handcrafted",
+      "start": 12.1,
+      "end": 12.98
+    },
+    {
+      "word": "by",
+      "start": 12.98,
+      "end": 13.16
+    },
+    {
+      "word": "Swiss",
+      "start": 13.16,
+      "end": 13.52
+    },
+    {
+      "word": "Hermits",
+      "start": 13.52,
+      "end": 13.96
+    },
+    {
+      "word": "in",
+      "start": 13.96,
+      "end": 14.26
+    },
+    {
+      "word": "the",
+      "start": 14.26,
+      "end": 14.4
+    },
+    {
+      "word": "Alps",
+      "start": 14.4,
+      "end": 14.7
+    },
+    {
+      "word": "over",
+      "start": 14.7,
+      "end": 15.0
+    },
+    {
+      "word": "18",
+      "start": 15.0,
+      "end": 15.36
+    },
+    {
+      "word": "months.",
+      "start": 15.36,
+      "end": 15.84
+    },
+    {
+      "word": "Run",
+      "start": 16.26,
+      "end": 16.36
+    },
+    {
+      "word": "the",
+      "start": 16.36,
+      "end": 16.52
+    },
+    {
+      "word": "teardown",
+      "start": 16.52,
+      "end": 16.96
+    },
+    {
+      "word": "under",
+      "start": 16.96,
+      "end": 17.24
+    },
+    {
+      "word": "the",
+      "start": 17.24,
+      "end": 17.38
+    },
+    {
+      "word": "scanner,",
+      "start": 17.38,
+      "end": 17.8
+    },
+    {
+      "word": "oyster",
+      "start": 18.26,
+      "end": 18.52
+    },
+    {
+      "word": "steel",
+      "start": 18.52,
+      "end": 18.9
+    },
+    {
+      "word": "904",
+      "start": 18.9,
+      "end": 20.02
+    },
+    {
+      "word": "L",
+      "start": 20.02,
+      "end": 20.28
+    },
+    {
+      "word": "case",
+      "start": 20.28,
+      "end": 20.52
+    },
+    {
+      "word": "and",
+      "start": 20.52,
+      "end": 20.84
+    },
+    {
+      "word": "bracelet,",
+      "start": 20.84,
+      "end": 21.24
+    },
+    {
+      "word": "$450,",
+      "start": 21.78,
+      "end": 22.72
+    },
+    {
+      "word": "caliber",
+      "start": 23.38,
+      "end": 23.88
+    },
+    {
+      "word": "3",
+      "start": 23.88,
+      "end": 24.38
+    },
+    {
+      "word": ",235",
+      "start": 24.38,
+      "end": 26.18
+    },
+    {
+      "word": "automatic",
+      "start": 26.18,
+      "end": 26.9
+    },
+    {
+      "word": "movement,",
+      "start": 26.9,
+      "end": 27.78
+    },
+    {
+      "word": "$650,",
+      "start": 27.9,
+      "end": 29.08
+    },
+    {
+      "word": "Sarah",
+      "start": 29.8,
+      "end": 30.14
+    },
+    {
+      "word": "Chrome's",
+      "start": 30.14,
+      "end": 30.66
+    },
+    {
+      "word": "ceramic",
+      "start": 30.66,
+      "end": 31.06
+    },
+    {
+      "word": "bezel",
+      "start": 31.06,
+      "end": 31.46
+    },
+    {
+      "word": "and",
+      "start": 31.46,
+      "end": 31.72
+    },
+    {
+      "word": "dial,",
+      "start": 31.72,
+      "end": 32.04
+    },
+    {
+      "word": "$280,",
+      "start": 32.56,
+      "end": 33.26
+    },
+    {
+      "word": "Cyclops",
+      "start": 34.0,
+      "end": 34.58
+    },
+    {
+      "word": "sapphire",
+      "start": 34.58,
+      "end": 35.08
+    },
+    {
+      "word": "crystal",
+      "start": 35.08,
+      "end": 35.52
+    },
+    {
+      "word": "and",
+      "start": 35.52,
+      "end": 35.74
+    },
+    {
+      "word": "seals,",
+      "start": 35.74,
+      "end": 36.1
+    },
+    {
+      "word": "$120,",
+      "start": 36.7,
+      "end": 37.4
+    },
+    {
+      "word": "assembly,",
+      "start": 38.16,
+      "end": 38.74
+    },
+    {
+      "word": "testing",
+      "start": 39.02,
+      "end": 39.3
+    },
+    {
+      "word": "and",
+      "start": 39.3,
+      "end": 39.56
+    },
+    {
+      "word": "COSC",
+      "start": 39.56,
+      "end": 40.4
+    },
+    {
+      "word": "certification,",
+      "start": 40.4,
+      "end": 41.2
+    },
+    {
+      "word": "$300,",
+      "start": 41.62,
+      "end": 42.28
+    },
+    {
+      "word": "that",
+      "start": 43.04,
+      "end": 43.32
+    },
+    {
+      "word": "leaves",
+      "start": 43.32,
+      "end": 43.58
+    },
+    {
+      "word": "over",
+      "start": 43.58,
+      "end": 43.94
+    },
+    {
+      "word": "$8",
+      "start": 43.94,
+      "end": 44.34
+    },
+    {
+      "word": ",400",
+      "start": 44.34,
+      "end": 45.26
+    },
+    {
+      "word": "of",
+      "start": 45.26,
+      "end": 45.94
+    },
+    {
+      "word": "gross",
+      "start": 45.94,
+      "end": 46.28
+    },
+    {
+      "word": "margin,",
+      "start": 46.28,
+      "end": 46.88
+    },
+    {
+      "word": "per",
+      "start": 47.26,
+      "end": 47.32
+    },
+    {
+      "word": "stainless",
+      "start": 47.32,
+      "end": 47.76
+    },
+    {
+      "word": "steel",
+      "start": 47.76,
+      "end": 48.16
+    },
+    {
+      "word": "watch.",
+      "start": 48.16,
+      "end": 48.5
+    },
+    {
+      "word": "The",
+      "start": 48.5,
+      "end": 49.1
+    },
+    {
+      "word": "empty",
+      "start": 49.1,
+      "end": 49.42
+    },
+    {
+      "word": "display",
+      "start": 49.42,
+      "end": 49.84
+    },
+    {
+      "word": "case",
+      "start": 49.84,
+      "end": 50.16
+    },
+    {
+      "word": "is",
+      "start": 50.16,
+      "end": 50.68
+    },
+    {
+      "word": "not",
+      "start": 50.68,
+      "end": 50.86
+    },
+    {
+      "word": "a",
+      "start": 50.86,
+      "end": 50.98
+    },
+    {
+      "word": "supply",
+      "start": 50.98,
+      "end": 51.3
+    },
+    {
+      "word": "shortage.",
+      "start": 51.3,
+      "end": 51.9
+    },
+    {
+      "word": "It",
+      "start": 52.42,
+      "end": 52.54
+    },
+    {
+      "word": "is",
+      "start": 52.54,
+      "end": 52.76
+    },
+    {
+      "word": "an",
+      "start": 52.76,
+      "end": 52.92
+    },
+    {
+      "word": "engineered",
+      "start": 52.92,
+      "end": 53.58
+    },
+    {
+      "word": "psychological",
+      "start": 53.58,
+      "end": 54.12
+    },
+    {
+      "word": "asset",
+      "start": 54.12,
+      "end": 54.96
+    },
+    {
+      "word": "by",
+      "start": 54.96,
+      "end": 55.36
+    },
+    {
+      "word": "forcing",
+      "start": 55.36,
+      "end": 55.74
+    },
+    {
+      "word": "customers",
+      "start": 55.74,
+      "end": 56.36
+    },
+    {
+      "word": "onto",
+      "start": 56.36,
+      "end": 56.82
+    },
+    {
+      "word": "multi",
+      "start": 56.82,
+      "end": 57.24
+    },
+    {
+      "word": "-year",
+      "start": 57.24,
+      "end": 57.56
+    },
+    {
+      "word": "wait",
+      "start": 57.56,
+      "end": 57.84
+    },
+    {
+      "word": "lists.",
+      "start": 57.84,
+      "end": 58.26
+    },
+    {
+      "word": "Rolex",
+      "start": 58.8,
+      "end": 59.06
+    },
+    {
+      "word": "manufacturers",
+      "start": 59.06,
+      "end": 59.94
+    },
+    {
+      "word": "artificial",
+      "start": 59.94,
+      "end": 60.56
+    },
+    {
+      "word": "scarcity.",
+      "start": 60.56,
+      "end": 61.34
+    },
+    {
+      "word": "This",
+      "start": 61.6,
+      "end": 61.88
+    },
+    {
+      "word": "props",
+      "start": 61.88,
+      "end": 62.2
+    },
+    {
+      "word": "up",
+      "start": 62.2,
+      "end": 62.46
+    },
+    {
+      "word": "secondary",
+      "start": 62.46,
+      "end": 62.94
+    },
+    {
+      "word": "market",
+      "start": 62.94,
+      "end": 63.32
+    },
+    {
+      "word": "values,",
+      "start": 63.32,
+      "end": 63.94
+    },
+    {
+      "word": "convincing",
+      "start": 64.34,
+      "end": 64.78
+    },
+    {
+      "word": "buyers",
+      "start": 64.78,
+      "end": 65.28
+    },
+    {
+      "word": "that",
+      "start": 65.28,
+      "end": 65.56
+    },
+    {
+      "word": "a",
+      "start": 65.56,
+      "end": 65.66
+    },
+    {
+      "word": "luxury",
+      "start": 65.66,
+      "end": 66.02
+    },
+    {
+      "word": "watch",
+      "start": 66.02,
+      "end": 66.44
+    },
+    {
+      "word": "is",
+      "start": 66.44,
+      "end": 66.92
+    },
+    {
+      "word": "an",
+      "start": 66.92,
+      "end": 67.04
+    },
+    {
+      "word": "appreciating",
+      "start": 67.04,
+      "end": 67.78
+    },
+    {
+      "word": "financial",
+      "start": 67.78,
+      "end": 68.28
+    },
+    {
+      "word": "asset.",
+      "start": 68.28,
+      "end": 69.02
+    },
+    {
+      "word": "When",
+      "start": 69.4,
+      "end": 69.5
+    },
+    {
+      "word": "supply",
+      "start": 69.5,
+      "end": 69.88
+    },
+    {
+      "word": "meets",
+      "start": 69.88,
+      "end": 70.28
+    },
+    {
+      "word": "demand,",
+      "start": 70.28,
+      "end": 70.7
+    },
+    {
+      "word": "you",
+      "start": 71.14,
+      "end": 71.28
+    },
+    {
+      "word": "have",
+      "start": 71.28,
+      "end": 71.42
+    },
+    {
+      "word": "a",
+      "start": 71.42,
+      "end": 71.54
+    },
+    {
+      "word": "commodity.",
+      "start": 71.54,
+      "end": 72.0
+    },
+    {
+      "word": "When",
+      "start": 72.58,
+      "end": 72.7
+    },
+    {
+      "word": "you",
+      "start": 72.7,
+      "end": 72.84
+    },
+    {
+      "word": "artificially",
+      "start": 72.84,
+      "end": 73.6
+    },
+    {
+      "word": "choke",
+      "start": 73.6,
+      "end": 73.88
+    },
+    {
+      "word": "supply,",
+      "start": 73.88,
+      "end": 74.36
+    },
+    {
+      "word": "you",
+      "start": 74.8,
+      "end": 74.98
+    },
+    {
+      "word": "have",
+      "start": 74.98,
+      "end": 75.16
+    },
+    {
+      "word": "a",
+      "start": 75.16,
+      "end": 75.26
+    },
+    {
+      "word": "religion.",
+      "start": 75.26,
+      "end": 75.72
+    },
+    {
+      "word": "Case",
+      "start": 75.72,
+      "end": 76.34
+    },
+    {
+      "word": "closed.",
+      "start": 76.34,
+      "end": 76.92
+    },
+    {
+      "word": "The",
+      "start": 77.28,
+      "end": 77.48
+    },
+    {
+      "word": "Lincoln",
+      "start": 77.48,
+      "end": 77.74
+    },
+    {
+      "word": "penny",
+      "start": 77.74,
+      "end": 78.16
+    },
+    {
+      "word": "number",
+      "start": 78.16,
+      "end": 78.5
+    },
+    {
+      "word": "one.",
+      "start": 78.5,
+      "end": 78.82
+    }
+  ]
+}

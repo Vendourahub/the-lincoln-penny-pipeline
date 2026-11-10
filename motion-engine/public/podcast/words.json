@@ -1,0 +1,671 @@
+{
+  "duration": 41.653333333333336,
+  "words": [
+    {
+      "word": "Our",
+      "start": 0.0,
+      "end": 0.1,
+      "speaker": "host"
+    },
+    {
+      "word": "last",
+      "start": 0.1,
+      "end": 0.4,
+      "speaker": "host"
+    },
+    {
+      "word": "video",
+      "start": 0.4,
+      "end": 0.68,
+      "speaker": "host"
+    },
+    {
+      "word": "about",
+      "start": 0.68,
+      "end": 0.98,
+      "speaker": "host"
+    },
+    {
+      "word": "McDonald's",
+      "start": 0.98,
+      "end": 1.62,
+      "speaker": "host"
+    },
+    {
+      "word": "blew",
+      "start": 1.62,
+      "end": 1.82,
+      "speaker": "host"
+    },
+    {
+      "word": "up",
+      "start": 1.82,
+      "end": 2.14,
+      "speaker": "host"
+    },
+    {
+      "word": "and",
+      "start": 2.14,
+      "end": 2.48,
+      "speaker": "host"
+    },
+    {
+      "word": "the",
+      "start": 2.48,
+      "end": 2.6,
+      "speaker": "host"
+    },
+    {
+      "word": "comments",
+      "start": 2.6,
+      "end": 2.98,
+      "speaker": "host"
+    },
+    {
+      "word": "are",
+      "start": 2.98,
+      "end": 3.18,
+      "speaker": "host"
+    },
+    {
+      "word": "fighting",
+      "start": 3.18,
+      "end": 3.58,
+      "speaker": "host"
+    },
+    {
+      "word": "over",
+      "start": 3.58,
+      "end": 3.9,
+      "speaker": "host"
+    },
+    {
+      "word": "Ray",
+      "start": 3.9,
+      "end": 4.12,
+      "speaker": "host"
+    },
+    {
+      "word": "Croc.",
+      "start": 4.12,
+      "end": 4.66,
+      "speaker": "host"
+    },
+    {
+      "word": "But",
+      "start": 4.9,
+      "end": 5.28,
+      "speaker": "host"
+    },
+    {
+      "word": "almost",
+      "start": 5.28,
+      "end": 5.5,
+      "speaker": "host"
+    },
+    {
+      "word": "nobody",
+      "start": 5.5,
+      "end": 5.96,
+      "speaker": "host"
+    },
+    {
+      "word": "knows",
+      "start": 5.96,
+      "end": 6.26,
+      "speaker": "host"
+    },
+    {
+      "word": "where",
+      "start": 6.26,
+      "end": 6.54,
+      "speaker": "host"
+    },
+    {
+      "word": "their",
+      "start": 6.54,
+      "end": 6.68,
+      "speaker": "host"
+    },
+    {
+      "word": "money",
+      "start": 6.68,
+      "end": 6.92,
+      "speaker": "host"
+    },
+    {
+      "word": "actually",
+      "start": 6.92,
+      "end": 7.38,
+      "speaker": "host"
+    },
+    {
+      "word": "comes",
+      "start": 7.38,
+      "end": 7.72,
+      "speaker": "host"
+    },
+    {
+      "word": "from.",
+      "start": 7.72,
+      "end": 8.02,
+      "speaker": "host"
+    },
+    {
+      "word": "Because",
+      "start": 8.26,
+      "end": 8.56,
+      "speaker": "host"
+    },
+    {
+      "word": "McDonald's",
+      "start": 8.56,
+      "end": 9.28,
+      "speaker": "guest"
+    },
+    {
+      "word": "isn't",
+      "start": 9.28,
+      "end": 9.52,
+      "speaker": "guest"
+    },
+    {
+      "word": "a",
+      "start": 9.52,
+      "end": 9.6,
+      "speaker": "guest"
+    },
+    {
+      "word": "burger",
+      "start": 9.6,
+      "end": 9.84,
+      "speaker": "guest"
+    },
+    {
+      "word": "chain,",
+      "start": 9.84,
+      "end": 10.3,
+      "speaker": "guest"
+    },
+    {
+      "word": "they're",
+      "start": 10.9,
+      "end": 11.16,
+      "speaker": "guest"
+    },
+    {
+      "word": "a",
+      "start": 11.16,
+      "end": 11.24,
+      "speaker": "guest"
+    },
+    {
+      "word": "$30",
+      "start": 11.24,
+      "end": 11.68,
+      "speaker": "guest"
+    },
+    {
+      "word": "billion",
+      "start": 11.68,
+      "end": 12.16,
+      "speaker": "guest"
+    },
+    {
+      "word": "real",
+      "start": 12.16,
+      "end": 12.98,
+      "speaker": "guest"
+    },
+    {
+      "word": "estate",
+      "start": 12.98,
+      "end": 13.44,
+      "speaker": "guest"
+    },
+    {
+      "word": "empire.",
+      "start": 13.44,
+      "end": 14.0,
+      "speaker": "guest"
+    },
+    {
+      "word": "Wait,",
+      "start": 14.46,
+      "end": 14.6,
+      "speaker": "host"
+    },
+    {
+      "word": "what",
+      "start": 14.72,
+      "end": 14.92,
+      "speaker": "host"
+    },
+    {
+      "word": "they",
+      "start": 14.92,
+      "end": 15.16,
+      "speaker": "host"
+    },
+    {
+      "word": "sell",
+      "start": 15.16,
+      "end": 15.4,
+      "speaker": "host"
+    },
+    {
+      "word": "burgers,",
+      "start": 15.4,
+      "end": 15.76,
+      "speaker": "host"
+    },
+    {
+      "word": "the",
+      "start": 16.24,
+      "end": 16.32,
+      "speaker": "guest"
+    },
+    {
+      "word": "burgers",
+      "start": 16.32,
+      "end": 16.72,
+      "speaker": "guest"
+    },
+    {
+      "word": "are",
+      "start": 16.72,
+      "end": 17.02,
+      "speaker": "guest"
+    },
+    {
+      "word": "just",
+      "start": 17.02,
+      "end": 17.28,
+      "speaker": "guest"
+    },
+    {
+      "word": "the",
+      "start": 17.28,
+      "end": 17.5,
+      "speaker": "guest"
+    },
+    {
+      "word": "bait.",
+      "start": 17.5,
+      "end": 17.82,
+      "speaker": "guest"
+    },
+    {
+      "word": "Ray",
+      "start": 18.48,
+      "end": 18.62,
+      "speaker": "guest"
+    },
+    {
+      "word": "Croc's",
+      "start": 18.62,
+      "end": 19.14,
+      "speaker": "guest"
+    },
+    {
+      "word": "genius",
+      "start": 19.14,
+      "end": 19.6,
+      "speaker": "guest"
+    },
+    {
+      "word": "was",
+      "start": 19.6,
+      "end": 19.94,
+      "speaker": "guest"
+    },
+    {
+      "word": "buying",
+      "start": 19.94,
+      "end": 20.36,
+      "speaker": "guest"
+    },
+    {
+      "word": "the",
+      "start": 20.36,
+      "end": 20.56,
+      "speaker": "guest"
+    },
+    {
+      "word": "physical",
+      "start": 20.56,
+      "end": 20.86,
+      "speaker": "guest"
+    },
+    {
+      "word": "land",
+      "start": 20.86,
+      "end": 21.32,
+      "speaker": "guest"
+    },
+    {
+      "word": "under",
+      "start": 21.32,
+      "end": 21.56,
+      "speaker": "guest"
+    },
+    {
+      "word": "every",
+      "start": 21.56,
+      "end": 21.94,
+      "speaker": "guest"
+    },
+    {
+      "word": "restaurant.",
+      "start": 21.94,
+      "end": 22.46,
+      "speaker": "guest"
+    },
+    {
+      "word": "If",
+      "start": 22.96,
+      "end": 23.24,
+      "speaker": "guest"
+    },
+    {
+      "word": "a",
+      "start": 23.24,
+      "end": 23.3,
+      "speaker": "guest"
+    },
+    {
+      "word": "franchise",
+      "start": 23.3,
+      "end": 23.68,
+      "speaker": "guest"
+    },
+    {
+      "word": "wants",
+      "start": 23.68,
+      "end": 24.18,
+      "speaker": "guest"
+    },
+    {
+      "word": "to",
+      "start": 24.18,
+      "end": 24.42,
+      "speaker": "guest"
+    },
+    {
+      "word": "sell",
+      "start": 24.42,
+      "end": 24.64,
+      "speaker": "guest"
+    },
+    {
+      "word": "fries,",
+      "start": 24.64,
+      "end": 25.18,
+      "speaker": "guest"
+    },
+    {
+      "word": "they",
+      "start": 25.7,
+      "end": 25.78,
+      "speaker": "guest"
+    },
+    {
+      "word": "have",
+      "start": 25.78,
+      "end": 25.94,
+      "speaker": "guest"
+    },
+    {
+      "word": "to",
+      "start": 25.94,
+      "end": 26.1,
+      "speaker": "guest"
+    },
+    {
+      "word": "pay",
+      "start": 26.1,
+      "end": 26.32,
+      "speaker": "guest"
+    },
+    {
+      "word": "McDonald's",
+      "start": 26.32,
+      "end": 27.14,
+      "speaker": "guest"
+    },
+    {
+      "word": "rent",
+      "start": 27.14,
+      "end": 27.3,
+      "speaker": "guest"
+    },
+    {
+      "word": "first.",
+      "start": 27.3,
+      "end": 27.78,
+      "speaker": "guest"
+    },
+    {
+      "word": "So",
+      "start": 27.78,
+      "end": 28.32,
+      "speaker": "guest"
+    },
+    {
+      "word": "they",
+      "start": 28.32,
+      "end": 28.44,
+      "speaker": "host"
+    },
+    {
+      "word": "make",
+      "start": 28.44,
+      "end": 28.58,
+      "speaker": "host"
+    },
+    {
+      "word": "more",
+      "start": 28.58,
+      "end": 28.8,
+      "speaker": "host"
+    },
+    {
+      "word": "from",
+      "start": 28.8,
+      "end": 29.04,
+      "speaker": "host"
+    },
+    {
+      "word": "rent",
+      "start": 29.04,
+      "end": 29.2,
+      "speaker": "host"
+    },
+    {
+      "word": "than",
+      "start": 29.2,
+      "end": 29.46,
+      "speaker": "host"
+    },
+    {
+      "word": "burgers.",
+      "start": 29.46,
+      "end": 29.8,
+      "speaker": "host"
+    },
+    {
+      "word": "80",
+      "start": 30.32,
+      "end": 30.5,
+      "speaker": "guest"
+    },
+    {
+      "word": "%",
+      "start": 30.5,
+      "end": 30.84,
+      "speaker": "guest"
+    },
+    {
+      "word": "of",
+      "start": 30.84,
+      "end": 30.98,
+      "speaker": "guest"
+    },
+    {
+      "word": "their",
+      "start": 30.98,
+      "end": 31.12,
+      "speaker": "guest"
+    },
+    {
+      "word": "profit",
+      "start": 31.12,
+      "end": 31.56,
+      "speaker": "guest"
+    },
+    {
+      "word": "is",
+      "start": 31.56,
+      "end": 31.82,
+      "speaker": "guest"
+    },
+    {
+      "word": "pure",
+      "start": 31.82,
+      "end": 32.16,
+      "speaker": "guest"
+    },
+    {
+      "word": "rent",
+      "start": 32.16,
+      "end": 32.64,
+      "speaker": "guest"
+    },
+    {
+      "word": "and",
+      "start": 32.64,
+      "end": 33.02,
+      "speaker": "guest"
+    },
+    {
+      "word": "franchise",
+      "start": 33.02,
+      "end": 33.52,
+      "speaker": "guest"
+    },
+    {
+      "word": "royalties.",
+      "start": 33.52,
+      "end": 34.48,
+      "speaker": "guest"
+    },
+    {
+      "word": "McDonald's",
+      "start": 35.08,
+      "end": 35.76,
+      "speaker": "guest"
+    },
+    {
+      "word": "is",
+      "start": 35.76,
+      "end": 35.86,
+      "speaker": "guest"
+    },
+    {
+      "word": "a",
+      "start": 35.86,
+      "end": 36.0,
+      "speaker": "guest"
+    },
+    {
+      "word": "real",
+      "start": 36.0,
+      "end": 36.4,
+      "speaker": "guest"
+    },
+    {
+      "word": "estate",
+      "start": 36.4,
+      "end": 36.82,
+      "speaker": "guest"
+    },
+    {
+      "word": "monopoly",
+      "start": 36.82,
+      "end": 37.38,
+      "speaker": "guest"
+    },
+    {
+      "word": "in",
+      "start": 37.38,
+      "end": 37.7,
+      "speaker": "guest"
+    },
+    {
+      "word": "disguise,",
+      "start": 37.7,
+      "end": 38.16,
+      "speaker": "guest"
+    },
+    {
+      "word": "which",
+      "start": 38.58,
+      "end": 38.88,
+      "speaker": "guest"
+    },
+    {
+      "word": "is",
+      "start": 38.88,
+      "end": 39.02,
+      "speaker": "host"
+    },
+    {
+      "word": "why",
+      "start": 39.02,
+      "end": 39.32,
+      "speaker": "host"
+    },
+    {
+      "word": "our",
+      "start": 39.32,
+      "end": 39.52,
+      "speaker": "host"
+    },
+    {
+      "word": "last",
+      "start": 39.52,
+      "end": 39.84,
+      "speaker": "host"
+    },
+    {
+      "word": "video",
+      "start": 39.84,
+      "end": 40.18,
+      "speaker": "host"
+    },
+    {
+      "word": "was",
+      "start": 40.18,
+      "end": 40.4,
+      "speaker": "host"
+    },
+    {
+      "word": "only",
+      "start": 40.4,
+      "end": 40.76,
+      "speaker": "host"
+    },
+    {
+      "word": "the",
+      "start": 40.76,
+      "end": 40.9,
+      "speaker": "host"
+    },
+    {
+      "word": "beginning.",
+      "start": 40.9,
+      "end": 41.28,
+      "speaker": "host"
+    }
+  ]
+}

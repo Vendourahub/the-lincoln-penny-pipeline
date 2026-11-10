@@ -1,0 +1,470 @@
+﻿{
+  "duration": 41.75333333333333,
+  "words": [
+    {
+      "word": "Imagine",
+      "start": 0.0,
+      "end": 0.6
+    },
+    {
+      "word": "inventing",
+      "start": 0.6,
+      "end": 1.54
+    },
+    {
+      "word": "McDonald's",
+      "start": 1.54,
+      "end": 2.32
+    },
+    {
+      "word": "and",
+      "start": 2.32,
+      "end": 2.76
+    },
+    {
+      "word": "losing",
+      "start": 2.76,
+      "end": 3.06
+    },
+    {
+      "word": "the",
+      "start": 3.06,
+      "end": 3.32
+    },
+    {
+      "word": "right",
+      "start": 3.32,
+      "end": 3.54
+    },
+    {
+      "word": "to",
+      "start": 3.54,
+      "end": 3.76
+    },
+    {
+      "word": "call",
+      "start": 3.76,
+      "end": 4.02
+    },
+    {
+      "word": "your",
+      "start": 4.02,
+      "end": 4.26
+    },
+    {
+      "word": "restaurant",
+      "start": 4.26,
+      "end": 4.7
+    },
+    {
+      "word": "McDonald's.",
+      "start": 4.7,
+      "end": 5.72
+    },
+    {
+      "word": "That's",
+      "start": 5.98,
+      "end": 6.34
+    },
+    {
+      "word": "what",
+      "start": 6.34,
+      "end": 6.46
+    },
+    {
+      "word": "happened",
+      "start": 6.46,
+      "end": 6.76
+    },
+    {
+      "word": "to",
+      "start": 6.76,
+      "end": 6.96
+    },
+    {
+      "word": "two",
+      "start": 6.96,
+      "end": 7.18
+    },
+    {
+      "word": "brothers",
+      "start": 7.18,
+      "end": 7.52
+    },
+    {
+      "word": "in",
+      "start": 7.52,
+      "end": 7.78
+    },
+    {
+      "word": "California.",
+      "start": 7.78,
+      "end": 8.52
+    },
+    {
+      "word": "Richard",
+      "start": 9.0,
+      "end": 9.26
+    },
+    {
+      "word": "and",
+      "start": 9.26,
+      "end": 9.54
+    },
+    {
+      "word": "Morris",
+      "start": 9.54,
+      "end": 9.84
+    },
+    {
+      "word": "McDonald",
+      "start": 9.84,
+      "end": 10.38
+    },
+    {
+      "word": "built",
+      "start": 10.38,
+      "end": 11.1
+    },
+    {
+      "word": "a",
+      "start": 11.1,
+      "end": 11.28
+    },
+    {
+      "word": "restaurant",
+      "start": 11.28,
+      "end": 11.68
+    },
+    {
+      "word": "that",
+      "start": 11.68,
+      "end": 11.98
+    },
+    {
+      "word": "served",
+      "start": 11.98,
+      "end": 12.38
+    },
+    {
+      "word": "burgers",
+      "start": 12.38,
+      "end": 12.78
+    },
+    {
+      "word": "ridiculously",
+      "start": 12.78,
+      "end": 13.48
+    },
+    {
+      "word": "fast.",
+      "start": 13.48,
+      "end": 14.28
+    },
+    {
+      "word": "Then",
+      "start": 14.56,
+      "end": 14.78
+    },
+    {
+      "word": "a",
+      "start": 14.78,
+      "end": 14.92
+    },
+    {
+      "word": "milkshake",
+      "start": 14.92,
+      "end": 15.38
+    },
+    {
+      "word": "machine",
+      "start": 15.38,
+      "end": 15.76
+    },
+    {
+      "word": "salesman",
+      "start": 15.76,
+      "end": 16.56
+    },
+    {
+      "word": "named",
+      "start": 16.56,
+      "end": 16.94
+    },
+    {
+      "word": "Ray",
+      "start": 16.94,
+      "end": 17.2
+    },
+    {
+      "word": "Croc",
+      "start": 17.2,
+      "end": 17.62
+    },
+    {
+      "word": "showed",
+      "start": 17.62,
+      "end": 17.88
+    },
+    {
+      "word": "up.",
+      "start": 17.88,
+      "end": 18.18
+    },
+    {
+      "word": "He",
+      "start": 18.62,
+      "end": 18.78
+    },
+    {
+      "word": "saw",
+      "start": 18.78,
+      "end": 19.02
+    },
+    {
+      "word": "something",
+      "start": 19.02,
+      "end": 19.4
+    },
+    {
+      "word": "bigger",
+      "start": 19.4,
+      "end": 19.78
+    },
+    {
+      "word": "than",
+      "start": 19.78,
+      "end": 19.98
+    },
+    {
+      "word": "burgers.",
+      "start": 19.98,
+      "end": 20.42
+    },
+    {
+      "word": "A",
+      "start": 21.04,
+      "end": 21.22
+    },
+    {
+      "word": "restaurant",
+      "start": 21.22,
+      "end": 21.64
+    },
+    {
+      "word": "system",
+      "start": 21.64,
+      "end": 22.16
+    },
+    {
+      "word": "he",
+      "start": 22.16,
+      "end": 22.4
+    },
+    {
+      "word": "could",
+      "start": 22.4,
+      "end": 22.58
+    },
+    {
+      "word": "repeat",
+      "start": 22.58,
+      "end": 22.9
+    },
+    {
+      "word": "across",
+      "start": 22.9,
+      "end": 23.26
+    },
+    {
+      "word": "America.",
+      "start": 23.26,
+      "end": 23.86
+    },
+    {
+      "word": "He",
+      "start": 23.86,
+      "end": 24.5
+    },
+    {
+      "word": "became",
+      "start": 24.5,
+      "end": 24.82
+    },
+    {
+      "word": "their",
+      "start": 24.82,
+      "end": 25.08
+    },
+    {
+      "word": "franchising",
+      "start": 25.08,
+      "end": 25.84
+    },
+    {
+      "word": "partner",
+      "start": 25.84,
+      "end": 26.36
+    },
+    {
+      "word": "and",
+      "start": 26.36,
+      "end": 26.9
+    },
+    {
+      "word": "in",
+      "start": 26.9,
+      "end": 27.0
+    },
+    {
+      "word": "1961",
+      "start": 27.0,
+      "end": 27.9
+    },
+    {
+      "word": "he",
+      "start": 27.9,
+      "end": 29.02
+    },
+    {
+      "word": "bought",
+      "start": 29.02,
+      "end": 29.28
+    },
+    {
+      "word": "their",
+      "start": 29.28,
+      "end": 29.52
+    },
+    {
+      "word": "business",
+      "start": 29.52,
+      "end": 29.86
+    },
+    {
+      "word": "rights",
+      "start": 29.86,
+      "end": 30.2
+    },
+    {
+      "word": "for",
+      "start": 30.2,
+      "end": 30.46
+    },
+    {
+      "word": "$2",
+      "start": 30.46,
+      "end": 30.76
+    },
+    {
+      "word": ".7",
+      "start": 30.76,
+      "end": 31.44
+    },
+    {
+      "word": "million.",
+      "start": 31.44,
+      "end": 31.8
+    },
+    {
+      "word": "The",
+      "start": 32.64,
+      "end": 33.14
+    },
+    {
+      "word": "brothers",
+      "start": 33.14,
+      "end": 33.46
+    },
+    {
+      "word": "kept",
+      "start": 33.46,
+      "end": 33.78
+    },
+    {
+      "word": "their",
+      "start": 33.78,
+      "end": 34.06
+    },
+    {
+      "word": "original",
+      "start": 34.06,
+      "end": 34.58
+    },
+    {
+      "word": "restaurant",
+      "start": 34.58,
+      "end": 35.1
+    },
+    {
+      "word": "but",
+      "start": 35.1,
+      "end": 35.76
+    },
+    {
+      "word": "not",
+      "start": 35.76,
+      "end": 35.94
+    },
+    {
+      "word": "the",
+      "start": 35.94,
+      "end": 36.16
+    },
+    {
+      "word": "name.",
+      "start": 36.16,
+      "end": 36.56
+    },
+    {
+      "word": "Imagine",
+      "start": 37.0,
+      "end": 37.5
+    },
+    {
+      "word": "building",
+      "start": 37.5,
+      "end": 37.94
+    },
+    {
+      "word": "McDonald's",
+      "start": 37.94,
+      "end": 38.86
+    },
+    {
+      "word": "and",
+      "start": 38.86,
+      "end": 39.26
+    },
+    {
+      "word": "having",
+      "start": 39.26,
+      "end": 39.48
+    },
+    {
+      "word": "to",
+      "start": 39.48,
+      "end": 39.68
+    },
+    {
+      "word": "rename",
+      "start": 39.68,
+      "end": 40.0
+    },
+    {
+      "word": "your",
+      "start": 40.0,
+      "end": 40.28
+    },
+    {
+      "word": "own",
+      "start": 40.28,
+      "end": 40.6
+    },
+    {
+      "word": "McDonald's.",
+      "start": 40.6,
+      "end": 41.54
+    }
+  ]
+}

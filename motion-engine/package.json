@@ -1,0 +1,31 @@
+{
+  "name": "lincoln-motion-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Lincoln Penny — Programmatic Motion Graphics, Whiteboard & 2.5D Parallax Engine",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts AirlineHook out/airline_motion_v2.mp4 --codec=h264 --crf=18"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.18.0",
+    "@remotion/cli": "4.0.286",
+    "@remotion/lottie": "4.0.286",
+    "@remotion/paths": "4.0.286",
+    "@remotion/renderer": "4.0.286",
+    "@remotion/three": "^4.0.286",
+    "@remotion/transitions": "4.0.286",
+    "@types/three": "^0.160.0",
+    "lottie-web": "^5.12.2",
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.286",
+    "roughjs": "^4.6.6",
+    "three": "^0.160.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.7.3"
+  }
+}

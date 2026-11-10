@@ -1,0 +1,487 @@
+{
+  "totalDuration": 39.995,
+  "scenes": [
+    {
+      "id": "s1",
+      "text": "If you spent four hundred dollars on a flight today, the airline lost money on you.",
+      "start": 0.15,
+      "speechEnd": 4.865,
+      "end": 5.145,
+      "duration": 4.995
+    },
+    {
+      "id": "s2",
+      "text": "Jet fuel, pilot wages, and airport gate fees vaporize almost every cent, leaving just twelve dollars in profit.",
+      "start": 5.145,
+      "speechEnd": 13.251,
+      "end": 13.531,
+      "duration": 8.387
+    },
+    {
+      "id": "s3",
+      "text": "Yet major airlines still report billions in annual profit. If flying planes destroys cash, where does the money come from?",
+      "start": 13.531,
+      "speechEnd": 21.745,
+      "end": 22.025,
+      "duration": 8.493
+    },
+    {
+      "id": "s4",
+      "text": "Buried inside Delta's S E C filing is the truth: American Express paid them six point five billion dollars just for frequent flyer miles.",
+      "start": 22.025,
+      "speechEnd": 32.115,
+      "end": 32.395,
+      "duration": 10.371
+    },
+    {
+      "id": "s5",
+      "text": "Airlines aren't airlines anymore. They are unregulated banks with wings, and the planes are just the bait.",
+      "start": 32.395,
+      "speechEnd": 39.265,
+      "end": 39.545,
+      "duration": 7.149
+    }
+  ],
+  "words": [
+    {
+      "word": "If",
+      "start": 0.0,
+      "end": 0.28
+    },
+    {
+      "word": "you",
+      "start": 0.28,
+      "end": 0.36
+    },
+    {
+      "word": "spent",
+      "start": 0.36,
+      "end": 0.6
+    },
+    {
+      "word": "$400",
+      "start": 0.6,
+      "end": 1.24
+    },
+    {
+      "word": "on",
+      "start": 1.24,
+      "end": 1.88
+    },
+    {
+      "word": "a",
+      "start": 1.88,
+      "end": 1.96
+    },
+    {
+      "word": "flight",
+      "start": 1.96,
+      "end": 2.18
+    },
+    {
+      "word": "today,",
+      "start": 2.18,
+      "end": 2.56
+    },
+    {
+      "word": "the",
+      "start": 3.1,
+      "end": 3.16
+    },
+    {
+      "word": "airline",
+      "start": 3.16,
+      "end": 3.54
+    },
+    {
+      "word": "lost",
+      "start": 3.54,
+      "end": 3.92
+    },
+    {
+      "word": "money",
+      "start": 3.92,
+      "end": 4.26
+    },
+    {
+      "word": "on",
+      "start": 4.26,
+      "end": 4.5
+    },
+    {
+      "word": "you.",
+      "start": 4.5,
+      "end": 4.72
+    },
+    {
+      "word": "Jet",
+      "start": 5.22,
+      "end": 5.36
+    },
+    {
+      "word": "fuel,",
+      "start": 5.36,
+      "end": 5.8
+    },
+    {
+      "word": "pilot",
+      "start": 6.22,
+      "end": 6.48
+    },
+    {
+      "word": "wages,",
+      "start": 6.48,
+      "end": 6.94
+    },
+    {
+      "word": "and",
+      "start": 7.32,
+      "end": 7.54
+    },
+    {
+      "word": "airport",
+      "start": 7.54,
+      "end": 7.92
+    },
+    {
+      "word": "gate",
+      "start": 7.92,
+      "end": 8.26
+    },
+    {
+      "word": "fees",
+      "start": 8.26,
+      "end": 8.72
+    },
+    {
+      "word": "vaporize",
+      "start": 8.72,
+      "end": 9.38
+    },
+    {
+      "word": "almost",
+      "start": 9.38,
+      "end": 9.82
+    },
+    {
+      "word": "every",
+      "start": 9.82,
+      "end": 10.26
+    },
+    {
+      "word": "cent,",
+      "start": 10.26,
+      "end": 10.58
+    },
+    {
+      "word": "leaving",
+      "start": 11.14,
+      "end": 11.3
+    },
+    {
+      "word": "just",
+      "start": 11.3,
+      "end": 11.62
+    },
+    {
+      "word": "$12",
+      "start": 11.62,
+      "end": 12.02
+    },
+    {
+      "word": "in",
+      "start": 12.02,
+      "end": 12.62
+    },
+    {
+      "word": "profit.",
+      "start": 12.62,
+      "end": 13.08
+    },
+    {
+      "word": "Yet",
+      "start": 13.5,
+      "end": 13.7
+    },
+    {
+      "word": "major",
+      "start": 13.7,
+      "end": 14.12
+    },
+    {
+      "word": "airlines",
+      "start": 14.12,
+      "end": 14.68
+    },
+    {
+      "word": "still",
+      "start": 14.68,
+      "end": 15.04
+    },
+    {
+      "word": "report",
+      "start": 15.04,
+      "end": 15.4
+    },
+    {
+      "word": "billions",
+      "start": 15.4,
+      "end": 15.92
+    },
+    {
+      "word": "in",
+      "start": 15.92,
+      "end": 16.2
+    },
+    {
+      "word": "annual",
+      "start": 16.2,
+      "end": 16.58
+    },
+    {
+      "word": "profit.",
+      "start": 16.58,
+      "end": 17.1
+    },
+    {
+      "word": "If",
+      "start": 17.56,
+      "end": 17.78
+    },
+    {
+      "word": "flying",
+      "start": 17.78,
+      "end": 18.2
+    },
+    {
+      "word": "planes",
+      "start": 18.2,
+      "end": 18.68
+    },
+    {
+      "word": "destroys",
+      "start": 18.68,
+      "end": 19.3
+    },
+    {
+      "word": "cash,",
+      "start": 19.3,
+      "end": 20.0
+    },
+    {
+      "word": "where",
+      "start": 20.28,
+      "end": 20.48
+    },
+    {
+      "word": "does",
+      "start": 20.48,
+      "end": 20.7
+    },
+    {
+      "word": "the",
+      "start": 20.7,
+      "end": 20.86
+    },
+    {
+      "word": "money",
+      "start": 20.86,
+      "end": 21.08
+    },
+    {
+      "word": "come",
+      "start": 21.08,
+      "end": 21.34
+    },
+    {
+      "word": "from?",
+      "start": 21.34,
+      "end": 21.58
+    },
+    {
+      "word": "Buried",
+      "start": 22.12,
+      "end": 22.36
+    },
+    {
+      "word": "inside",
+      "start": 22.36,
+      "end": 22.84
+    },
+    {
+      "word": "Delta's",
+      "start": 22.84,
+      "end": 23.6
+    },
+    {
+      "word": "SEC",
+      "start": 23.6,
+      "end": 24.0
+    },
+    {
+      "word": "filing",
+      "start": 24.0,
+      "end": 24.72
+    },
+    {
+      "word": "is",
+      "start": 24.72,
+      "end": 25.0
+    },
+    {
+      "word": "the",
+      "start": 25.0,
+      "end": 25.12
+    },
+    {
+      "word": "truth.",
+      "start": 25.12,
+      "end": 25.44
+    },
+    {
+      "word": "American",
+      "start": 26.0,
+      "end": 26.46
+    },
+    {
+      "word": "Express",
+      "start": 26.46,
+      "end": 26.96
+    },
+    {
+      "word": "paid",
+      "start": 26.96,
+      "end": 27.32
+    },
+    {
+      "word": "them",
+      "start": 27.32,
+      "end": 27.54
+    },
+    {
+      "word": "$6",
+      "start": 27.54,
+      "end": 27.82
+    },
+    {
+      "word": ".5",
+      "start": 27.82,
+      "end": 28.74
+    },
+    {
+      "word": "billion",
+      "start": 28.74,
+      "end": 29.12
+    },
+    {
+      "word": "just",
+      "start": 29.12,
+      "end": 30.22
+    },
+    {
+      "word": "for",
+      "start": 30.22,
+      "end": 30.5
+    },
+    {
+      "word": "frequent",
+      "start": 30.5,
+      "end": 30.94
+    },
+    {
+      "word": "flyer",
+      "start": 30.94,
+      "end": 31.44
+    },
+    {
+      "word": "miles.",
+      "start": 31.44,
+      "end": 31.86
+    },
+    {
+      "word": "Airlines",
+      "start": 32.5,
+      "end": 32.78
+    },
+    {
+      "word": "aren't",
+      "start": 32.78,
+      "end": 33.28
+    },
+    {
+      "word": "airlines",
+      "start": 33.28,
+      "end": 33.64
+    },
+    {
+      "word": "anymore.",
+      "start": 33.64,
+      "end": 34.08
+    },
+    {
+      "word": "They",
+      "start": 34.76,
+      "end": 34.94
+    },
+    {
+      "word": "are",
+      "start": 34.94,
+      "end": 35.1
+    },
+    {
+      "word": "unregulated",
+      "start": 35.1,
+      "end": 36.06
+    },
+    {
+      "word": "banks",
+      "start": 36.06,
+      "end": 36.4
+    },
+    {
+      "word": "with",
+      "start": 36.4,
+      "end": 36.74
+    },
+    {
+      "word": "wings,",
+      "start": 36.74,
+      "end": 37.06
+    },
+    {
+      "word": "and",
+      "start": 37.54,
+      "end": 37.64
+    },
+    {
+      "word": "the",
+      "start": 37.64,
+      "end": 37.74
+    },
+    {
+      "word": "planes",
+      "start": 37.74,
+      "end": 38.12
+    },
+    {
+      "word": "are",
+      "start": 38.12,
+      "end": 38.38
+    },
+    {
+      "word": "just",
+      "start": 38.38,
+      "end": 38.6
+    },
+    {
+      "word": "the",
+      "start": 38.6,
+      "end": 38.78
+    },
+    {
+      "word": "bait.",
+      "start": 38.78,
+      "end": 39.06
+    }
+  ]
+}

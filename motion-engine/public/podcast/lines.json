@@ -1,0 +1,51 @@
+[
+  {
+    "line": 0,
+    "speaker": "host",
+    "text": "Our last video about McDonald's blew up, and the comments are fighting over Ray Kroc. But almost nobody knows where their money actually comes from.",
+    "start": 0.0,
+    "end": 8.171
+  },
+  {
+    "line": 1,
+    "speaker": "guest",
+    "text": "Because McDonald's isn't a burger chain. They're a thirty billion dollar real estate empire.",
+    "start": 8.331,
+    "end": 14.283
+  },
+  {
+    "line": 2,
+    "speaker": "host",
+    "text": "Wait... what? They sell burgers!",
+    "start": 14.443,
+    "end": 16.064
+  },
+  {
+    "line": 3,
+    "speaker": "guest",
+    "text": "The burgers are just the bait. Ray Kroc's genius was buying the physical land under every restaurant. If a franchisee wants to sell fries, they have to pay McDonald's rent first.",
+    "start": 16.224,
+    "end": 28.043
+  },
+  {
+    "line": 4,
+    "speaker": "host",
+    "text": "So they make more from rent than burgers?",
+    "start": 28.203,
+    "end": 30.123
+  },
+  {
+    "line": 5,
+    "speaker": "guest",
+    "text": "Eighty percent of their profit is pure rent and franchise royalties. McDonald's is a real estate monopoly in disguise.",
+    "start": 30.283,
+    "end": 38.56
+  },
+  {
+    "line": 6,
+    "speaker": "host",
+    "text": "Which is why our last video was only the beginning.",
+    "start": 38.72,
+    "end": 41.493
+  }
+]

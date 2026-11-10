@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment & Secrets
+.env
+.env.*
+*.pem
+*.key
+client_secret*.json
+youtube_tokens*.json
+
+# Remotion & Render Caches
+out/
+build/
+.remotion/
+*.mp4
+*.wav
+*.mkv
+*.mov
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# OS Artifacts
+.DS_Store
+Thumbs.db
