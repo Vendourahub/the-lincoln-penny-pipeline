@@ -1,0 +1,69 @@
+{
+  "slug": "airline-seat-cut",
+  "topic": "why airlines earn only a few dollars of profit per passenger even on a full flight",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Airlines move billions of people and keep very little per ticket.",
+  "doNotClaim": [
+    "These are IATA industry-wide FORECASTS for 2024, not any one airline or any one ticket.",
+    "Do not say a specific airline loses money on a seat.",
+    "Do not name any airline, aircraft maker (Airbus, Boeing) or other company: this is the whole industry."
+  ],
+  "facts": [
+    {
+      "id": "i1",
+      "claim": "IATA June 2024 forecast: industry NET PROFIT of $30.5 billion in 2024.",
+      "say": [
+        "$30.5 billion"
+      ],
+      "source": "https://www.iata.org/en/pressroom/2024-releases/2024-06-03-01/",
+      "tier": "primary",
+      "note": "forecast"
+    },
+    {
+      "id": "i2",
+      "claim": "IATA forecast net profit MARGIN of 3.1% of revenue.",
+      "say": [
+        "3.1%",
+        "three point one percent"
+      ],
+      "source": "https://www.iata.org/en/pressroom/2024-releases/2024-06-03-01/",
+      "tier": "primary",
+      "note": "forecast"
+    },
+    {
+      "id": "i3",
+      "claim": "IATA forecast net profit PER PASSENGER of $6.14.",
+      "say": [
+        "$6.14",
+        "six dollars and fourteen cents",
+        "six dollars fourteen cents"
+      ],
+      "source": "https://www.iata.org/en/pressroom/2024-releases/2024-06-03-01/",
+      "tier": "primary",
+      "note": "forecast; the CEO called it \"just $6.14 per passenger\""
+    },
+    {
+      "id": "i4",
+      "claim": "IATA forecast total industry REVENUES of $996 billion.",
+      "say": [
+        "$996 billion"
+      ],
+      "source": "https://www.iata.org/en/pressroom/2024-releases/2024-06-03-01/",
+      "tier": "primary",
+      "note": "forecast"
+    },
+    {
+      "id": "i5",
+      "claim": "IATA forecast 4.96 billion travelers in 2024.",
+      "say": [
+        "4.96 billion",
+        "four point nine six billion"
+      ],
+      "source": "https://www.iata.org/en/pressroom/2024-releases/2024-06-03-01/",
+      "tier": "primary",
+      "note": "forecast"
+    }
+  ],
+  "derived": []
+}

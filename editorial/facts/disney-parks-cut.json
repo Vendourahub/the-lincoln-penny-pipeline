@@ -1,0 +1,45 @@
+{
+  "slug": "disney-parks-cut",
+  "topic": "how Disney theme parks and cruises earn most of the whole company profit",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Disney is a film and TV company in your head and a parks company on its books.",
+  "doNotClaim": [
+    "Segment operating income is not net income.",
+    "Fiscal 2024 ended September 28, 2024.",
+    "Do not say streaming or TV loses money; no source here says so."
+  ],
+  "facts": [
+    {
+      "id": "p1",
+      "claim": "Disney fiscal 2024 Experiences segment (parks, resorts, cruises and consumer products) operating income was $9,272 million.",
+      "say": [
+        "$9.3 billion",
+        "nine point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000275/fy2024_q4xprxex991.htm",
+      "tier": "secondary",
+      "note": "two independent summaries agree; confirm in 10-K"
+    },
+    {
+      "id": "p2",
+      "claim": "Disney fiscal 2024 total segment operating income was $15,601 million.",
+      "say": [
+        "$15.6 billion",
+        "fifteen point six billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448924000275/fy2024_q4xprxex991.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Experiences was about 59% of total segment operating income (9,272 / 15,601): nearly six dollars in ten.",
+      "say": [
+        "59%",
+        "fifty nine percent",
+        "nearly six in ten"
+      ]
+    }
+  ]
+}

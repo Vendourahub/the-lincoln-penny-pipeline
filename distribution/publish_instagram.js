@@ -7,9 +7,11 @@
  *
  *   node publish_instagram.js <video.mp4> [--caption "text"]
  */
-const fs=require('fs'), path=require('path');
-const ROOT=__dirname;
-for(const l of (fs.existsSync(path.join(ROOT,'.env'))?fs.readFileSync(path.join(ROOT,'.env'),'utf8').split('\n'):[])){const m=l.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);if(m&&!process.env[m[1]])process.env[m[1]]=m[2].replace(/^["']|["']$/g,'');}
+const fs = require('fs');
+const path = require('path');
+const { ROOT_DIR, OUT_DIR } = require('../config/env');
+
+const ROOT = ROOT_DIR;
 // Publish via the Facebook Graph API using the non-expiring SYSTEM_USER token (instagram_content_publish).
 // This removes the 60-day Instagram-Login token expiry entirely.
 const UID=(process.env.IG_BUSINESS_ID||'').trim();
@@ -26,7 +28,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 (async()=>{
   try{
     // stage the clip at the public path
-    const stage=path.join(ROOT,'out','instagram'); fs.mkdirSync(stage,{recursive:true});
+    const stage = path.join(OUT_DIR, 'instagram'); fs.mkdirSync(stage, { recursive: true });
     const base=path.basename(video);
     fs.copyFileSync(video, path.join(stage, base));
     const videoUrl=`${PUBLIC}/${base}`;
@@ -54,7 +56,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
     d=await r.json();
     if(d.error||!d.id) throw new Error('publish: '+(d.error?d.error.message:'no id'));
     const slug=base.replace(/\.[^.]+$/,'');
-    fs.writeFileSync(path.join(ROOT,'out',slug+'.instagram.json'),JSON.stringify({platform:'instagram_reel',mediaId:d.id,at:Date.now()},null,2));
+    fs.writeFileSync(path.join(OUT_DIR, slug + '.instagram.json'), JSON.stringify({platform:'instagram_reel',mediaId:d.id,at:Date.now()},null,2));
     console.log(`  ✓ IG REEL published: ${d.id}`);
   }catch(e){ console.error('  IG reel failed:',e.message); process.exit(1); }
 })();

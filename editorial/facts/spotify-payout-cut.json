@@ -1,0 +1,44 @@
+{
+  "slug": "spotify-payout-cut",
+  "topic": "how Spotify pays out about seventy cents of every dollar to the music industry but musicians still say they earn little",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Most of the money leaves Spotify, but it goes to labels and publishers, not straight to artists.",
+  "doNotClaim": [
+    "The ~70% goes to rights holders (labels/publishers), not directly to artists.",
+    "Do not state a per-stream payout."
+  ],
+  "facts": [
+    {
+      "id": "s1",
+      "claim": "Spotify says it pays out about 70% of every dollar generated from music to the music industry (2022 data); about 66% was reported for 2021.",
+      "say": [
+        "70%",
+        "seventy percent",
+        "seventy cents",
+        "about seventy cents on the dollar",
+        "66%"
+      ],
+      "source": "https://www.indieisnotagenre.com/spotify-loud-and-clear/",
+      "tier": "secondary"
+    },
+    {
+      "id": "s2",
+      "claim": "That payout goes to rights holders (record labels, distributors and music publishers), not necessarily straight to the artists themselves.",
+      "say": [],
+      "source": "https://www.indieisnotagenre.com/spotify-loud-and-clear/",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "The remaining roughly 30% (100% minus 70%) is what Spotify keeps to cover its own costs and profit.",
+      "say": [
+        "30%",
+        "thirty percent",
+        "thirty cents",
+        "about thirty cents on the dollar"
+      ]
+    }
+  ]
+}

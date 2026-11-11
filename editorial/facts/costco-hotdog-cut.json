@@ -1,0 +1,105 @@
+{
+  "slug": "costco-hotdog-cut",
+  "topic": "why Costco has sold its hot dog and soda for one dollar fifty since the mid 1980s and will not raise it",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "The hot dog is a loss leader that keeps people walking in; the real money is the membership card.",
+  "doNotClaim": [
+    "Do not say what Costco earns or loses on the combo; no source gives that. Analysts call it a loss leader, Costco has not published its margin.",
+    "Do not use vague money words like \"a few cents\" or \"pennies\".",
+    "Do not give an exact launch year; sources say only \"mid-1980s\".",
+    "Do not quote profanity or violence; paraphrase the founder anecdote and say \"reportedly\"."
+  ],
+  "facts": [
+    {
+      "id": "hd1",
+      "claim": "The Costco hot dog and soda combo costs $1.50 and has since the mid-1980s.",
+      "say": [
+        "$1.50",
+        "a dollar fifty",
+        "one dollar and fifty cents"
+      ],
+      "source": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s-heres-why-prices-arent-changing",
+      "tier": "secondary"
+    },
+    {
+      "id": "hd2",
+      "claim": "Costco sold nearly 200 million combos in fiscal 2023.",
+      "say": [
+        "nearly 200 million",
+        "nearly two hundred million"
+      ],
+      "source": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s-heres-why-prices-arent-changing",
+      "tier": "secondary"
+    },
+    {
+      "id": "hd3",
+      "claim": "Costco began running its own hot dog factories in 2008 to cut supply-chain costs.",
+      "say": [
+        "2008"
+      ],
+      "source": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s-heres-why-prices-arent-changing",
+      "tier": "secondary"
+    },
+    {
+      "id": "hd4",
+      "claim": "Reportedly, co-founder Jim Sinegal told then-CEO Craig Jelinek not to raise the price (a 2018 interview; the article calls the story part legend). Paraphrase it, say \"reportedly\".",
+      "say": [],
+      "source": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s-heres-why-prices-arent-changing",
+      "tier": "secondary"
+    },
+    {
+      "id": "hd5",
+      "claim": "Analysts describe the combo as loss-leader pricing; Forrester analyst Brendan Witcher said \"The retailer is ultimately eating that cost to keep the customer loyal.\" Costco itself has not published a margin for the combo.",
+      "say": [],
+      "source": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s-heres-why-prices-arent-changing",
+      "tier": "secondary",
+      "note": "attribute to analysts; do not state a Costco margin"
+    },
+    {
+      "id": "c1",
+      "claim": "Costco FY2024 MEMBERSHIP FEE REVENUE (what members paid in annual fees) was $4,828 million.",
+      "say": [
+        "$4.8 billion",
+        "$4,828 million",
+        "four point eight billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "c2",
+      "claim": "Costco FY2024 OPERATING INCOME (profit from operations) was $9,285 million.",
+      "say": [
+        "$9.3 billion",
+        "$9,285 million",
+        "nine point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "c4",
+      "claim": "Annual fees rose on Sept 1 2024: Gold Star/Business from $60 to $65, Executive from $120 to $130.",
+      "say": [
+        "$65",
+        "$130",
+        "$60",
+        "$120"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Membership fee revenue was about 52% of Costco operating income (4,828 / 9,285): about half.",
+      "say": [
+        "52%",
+        "fifty two percent",
+        "about half",
+        "half"
+      ]
+    }
+  ]
+}

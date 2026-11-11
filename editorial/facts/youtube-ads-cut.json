@@ -1,0 +1,45 @@
+{
+  "slug": "youtube-ads-cut",
+  "topic": "how YouTube ads alone brought in nearly as much as all of Netflix",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "One part of Google's ad machine is almost the size of the whole streaming giant.",
+  "doNotClaim": [
+    "Both are 2024 revenue figures; revenue is not profit.",
+    "YouTube ads revenue is Alphabet's advertising revenue from YouTube, not money paid to creators.",
+    "Do not say which is more valuable."
+  ],
+  "facts": [
+    {
+      "id": "y1",
+      "claim": "Alphabet 2024 YouTube ads revenue was about $36.1 billion.",
+      "say": [
+        "$36.1 billion",
+        "thirty six point one billion dollars"
+      ],
+      "source": "https://capedge.com/filing/1652044/0001652044-25-000010/GOOG-8K/file/2",
+      "tier": "secondary",
+      "note": "aggregators citing the Alphabet release agree; confirm in 10-K"
+    },
+    {
+      "id": "y2",
+      "claim": "Netflix 2024 total revenues were about $39.0 billion.",
+      "say": [
+        "$39.0 billion",
+        "thirty nine billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528025000044/nflx-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "YouTube ads revenue was about 93% of Netflix total revenue (36.1 / 39.0): nearly as much.",
+      "say": [
+        "93%",
+        "ninety three percent",
+        "nearly as much"
+      ]
+    }
+  ]
+}

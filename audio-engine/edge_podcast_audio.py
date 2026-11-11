@@ -21,9 +21,11 @@ def main():
         {"speaker": "host", "voice": "en-US-GuyNeural", "rate": "+4%", "pitch": "+0Hz", "text": "Which is why our last video was only the beginning."}
     ]
 
-    out_dir = "/opt/faceless/blueprint/out/mcdonalds-part2-edge-short"
+    import tempfile
+    root_dir = os.environ.get("LINCOLN_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+    out_dir = os.path.join(root_dir, "out", "mcdonalds-part2-edge-short")
     os.makedirs(out_dir, exist_ok=True)
-    temp_dir = "/tmp/edge_podcast_lines"
+    temp_dir = os.path.join(tempfile.gettempdir(), "edge_podcast_lines")
     os.makedirs(temp_dir, exist_ok=True)
 
     print("[*] Generating lines with Edge-TTS Microsoft Neural...")

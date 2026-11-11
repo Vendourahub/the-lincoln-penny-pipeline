@@ -1,0 +1,45 @@
+{
+  "slug": "nvidia-datacenter-cut",
+  "topic": "how almost all of Nvidia revenue now comes from data centers",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Nvidia started as a graphics company for gamers; now one business makes nearly everything.",
+  "doNotClaim": [
+    "Fiscal 2025 means the year ended in late January 2025.",
+    "These are revenue figures, not profit.",
+    "Do not say gaming is small or declining."
+  ],
+  "facts": [
+    {
+      "id": "n1",
+      "claim": "Nvidia fiscal 2025 total revenue was $130,497 million.",
+      "say": [
+        "$130.5 billion",
+        "one hundred thirty point five billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "n2",
+      "claim": "Nvidia fiscal 2025 Data Center revenue was $115.2 billion, up 142% from a year earlier.",
+      "say": [
+        "$115.2 billion",
+        "142%",
+        "one hundred fifteen point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000021/q4fy25pr.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Data Center was about 88% of Nvidia fiscal 2025 revenue (115.2 / 130.5): nearly nine dollars in every ten.",
+      "say": [
+        "88%",
+        "eighty eight percent",
+        "nearly nine in ten"
+      ]
+    }
+  ]
+}

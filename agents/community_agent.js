@@ -18,10 +18,11 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const { ROOT_DIR, OUT_DIR } = require('../config/env');
+const { getYoutubeTokensPath, getYoutubeClientSecretPath } = require('../config/credentials');
 
-const ROOT = '/opt/faceless';
+const ROOT = ROOT_DIR;
 const BP_DIR = path.join(ROOT, 'blueprint');
-const OUT_DIR = path.join(ROOT, 'out');
 const RESEARCH_DIR = path.join(BP_DIR, 'research');
 const BRIEFS_DIR = path.join(RESEARCH_DIR, 'growth-briefs');
 
@@ -220,10 +221,14 @@ async function facebook(mode, inbox, env) {
 // ========================================================
 async function youtube(mode, inbox, env) {
   const { google } = require('googleapis');
-  const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'client_secret.json'), 'utf8'));
+  const secretPath = getYoutubeClientSecretPath();
+  const tokensPath = getYoutubeTokensPath();
+  if (!fs.existsSync(secretPath)) throw new Error(`client_secret.json not found at ${secretPath}`);
+  if (!fs.existsSync(tokensPath)) throw new Error(`YouTube tokens not found at ${tokensPath}`);
+  const raw = JSON.parse(fs.readFileSync(secretPath, 'utf8'));
   const cfg = raw.installed || raw.web;
   const auth = new google.auth.OAuth2(cfg.client_id, cfg.client_secret);
-  auth.setCredentials(JSON.parse(fs.readFileSync(path.join(ROOT, 'youtube_tokens_lincoln.json'), 'utf8')));
+  auth.setCredentials(JSON.parse(fs.readFileSync(tokensPath, 'utf8')));
   
   const yt = google.youtube({ version: 'v3', auth });
   const channel = (await yt.channels.list({ part: ['id', 'statistics', 'snippet'], mine: true })).data.items?.[0];

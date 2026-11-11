@@ -1,0 +1,59 @@
+{
+  "slug": "aws-profit-cut",
+  "topic": "how Amazon Web Services makes most of the profit of the whole of Amazon",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Amazon looks like a giant shop but most of its profit comes from the cloud business in the back.",
+  "doNotClaim": [
+    "Do not say Amazon retail loses money.",
+    "AWS sales are revenue, not profit: NEVER compare AWS sales with Amazon profit."
+  ],
+  "facts": [
+    {
+      "id": "a1",
+      "claim": "AWS OPERATING INCOME (profit) in 2024 was $39,834 million.",
+      "say": [
+        "$39.8 billion",
+        "$39,834 million"
+      ],
+      "source": "https://ir.aboutamazon.com/news-release/news-release-details/2025/Amazon-com-Announces-Fourth-Quarter-Results/",
+      "tier": "primary"
+    },
+    {
+      "id": "a2",
+      "claim": "Amazon TOTAL OPERATING INCOME (profit, all segments) in 2024 was $68,593 million.",
+      "say": [
+        "$68.6 billion",
+        "$68,593 million"
+      ],
+      "source": "https://ir.aboutamazon.com/news-release/news-release-details/2025/Amazon-com-Announces-Fourth-Quarter-Results/",
+      "tier": "primary"
+    },
+    {
+      "id": "a3",
+      "claim": "AWS NET SALES (revenue, not profit) in 2024 were $107,556 million.",
+      "say": [
+        "$107.6 billion",
+        "$107,556 million"
+      ],
+      "source": "https://ir.aboutamazon.com/news-release/news-release-details/2025/Amazon-com-Announces-Fourth-Quarter-Results/",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "AWS was about 58% of Amazon operating income (39,834 / 68,593): a bit over half of all the profit.",
+      "say": [
+        "58%",
+        "fifty eight percent"
+      ]
+    },
+    {
+      "claim": "AWS operating margin was about 37% (39,834 / 107,556).",
+      "say": [
+        "37%",
+        "thirty seven percent"
+      ]
+    }
+  ]
+}

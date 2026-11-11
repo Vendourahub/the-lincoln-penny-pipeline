@@ -1,0 +1,59 @@
+{
+  "slug": "michelin-guide-cut",
+  "topic": "how a tire company created the Michelin Guide to get people driving more",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "A tire maker wanted more driving, so it printed a guidebook, and the guidebook became the thing restaurants are judged by.",
+  "doNotClaim": [
+    "Do not say how stars are awarded or who the inspectors are.",
+    "Do not give any restaurant, chef or city.",
+    "The 1900 aim is as stated in the guide itself: to help motorists, which would raise demand for cars and so for tires."
+  ],
+  "facts": [
+    {
+      "id": "m1",
+      "claim": "The first Michelin Guide appeared in 1900, published by the tire-making Michelin brothers for French motorists, with information on fuel, repairs, lodging and food.",
+      "say": [
+        "1900"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Michelin_Guide",
+      "tier": "secondary",
+      "note": "several sources agree"
+    },
+    {
+      "id": "m2",
+      "claim": "The brothers published it to increase demand for cars and therefore for tires: tires wear out through use, so more driving means more tire sales.",
+      "say": [],
+      "source": "https://www.beyond.fr/food/michelin-guide-history.html",
+      "tier": "secondary"
+    },
+    {
+      "id": "m3",
+      "claim": "Nearly 35,000 copies of the first edition were printed and given free to motorists.",
+      "say": [
+        "35,000",
+        "thirty five thousand",
+        "nearly thirty five thousand"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Michelin_Guide",
+      "tier": "secondary"
+    },
+    {
+      "id": "m4",
+      "claim": "In 1926 the guide began awarding stars to restaurants, at first only a single star.",
+      "say": [
+        "1926"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Michelin_Guide",
+      "tier": "secondary"
+    },
+    {
+      "id": "m5",
+      "claim": "Michelin stars are today one of the most closely watched restaurant ratings in the world.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Michelin_Guide",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

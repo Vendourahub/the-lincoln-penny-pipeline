@@ -1,0 +1,37 @@
+{
+  "slug": "doordash-takerate-cut",
+  "topic": "how much of every dollar of orders DoorDash keeps as its own revenue",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "DoorDash keeps a modest slice of each order, and the slice is growing because of ads.",
+  "doNotClaim": [
+    "Net Revenue Margin is DoorDash revenue as a percent of Marketplace GOV (gross order value); NEVER say what share goes to restaurants or drivers.",
+    "Do not state any dollar split of a single order."
+  ],
+  "facts": [
+    {
+      "id": "o1",
+      "claim": "DoorDash full-year 2024 Marketplace GOV (total dollar value of orders on its marketplace) was $80.2 billion.",
+      "say": [
+        "$80.2 billion",
+        "eighty point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1792789/000162828025005715/dash-20241231.htm",
+      "tier": "secondary",
+      "note": "search summary of the 10-K"
+    },
+    {
+      "id": "o2",
+      "claim": "DoorDash full-year 2024 Net Revenue Margin (its revenue as a share of Marketplace GOV) was 13.4%, up from 12.9% in 2023, mainly from higher advertising.",
+      "say": [
+        "13.4%",
+        "12.9%",
+        "thirteen point four percent",
+        "about thirteen cents on the dollar"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1792789/000162828025005715/dash-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "apple-services-cut",
+  "topic": "why Apple earns a much bigger margin on App Store and other services than on iPhones",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "The phone is the doorway; the services are where the margin lives.",
+  "doNotClaim": [
+    "Do not state the App Store commission as a single number (it varies 15-30%).",
+    "These are Apple FY2024 gross margins, not profit per phone."
+  ],
+  "facts": [
+    {
+      "id": "p1",
+      "claim": "Apple FY2024 SERVICES gross margin percentage was 73.9% (70.8% the year before).",
+      "say": [
+        "73.9%",
+        "70.8%"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "tier": "secondary",
+      "note": "SEC-hosted 10-K excerpt via search"
+    },
+    {
+      "id": "p2",
+      "claim": "Apple FY2024 PRODUCTS gross margin percentage was 37.2%.",
+      "say": [
+        "37.2%"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "p3",
+      "claim": "Apple FY2024 SERVICES gross margin was $71,050 million.",
+      "say": [
+        "$71 billion",
+        "$71,050 million"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/320193/000032019324000123/aapl-20240928.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

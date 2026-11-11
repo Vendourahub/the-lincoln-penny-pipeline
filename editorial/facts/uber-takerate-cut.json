@@ -1,0 +1,38 @@
+{
+  "slug": "uber-takerate-cut",
+  "topic": "how much of every dollar booked on Uber rides ends up as Uber revenue",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Uber keeps roughly thirty cents of each dollar booked, which is not the same as what the driver is paid.",
+  "doNotClaim": [
+    "Take rate = Uber revenue / gross bookings. Gross bookings include taxes, tolls and fees, so NEVER say what share of a rider fare or of driver pay this equals.",
+    "Do not say drivers get 70%.",
+    "Do not state any dollar split of a specific fare."
+  ],
+  "facts": [
+    {
+      "id": "u1",
+      "claim": "In the last quarter of 2024 (Q4), Uber MOBILITY (rides) take rate was 30.3%: Uber revenue as a share of gross bookings, so say \"of every dollar BOOKED\" (never \"of every dollar you pay\"); it was 28.7% a year earlier.",
+      "say": [
+        "30.3%",
+        "28.7%",
+        "thirty point three percent",
+        "about thirty cents on the dollar"
+      ],
+      "source": "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2024/default.aspx",
+      "tier": "secondary",
+      "note": "earnings-release excerpt"
+    },
+    {
+      "id": "u2",
+      "claim": "In that same last quarter of 2024 (one quarter, not a year), Uber Mobility revenue was $6.9 billion on gross bookings of $22.8 billion.",
+      "say": [
+        "$6.9 billion",
+        "$22.8 billion"
+      ],
+      "source": "https://investor.uber.com/news-events/news/press-release-details/2025/Uber-Announces-Results-for-Fourth-Quarter-and-Full-Year-2024/default.aspx",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

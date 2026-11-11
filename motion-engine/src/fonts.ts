@@ -38,6 +38,7 @@ export const FONTS = {
   display: "'Fraunces', Georgia, serif",
   serif: "'Fraunces', Georgia, serif",
   sans: "'Archivo', 'Segoe UI', sans-serif",
+  body: "'Archivo', 'Segoe UI', sans-serif",
   mono: "'PlexMono', Consolas, monospace",
   hand: "'Caveat', cursive",
 };

@@ -1,0 +1,38 @@
+{
+  "slug": "google-apple-search-cut",
+  "topic": "how much Google pays to be the default search engine on phones and browsers",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Google pays a fortune to be the first thing you search with, and one witness revealed how big a cut Apple gets.",
+  "doNotClaim": [
+    "Both figures come from testimony at the US v. Google antitrust trial in fall 2023, as reported by news outlets; always say so (\"testimony at the antitrust trial\").",
+    "Do NOT state a total dollar amount paid to Apple; only estimates exist.",
+    "The 36% is a share of search ad revenue from Safari per Google's own expert witness, not of Apple's total revenue.",
+    "Google argued at trial that the payments reflect competition; do not accuse Google of wrongdoing."
+  ],
+  "facts": [
+    {
+      "id": "g1",
+      "claim": "Testimony at the antitrust trial said Google paid about $26.3 billion in 2021 to be the default search engine on phones and browsers.",
+      "say": [
+        "$26.3 billion",
+        "twenty six point three billion dollars"
+      ],
+      "source": "https://pymnts.com/?p=1625929",
+      "tier": "secondary",
+      "note": "multiple outlets report the same testimony"
+    },
+    {
+      "id": "g2",
+      "claim": "Google's own expert witness said under cross-examination that Google gives Apple 36% of search ad revenue from Safari.",
+      "say": [
+        "36%",
+        "thirty six percent",
+        "about thirty six cents on the dollar"
+      ],
+      "source": "https://qz.com/an-expert-witness-just-let-slip-how-much-google-pays-ap-1851019654",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "amazon-ads-cut",
+  "topic": "how Amazon earns more from advertising than from its subscription services and its physical stores",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Amazon looks like a store, but its ad business out-earns its subscriptions and its physical stores.",
+  "doNotClaim": [
+    "These are 2024 net sales (revenue) figures from the 10-K, not profit; do not say anything about ad profit or margin.",
+    "Do not say Prime; the 10-K line is called subscription services.",
+    "Do not say ads are Amazon's biggest business; third-party seller services is larger."
+  ],
+  "facts": [
+    {
+      "id": "z1",
+      "claim": "Amazon 2024 net sales from ADVERTISING services (sponsored ads, display and video ads sold to sellers, vendors, publishers and others) were $56,214 million.",
+      "say": [
+        "$56.2 billion",
+        "fifty six point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "z2",
+      "claim": "Amazon 2024 net sales from SUBSCRIPTION services were $44,374 million.",
+      "say": [
+        "$44.4 billion",
+        "forty four point four billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "z3",
+      "claim": "Amazon 2024 net sales from PHYSICAL STORES were $21,215 million.",
+      "say": [
+        "$21.2 billion",
+        "twenty one point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Advertising net sales were more than two and a half times physical-store net sales (56.2 / 21.2 = 2.65).",
+      "say": [
+        "more than two and a half times",
+        "two and a half times"
+      ]
+    }
+  ]
+}

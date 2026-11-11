@@ -1,0 +1,63 @@
+{
+  "slug": "livenation-ticketing-cut",
+  "topic": "why Live Nation earns more profit from ticketing than from concerts on a fraction of the revenue",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Concerts bring in most of the revenue; ticketing, a small slice of it, brings in twice the profit.",
+  "doNotClaim": [
+    "Adjusted operating income (AOI) is Live Nation's own measure of segment profit, not net income.",
+    "Do not state any ticket fee amount or fee percentage.",
+    "Do not mention lawsuits, regulators or any specific event."
+  ],
+  "facts": [
+    {
+      "id": "n1",
+      "claim": "Live Nation 2024 total revenue was about $23.16 billion.",
+      "say": [
+        "$23.2 billion",
+        "twenty three point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1335258/000133525825000028/lyv-20241231.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "n2",
+      "claim": "Live Nation 2024 CONCERTS segment revenue was about $19.0 billion and its adjusted operating income (AOI) was $529.7 million.",
+      "say": [
+        "$19.0 billion",
+        "$530 million",
+        "nineteen billion dollars"
+      ],
+      "source": "https://news.livenationentertainment.com/news/live-nation-entertainment-reports-full-year-and-fourth-quarter-2024-results",
+      "tier": "secondary"
+    },
+    {
+      "id": "n3",
+      "claim": "Live Nation 2024 TICKETING segment revenue was about $2.99 billion and its adjusted operating income (AOI) was $1,123.6 million.",
+      "say": [
+        "$3.0 billion",
+        "$1.1 billion",
+        "three billion dollars"
+      ],
+      "source": "https://news.livenationentertainment.com/news/live-nation-entertainment-reports-full-year-and-fourth-quarter-2024-results",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Ticketing was about 13% of total revenue (2.99 / 23.16).",
+      "say": [
+        "13%",
+        "thirteen percent"
+      ]
+    },
+    {
+      "claim": "Ticketing AOI was about twice Concerts AOI (1,123.6 / 529.7 = 2.1).",
+      "say": [
+        "about twice",
+        "twice",
+        "double"
+      ]
+    }
+  ]
+}

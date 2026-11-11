@@ -1,0 +1,48 @@
+{
+  "slug": "tupperware-brownie-cut",
+  "topic": "how Brownie Wise made Tupperware a home-party business and was then fired",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "The woman who made Tupperware a party was fired from it.",
+  "doNotClaim": [
+    "Do NOT say Wise invented the home party; she brought the party plan from Stanley Home Products.",
+    "Do not say who fired her (sources split between Tupper and the board) and do not state an ownership stake or a dollar settlement; say only \"reportedly about a year's salary\".",
+    "Do not give reasons for the firing; accounts conflict."
+  ],
+  "facts": [
+    {
+      "id": "t1",
+      "claim": "Brownie Wise had sold Stanley Home Products through home parties before she joined Tupperware; she met Earl Tupper in 1951 and became his vice president and general manager.",
+      "say": [
+        "1951"
+      ],
+      "source": "https://www.ebsco.com/research-starters/history/earl-s-tupper",
+      "tier": "secondary"
+    },
+    {
+      "id": "t2",
+      "claim": "Wise urged Tupper to pull Tupperware out of retail stores and sell it only through home parties.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Brownie_Wise",
+      "tier": "secondary"
+    },
+    {
+      "id": "t3",
+      "claim": "Wise was fired in early 1958.",
+      "say": [
+        "1958"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Brownie_Wise",
+      "tier": "secondary"
+    },
+    {
+      "id": "t4",
+      "claim": "She sued and reportedly settled for about a year's salary.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Brownie_Wise",
+      "tier": "secondary",
+      "note": "sources conflict on amount; do not state a dollar figure"
+    }
+  ],
+  "derived": []
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "hermes-margin-cut",
+  "topic": "how Hermes keeps about forty cents of every euro of sales as recurring operating profit",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Hermes earns a margin most companies cannot dream of, on bags people queue for.",
+  "doNotClaim": [
+    "Figures are in euros for 2024.",
+    "Recurring operating income is the company's own measure and excludes one-off items.",
+    "Do not state the price of any bag or product, and do not compare to any other luxury brand."
+  ],
+  "facts": [
+    {
+      "id": "h1",
+      "claim": "Hermes 2024 revenue was about 15.2 billion euros.",
+      "say": [
+        "15.2 billion euros",
+        "fifteen point two billion euros"
+      ],
+      "source": "https://www.nasdaq.com/press-release/hermes-international-2024-full-year-results-2025-02-14",
+      "tier": "secondary",
+      "note": "several outlets repeating the company release agree"
+    },
+    {
+      "id": "h2",
+      "claim": "Hermes 2024 recurring operating income was about 6.2 billion euros, a margin of 40.5% of revenue.",
+      "say": [
+        "6.2 billion euros",
+        "40.5%",
+        "forty point five percent",
+        "about forty cents of every euro"
+      ],
+      "source": "https://www.nasdaq.com/press-release/hermes-international-2024-full-year-results-2025-02-14",
+      "tier": "secondary"
+    },
+    {
+      "id": "h3",
+      "claim": "Hermes 2024 net profit attributable to the group was about 4.6 billion euros, about 30% of revenue.",
+      "say": [
+        "4.6 billion euros",
+        "30%",
+        "thirty percent"
+      ],
+      "source": "https://www.nasdaq.com/press-release/hermes-international-2024-full-year-results-2025-02-14",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

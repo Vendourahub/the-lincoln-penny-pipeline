@@ -1,0 +1,53 @@
+{
+  "slug": "mcdonalds-rent-cut",
+  "topic": "how McDonalds makes about two fifths of its revenue from rent paid by its franchisees",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "McDonalds is closer to a landlord than a burger chain.",
+  "doNotClaim": [
+    "Rent is the 10-K \"Rents\" revenue line, not profit.",
+    "Do not say McDonalds owns every restaurant."
+  ],
+  "facts": [
+    {
+      "id": "m1",
+      "claim": "McDonalds 2024 RENT revenue from franchisees was $10,017 million.",
+      "say": [
+        "$10 billion",
+        "$10,017 million"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+      "tier": "secondary",
+      "note": "two independent excerpts agreed; confirm in 10-K before long-form use"
+    },
+    {
+      "id": "m2",
+      "claim": "McDonalds 2024 TOTAL REVENUES were $25,920 million.",
+      "say": [
+        "$25.9 billion",
+        "$25,920 million"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "m3",
+      "claim": "About 95% of McDonalds restaurants worldwide are franchised.",
+      "say": [
+        "95%",
+        "ninety five percent"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Rent was about 39% of total revenue (10,017 / 25,920): nearly two fifths.",
+      "say": [
+        "39%",
+        "thirty nine percent"
+      ]
+    }
+  ]
+}

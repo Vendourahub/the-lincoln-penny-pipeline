@@ -1,0 +1,54 @@
+{
+  "slug": "meta-reality-labs-cut",
+  "topic": "how much Meta has lost on its virtual reality division in a single year",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Meta spends billions a year on a division that sells a tiny fraction of that back.",
+  "doNotClaim": [
+    "Operating loss is an accounting loss, not cash burned.",
+    "Do not say Meta as a whole loses money, and do not call Reality Labs a failure.",
+    "Do not state per-headset losses."
+  ],
+  "facts": [
+    {
+      "id": "m1",
+      "claim": "Meta Reality Labs segment operating loss for full-year 2024 was about $17.7 billion.",
+      "say": [
+        "$17.7 billion",
+        "seventeen point seven billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000077/meta-09302024xexhibit991.htm",
+      "tier": "secondary",
+      "note": "nine-month 2024 loss of $12,762M is in the Q3 exhibit; Q4 coverage adds about $4.97B; confirm in Meta 10-K before long-form use"
+    },
+    {
+      "id": "m2",
+      "claim": "Meta Reality Labs segment revenue for full-year 2024 was about $2.1 billion.",
+      "say": [
+        "$2.1 billion",
+        "two point one billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000077/meta-09302024xexhibit991.htm",
+      "tier": "secondary",
+      "note": "nine-month revenue $1,063M plus Q4 about $1.08B; confirm in 10-K"
+    },
+    {
+      "id": "m3",
+      "claim": "Meta Reality Labs operating loss for full-year 2023 was about $16.2 billion.",
+      "say": [
+        "$16.2 billion"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1326801/000132680124000077/meta-09302024xexhibit991.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "The 2024 Reality Labs operating loss was roughly eight times its revenue (17.7 / 2.1).",
+      "say": [
+        "about eight times",
+        "eight times"
+      ]
+    }
+  ]
+}

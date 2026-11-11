@@ -1,0 +1,65 @@
+{
+  "slug": "ford-evtruck-cut",
+  "topic": "how Ford lost billions on electric cars while its business trucks earned billions",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "One Ford division pays for the bet another division is losing money on.",
+  "doNotClaim": [
+    "These are segment EBIT figures (earnings before interest and taxes) for 2024, not net income.",
+    "Do not say Ford will stop making electric vehicles.",
+    "Do not state per-vehicle losses."
+  ],
+  "facts": [
+    {
+      "id": "f1",
+      "claim": "Ford Pro (its commercial customers business) segment EBIT for full-year 2024 was $9,015 million.",
+      "say": [
+        "$9.0 billion",
+        "nine billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799625000013/f-20241231.htm",
+      "tier": "secondary",
+      "note": "two sources agree; confirm in 10-K"
+    },
+    {
+      "id": "f2",
+      "claim": "Ford Model e (its electric vehicle business) segment EBIT for full-year 2024 was a LOSS of $5,076 million.",
+      "say": [
+        "$5.1 billion",
+        "five point one billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799625000013/f-20241231.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "f3",
+      "claim": "Ford Blue (its gas and hybrid vehicle business) segment EBIT for full-year 2024 was $5,284 million.",
+      "say": [
+        "$5.3 billion",
+        "five point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799625000013/f-20241231.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "f4",
+      "claim": "Ford company adjusted EBIT for full-year 2024 was $10,208 million.",
+      "say": [
+        "$10.2 billion",
+        "ten point two billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/37996/000003799625000013/f-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "The Model e loss was about 56% of what Ford Pro earned (5,076 / 9,015): more than half.",
+      "say": [
+        "56%",
+        "fifty six percent",
+        "more than half"
+      ]
+    }
+  ]
+}

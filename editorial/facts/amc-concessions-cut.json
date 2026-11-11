@@ -1,0 +1,61 @@
+{
+  "slug": "amc-concessions-cut",
+  "topic": "why a movie theater keeps far more of what you spend on snacks than on your ticket",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "The ticket mostly goes back to the studio; the snacks are where the theater keeps its money.",
+  "doNotClaim": [
+    "These are 2024 cost ratios from the 10-K, not profit margins.",
+    "Do not say popcorn specifically; the 10-K groups all food and beverage.",
+    "Do not claim any other theater chain does the same."
+  ],
+  "facts": [
+    {
+      "id": "a1",
+      "claim": "AMC food and beverage COSTS were 17.3% of food and beverage revenues in 2024 (17.4% in 2023).",
+      "say": [
+        "17.3%",
+        "seventeen point three percent"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1411579/000141157925000042/amc-20241231x10k.htm",
+      "tier": "secondary",
+      "note": "search summary of the 10-K; confirm in filing"
+    },
+    {
+      "id": "a2",
+      "claim": "AMC film exhibition costs were 51.6% of admissions revenues in 2024 (50.8% in 2023). Film exhibition costs are what a theater pays to show films.",
+      "say": [
+        "51.6%",
+        "fifty one point six percent"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1411579/000141157925000042/amc-20241231x10k.htm",
+      "tier": "secondary"
+    },
+    {
+      "id": "a3",
+      "claim": "AMC food and beverage revenue per patron was $8.30 in 2024, up from $7.95.",
+      "say": [
+        "$8.30",
+        "eight dollars and thirty cents"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1411579/000141157925000042/amc-20241231x10k.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "After food and beverage costs about 82.7% of that revenue remains (100 - 17.3), before other expenses.",
+      "say": [
+        "83%",
+        "about eighty three percent"
+      ]
+    },
+    {
+      "claim": "After film exhibition costs about 48.4% of admissions revenue remains (100 - 51.6), before other expenses.",
+      "say": [
+        "48%",
+        "about forty eight percent"
+      ]
+    }
+  ]
+}

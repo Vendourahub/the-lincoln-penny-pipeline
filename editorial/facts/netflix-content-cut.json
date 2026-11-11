@@ -1,0 +1,57 @@
+{
+  "slug": "netflix-content-cut",
+  "topic": "how much of every dollar Netflix earns goes into paying for its shows and films",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Netflix is a content factory first; the profit is what is left after the shows are paid for.",
+  "doNotClaim": [
+    "Amortization of content assets is the expensed cost of content for 2024, NOT cash spent that year; never say Netflix spent that amount in cash.",
+    "Do not compare content costs to profit as if the same measure.",
+    "Do not name any specific show."
+  ],
+  "facts": [
+    {
+      "id": "x1",
+      "claim": "Netflix 2024 revenues were $39,001 million.",
+      "say": [
+        "$39.0 billion",
+        "thirty nine billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528025000044/nflx-20241231.htm",
+      "tier": "secondary",
+      "note": "two summaries of the 10-K agree"
+    },
+    {
+      "id": "x2",
+      "claim": "Netflix 2024 amortization of content assets (the content cost expensed in the year) was $15,302 million.",
+      "say": [
+        "$15.3 billion",
+        "fifteen point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528025000044/Financial_Report.xlsx",
+      "tier": "primary",
+      "note": "from the SEC XBRL financial report"
+    },
+    {
+      "id": "x3",
+      "claim": "Netflix 2024 income from operations was $10,418 million, about a 27% operating margin.",
+      "say": [
+        "$10.4 billion",
+        "27%",
+        "twenty seven percent"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1065280/000106528025000044/nflx-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Content amortization was about 39% of revenue (15.3 / 39.0): roughly thirty nine cents of every revenue dollar.",
+      "say": [
+        "39%",
+        "thirty nine percent",
+        "thirty nine cents"
+      ]
+    }
+  ]
+}

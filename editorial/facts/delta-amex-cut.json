@@ -1,0 +1,52 @@
+{
+  "slug": "delta-amex-cut",
+  "topic": "how a credit card partner pays Delta Air Lines billions of dollars a year",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Delta looks like an airline, but one of its biggest money streams is a credit card deal.",
+  "doNotClaim": [
+    "Remuneration is what American Express pays Delta under the deal; it is not the same as revenue recognised in the year and not profit. NEVER give it as a percent or share of Delta revenue, profit or pre-tax income.",
+    "Do not say Delta earns more from the card than from flying.",
+    "Do not say what any cardholder pays or earns."
+  ],
+  "facts": [
+    {
+      "id": "d1",
+      "claim": "In 2024, remuneration from American Express to Delta totaled $7.4 billion (Delta 10-K, 2024).",
+      "say": [
+        "$7.4 billion",
+        "seven point four billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/27904/000002790425000004/dal-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "d2",
+      "claim": "Delta expects remuneration from American Express to grow to $10 billion over the long term.",
+      "say": [
+        "$10 billion",
+        "ten billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/27904/000002790425000004/dal-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "d3",
+      "claim": "Delta calls its American Express co-brand card relationship its most significant and valuable contract for selling miles.",
+      "say": [],
+      "source": "https://www.sec.gov/Archives/edgar/data/27904/000002790425000004/dal-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "d4",
+      "claim": "Delta total operating revenue for 2024 was $61,643 million.",
+      "say": [
+        "$61.6 billion",
+        "sixty one point six billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/27904/000168316825000182/delta_ex9901.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": []
+}

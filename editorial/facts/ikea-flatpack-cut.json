@@ -1,0 +1,39 @@
+{
+  "slug": "ikea-flatpack-cut",
+  "topic": "how an IKEA employee taking the legs off a table helped make flat-pack furniture normal",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "A table that would not fit in a car turned into a business model where the customer does the assembly.",
+  "doNotClaim": [
+    "Do NOT say IKEA invented flat-pack furniture; IKEA itself says Lundgren helped popularize it.",
+    "Do not say the motive was shipping cost or damage; the sources say only that the table would not fit in the car.",
+    "Do not say whether the legs were sawed or unscrewed; accounts differ. The date is IKEA's account; some sources date the Lovet table to 1959."
+  ],
+  "facts": [
+    {
+      "id": "i1",
+      "claim": "According to IKEA's own story, in 1956 IKEA employee Gillis Lundgren could not fit a table into his car, so he took the legs off.",
+      "say": [
+        "1956"
+      ],
+      "source": "https://www.ikea.com/ph/en/this-is-ikea/about-us/the-story-of-ikea-flatpacks-puba710ccb0/",
+      "tier": "secondary",
+      "note": "IKEA page plus Wallpaper; date varies by source"
+    },
+    {
+      "id": "i2",
+      "claim": "IKEA says Lundgren helped popularize flat-pack furniture; it does not claim he invented the idea.",
+      "say": [],
+      "source": "https://www.ikea.com/ph/en/this-is-ikea/about-us/the-story-of-ikea-flatpacks-puba710ccb0/",
+      "tier": "secondary"
+    },
+    {
+      "id": "i3",
+      "claim": "IKEA customers assemble flat-pack furniture themselves after buying it.",
+      "say": [],
+      "source": "https://www.ikea.com/ph/en/this-is-ikea/about-us/the-story-of-ikea-flatpacks-puba710ccb0/",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

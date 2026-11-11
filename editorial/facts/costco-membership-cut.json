@@ -1,0 +1,67 @@
+{
+  "slug": "costco-membership-cut",
+  "topic": "why the annual Costco membership fee is about half of what Costco earns in operating income",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Costco sells almost everything cheaply; the membership card is where the profit comes from.",
+  "doNotClaim": [
+    "Do not say Costco sells at zero profit or at a loss.",
+    "Do not compare fees to net income; compare to operating income only."
+  ],
+  "facts": [
+    {
+      "id": "c1",
+      "claim": "Costco FY2024 MEMBERSHIP FEE REVENUE (what members paid in annual fees) was $4,828 million.",
+      "say": [
+        "$4.8 billion",
+        "$4,828 million",
+        "four point eight billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "c2",
+      "claim": "Costco FY2024 OPERATING INCOME (profit from operations) was $9,285 million.",
+      "say": [
+        "$9.3 billion",
+        "$9,285 million",
+        "nine point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "c3",
+      "claim": "Costco FY2024 total revenue was $254,453 million.",
+      "say": [
+        "$254 billion"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "c4",
+      "claim": "Annual fees rose on Sept 1 2024: Gold Star/Business from $60 to $65, Executive from $120 to $130.",
+      "say": [
+        "$65",
+        "$130",
+        "$60",
+        "$120"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Membership fee revenue was about 52% of Costco operating income.",
+      "say": [
+        "52%",
+        "fifty two percent",
+        "about half",
+        "half"
+      ]
+    }
+  ]
+}

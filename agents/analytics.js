@@ -9,12 +9,16 @@
 const fs = require('fs');
 const path = require('path');
 const { google } = require('googleapis');
+const { ROOT_DIR, OUT_DIR } = require('../config/env');
+const { getYoutubeTokensPath, getYoutubeClientSecretPath } = require('../config/credentials');
 
-const ROOT = __dirname;
-const SECRET = path.join(ROOT, 'client_secret.json');
-const TOKENS = path.join(ROOT, 'youtube_tokens.json');
+const SECRET = getYoutubeClientSecretPath();
+const TOKENS = getYoutubeTokensPath();
 
 function authed(){
+  if (!fs.existsSync(SECRET)) throw new Error(`client_secret.json not found at ${SECRET}`);
+  if (!fs.existsSync(TOKENS)) throw new Error(`YouTube tokens not found at ${TOKENS}`);
+
   const cfg = (JSON.parse(fs.readFileSync(SECRET,'utf8')).installed) || JSON.parse(fs.readFileSync(SECRET,'utf8')).web;
   const o = new google.auth.OAuth2(cfg.client_id, cfg.client_secret, (cfg.redirect_uris||['http://localhost'])[0]);
   o.setCredentials(JSON.parse(fs.readFileSync(TOKENS,'utf8')));
@@ -90,7 +94,8 @@ const today = () => new Date().toISOString().slice(0,10);
     videos,
     meta: { ctrNote },
   };
-  fs.writeFileSync(path.join(ROOT,'out','analytics.json'), JSON.stringify(out,null,2));
+  fs.mkdirSync(OUT_DIR, { recursive: true });
+  fs.writeFileSync(path.join(OUT_DIR, 'analytics.json'), JSON.stringify(out,null,2));
   console.log(`  ✓ analytics: ${channel.title} — ${channel.subs} subs, ${totalWatchHrs}h watched, ${videos.length} videos`);
   console.log(`    YPP progress: subs ${out.ypp.subsPct}% of 1,000 · watch-hours ${out.ypp.watchPct}% of 4,000`);
   if (ctrNote) console.log(`    note: ${ctrNote}`);

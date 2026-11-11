@@ -1,0 +1,40 @@
+{
+  "slug": "roblox-creators-cut",
+  "topic": "how much money Roblox pays the people who build its games",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Roblox is a platform where the creators are paid close to a billion dollars a year.",
+  "doNotClaim": [
+    "Developer exchange fees are what Roblox reports paying out to developers and creators in 2024; do not compute a percent or cents-per-dollar of bookings.",
+    "Bookings is Roblox's own measure of what users spend; revenue is recognised over time, so the two differ.",
+    "Do not compare the creator payout to the net loss; do not call anyone a kid."
+  ],
+  "facts": [
+    {
+      "id": "r1",
+      "claim": "Roblox 2024 developer exchange fees (the amounts it paid to developers and creators) were $922.8 million, up 25% from $740.8 million in 2023.",
+      "say": [
+        "$922.8 million",
+        "$923 million",
+        "nearly a billion dollars",
+        "25%",
+        "twenty five percent"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1315098/000131509825000033/rblx-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "r2",
+      "claim": "Roblox 2024 bookings were $4,369.1 million and revenue was $3,602.0 million.",
+      "say": [
+        "$4.4 billion",
+        "$3.6 billion",
+        "four point four billion dollars",
+        "three point six billion dollars"
+      ],
+      "source": "https://capedge.com/filing/1315098/0001315098-25-000021/RBLX-8K/file/2",
+      "tier": "primary"
+    }
+  ],
+  "derived": []
+}

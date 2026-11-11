@@ -1,0 +1,50 @@
+{
+  "slug": "diamond-forever-cut",
+  "topic": "how four words written for De Beers helped make the diamond engagement ring the expectation",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "A slogan helped turn a common option into an expected one.",
+  "doNotClaim": [
+    "Do NOT say De Beers invented the engagement ring (rings with and without diamonds were already in use before the campaign).",
+    "Do not give any percentage of pre-war diamond rings; no reliable figure was found.",
+    "Do not give any price. The exact first-ad date varies (1947 coined, possibly 1948 first ad), so say she wrote it in 1947."
+  ],
+  "facts": [
+    {
+      "id": "d1",
+      "claim": "In 1947 copywriter Frances Gerety of the N. W. Ayer agency wrote the four words \"A Diamond Is Forever\" for De Beers.",
+      "say": [
+        "1947",
+        "four words",
+        "four"
+      ],
+      "source": "https://www.sothebys.com/en/articles/how-de-beers-changed-the-diamond-market-with-one-simple-tagline",
+      "tier": "secondary",
+      "note": "multiple sources agree on 1947 for the writing"
+    },
+    {
+      "id": "d2",
+      "claim": "Diamond engagement rings existed before the campaign but were far from universal.",
+      "say": [],
+      "source": "https://www.nationalgeographic.com/premium/article/diamond-engagement-rings-history-debeers-marketing",
+      "tier": "secondary"
+    },
+    {
+      "id": "d3",
+      "claim": "The slogan has appeared in De Beers engagement advertising ever since.",
+      "say": [],
+      "source": "https://www.marketingsociety.com/the-library/tagline-forever",
+      "tier": "secondary"
+    },
+    {
+      "id": "d4",
+      "claim": "By 1951 the ad agency reported that jewelers were saying a girl is not engaged unless she has a diamond engagement ring.",
+      "say": [
+        "1951"
+      ],
+      "source": "https://www.nationalgeographic.com/premium/article/diamond-engagement-rings-history-debeers-marketing",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

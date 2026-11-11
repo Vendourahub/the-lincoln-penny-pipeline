@@ -1,0 +1,56 @@
+{
+  "slug": "wbd-writedown-cut",
+  "topic": "how Warner Bros. Discovery posted a huge net loss mostly because of one accounting writedown",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Most of the giant loss was an accounting charge for cable networks, not cash walking out the door.",
+  "doNotClaim": [
+    "The $9.1 billion is a pre-tax, NON-CASH goodwill impairment charge in the Networks unit; never call it cash lost or money spent.",
+    "Do not say the company is failing or in trouble.",
+    "Do not say anything about streaming profit or loss."
+  ],
+  "facts": [
+    {
+      "id": "w1",
+      "claim": "Warner Bros. Discovery 2024 net loss was about $11.3 billion.",
+      "say": [
+        "$11.3 billion",
+        "eleven point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1437107/000143710725000031/wbd-20241231.htm",
+      "tier": "secondary",
+      "note": "one detailed source plus coverage agree; confirm in 10-K"
+    },
+    {
+      "id": "w2",
+      "claim": "In 2024 Warner Bros. Discovery recorded a pre-tax, non-cash goodwill impairment charge of $9.1 billion in its Networks business, because the carrying value exceeded fair value.",
+      "say": [
+        "$9.1 billion",
+        "nine point one billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1437107/000143710725000031/wbd-20241231.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "w3",
+      "claim": "Warner Bros. Discovery 2024 revenues were about $39.3 billion.",
+      "say": [
+        "$39.3 billion",
+        "thirty nine point three billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1437107/000143710725000031/wbd-20241231.htm",
+      "tier": "secondary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "The impairment was about 81% of the net loss (9.1 / 11.3): roughly four fifths.",
+      "say": [
+        "81%",
+        "eighty one percent",
+        "about four fifths",
+        "roughly four fifths"
+      ]
+    }
+  ]
+}

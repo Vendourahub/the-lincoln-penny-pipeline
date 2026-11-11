@@ -1,0 +1,50 @@
+{
+  "slug": "mcdonalds-kroc-cut",
+  "topic": "how a milkshake machine salesman visited the McDonald brothers in 1954 and ended up buying the company",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "One restaurant buying a lot of milkshake mixers led a salesman to a business he later bought.",
+  "doNotClaim": [
+    "Do NOT state Kroc's age; sources do not agree.",
+    "Do not say Kroc invented the restaurant system; the McDonald brothers built it.",
+    "Do not describe the real-estate dispute."
+  ],
+  "facts": [
+    {
+      "id": "k1",
+      "claim": "In 1954 Ray Kroc, who sold Multimixer milkshake machines, visited the McDonald brothers' San Bernardino restaurant after they had bought eight of his machines, to see why they needed so many.",
+      "say": [
+        "1954",
+        "eight"
+      ],
+      "source": "https://pbssocal.org/food-living/the-real-mcdonalds-the-san-bernardino-origins-of-a-fast-food-empire",
+      "tier": "secondary"
+    },
+    {
+      "id": "k2",
+      "claim": "The McDonald brothers had built a fast, simple restaurant system designed for speed.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Richard_and_Maurice_McDonald",
+      "tier": "secondary"
+    },
+    {
+      "id": "k3",
+      "claim": "Kroc became their franchising agent and expanded the system.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Ray_Kroc",
+      "tier": "secondary"
+    },
+    {
+      "id": "k4",
+      "claim": "In 1961 Kroc bought the McDonald brothers out for $2.7 million.",
+      "say": [
+        "1961",
+        "$2.7 million",
+        "two point seven million dollars"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Richard_and_Maurice_McDonald",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

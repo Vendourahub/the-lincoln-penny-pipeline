@@ -9,7 +9,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { publishToTikTok } = require('./blueprint/tiktok_publisher');
+const { publishToTikTok } = require('./tiktok_publisher');
 
 const ROOT = __dirname;
 const video = process.argv[2];

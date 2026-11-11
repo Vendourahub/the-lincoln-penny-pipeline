@@ -1,0 +1,40 @@
+{
+  "slug": "nintendo-1889-cut",
+  "topic": "how Nintendo started in 1889 as a maker of handmade playing cards",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "The home of Mario began as a Kyoto card maker more than a century before video games.",
+  "doNotClaim": [
+    "Do not say nineteen eighty nine; the year is eighteen eighty nine.",
+    "Do not claim anything about electricity, cars or the world in 1889.",
+    "Name variants and founder age differ across sources; do not state either."
+  ],
+  "facts": [
+    {
+      "id": "n1",
+      "claim": "Nintendo was founded on 23 September 1889 in Kyoto by Fusajiro Yamauchi, to make handmade hanafuda playing cards.",
+      "say": [
+        "1889",
+        "eighteen eighty nine"
+      ],
+      "source": "https://en.wikipedia.org/wiki/Nintendo",
+      "tier": "secondary",
+      "note": "consistent across sources"
+    },
+    {
+      "id": "n2",
+      "claim": "Nintendo later moved into electronic games.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/History_of_Nintendo",
+      "tier": "secondary"
+    },
+    {
+      "id": "n3",
+      "claim": "Nintendo is the company behind Mario and the Switch.",
+      "say": [],
+      "source": "https://en.wikipedia.org/wiki/Nintendo",
+      "tier": "secondary"
+    }
+  ],
+  "derived": []
+}

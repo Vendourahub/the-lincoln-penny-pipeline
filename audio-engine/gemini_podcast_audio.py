@@ -10,7 +10,7 @@ from google import genai
 from google.genai import types
 from faster_whisper import WhisperModel
 
-ROOT = '/opt/faceless'
+ROOT = os.environ.get("LINCOLN_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 def main():
     dialogue = [
@@ -23,13 +23,15 @@ def main():
         {"speaker": "host", "voice": "Puck", "text": "Which is why our last video was only the beginning."}
     ]
 
-    out_dir = "/opt/faceless/blueprint/out/mcdonalds-part2-gemini-short"
+    out_dir = os.path.join(ROOT, "out", "mcdonalds-part2-gemini-short")
     os.makedirs(out_dir, exist_ok=True)
 
-    # Load Gemini API key
-    for line in open('/opt/faceless/.env'):
-        if line.startswith('GEMINI_API_KEY='):
-            os.environ['GEMINI_API_KEY'] = line.strip().split('=', 1)[1]
+    # Load Gemini API key from .env if present
+    env_file = os.path.join(ROOT, ".env")
+    if os.path.exists(env_file):
+        for line in open(env_file):
+            if line.startswith('GEMINI_API_KEY='):
+                os.environ['GEMINI_API_KEY'] = line.strip().split('=', 1)[1]
 
     print("[*] Initializing Gemini GenAI Client for Podcast Voices...")
     client = genai.Client()

@@ -1,0 +1,47 @@
+{
+  "slug": "lululemon-margin-cut",
+  "topic": "how much of every dollar lululemon sells is left after making the product",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Leggings are cheap to make relative to what the brand sells them for, and lululemon keeps a big slice of each dollar.",
+  "doNotClaim": [
+    "Gross margin is revenue minus the cost of the goods sold, before store, staff and marketing costs; it is NOT profit.",
+    "Do not state the price of any lululemon product or what any item costs to make.",
+    "Fiscal 2024 was a 53-week year ending February 2, 2025."
+  ],
+  "facts": [
+    {
+      "id": "l1",
+      "claim": "lululemon fiscal 2024 net revenue was about $10.6 billion.",
+      "say": [
+        "$10.6 billion",
+        "ten point six billion dollars"
+      ],
+      "source": "https://www.businesswire.com/news/home/20250327623807/en/lululemon-athletica-inc.-Announces-Fourth-Quarter-and-Full-Year-Fiscal-2024-Results",
+      "tier": "primary"
+    },
+    {
+      "id": "l2",
+      "claim": "lululemon fiscal 2024 GROSS margin was 59.2%.",
+      "say": [
+        "59.2%",
+        "fifty nine point two percent",
+        "about fifty nine cents of every dollar"
+      ],
+      "source": "https://www.businesswire.com/news/home/20250327623807/en/lululemon-athletica-inc.-Announces-Fourth-Quarter-and-Full-Year-Fiscal-2024-Results",
+      "tier": "primary"
+    },
+    {
+      "id": "l3",
+      "claim": "lululemon fiscal 2024 OPERATING margin (income from operations as a share of revenue) was 23.7%, with income from operations about $2.5 billion.",
+      "say": [
+        "23.7%",
+        "twenty three point seven percent",
+        "$2.5 billion"
+      ],
+      "source": "https://www.businesswire.com/news/home/20250327623807/en/lululemon-athletica-inc.-Announces-Fourth-Quarter-and-Full-Year-Fiscal-2024-Results",
+      "tier": "primary"
+    }
+  ],
+  "derived": []
+}

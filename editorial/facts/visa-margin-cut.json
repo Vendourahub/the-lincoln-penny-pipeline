@@ -1,0 +1,44 @@
+{
+  "slug": "visa-margin-cut",
+  "topic": "how Visa keeps more than half of every dollar of its revenue as profit",
+  "status": "approved",
+  "checkedAt": "2026-11-03",
+  "storyAngle": "Visa sits in the middle of every card swipe and keeps an unusually large slice of what it brings in.",
+  "doNotClaim": [
+    "Fiscal 2024 means the year ended September 30, 2024.",
+    "Net income is after all costs and taxes; do not call it a cut of what shoppers spend.",
+    "Do not say what merchants or banks pay per swipe."
+  ],
+  "facts": [
+    {
+      "id": "v1",
+      "claim": "Visa fiscal 2024 net revenue was $35,926 million.",
+      "say": [
+        "$35.9 billion",
+        "thirty five point nine billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316124000058/v-20240930.htm",
+      "tier": "primary"
+    },
+    {
+      "id": "v2",
+      "claim": "Visa fiscal 2024 GAAP net income was $19.7 billion.",
+      "say": [
+        "$19.7 billion",
+        "nineteen point seven billion dollars"
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1403161/000140316124000053/q42024earningsrelease.htm",
+      "tier": "primary"
+    }
+  ],
+  "derived": [
+    {
+      "claim": "Net income was about 55% of net revenue (19.7 / 35.9): about fifty five cents of profit on every dollar of revenue.",
+      "say": [
+        "55%",
+        "fifty five percent",
+        "fifty five cents"
+      ]
+    }
+  ]
+}
