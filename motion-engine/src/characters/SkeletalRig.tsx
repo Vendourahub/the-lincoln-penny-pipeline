@@ -149,6 +149,24 @@ export const SkeletalRig: React.FC<SkeletalRigProps> = ({
             <line x1={headTurn * 12 - 12} y1={19} x2={headTurn * 12 + 12} y2={19} stroke="#FFFFFF" strokeWidth={2.5} />
           </g>
         );
+      case "dental":
+        return (
+          <g>
+            {/* Upper teeth contacting bottom lip */}
+            <ellipse cx={headTurn * 12} cy={20} rx={11} ry={5 * Math.max(0.3, openAmount)} fill="#11141A" />
+            <rect x={headTurn * 12 - 7} y={18} width={14} height={3.5} fill="#FFFFFF" rx={1} />
+            <path d={`M ${headTurn * 12 - 11} 20 Q ${headTurn * 12} 22 ${headTurn * 12 + 11} 20`} stroke="#11141A" strokeWidth={2.5} fill="none" />
+          </g>
+        );
+      case "closed":
+        return (
+          <path
+            d={`M ${headTurn * 12 - 10} 20 L ${headTurn * 12 + 10} 20`}
+            stroke="#11141A"
+            strokeWidth={4.5}
+            strokeLinecap="round"
+          />
+        );
       case "smile":
         return (
           <path
