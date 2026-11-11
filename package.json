@@ -4,7 +4,7 @@
   "description": "Autonomous Animated Media Engine for The Lincoln Penny",
   "private": true,
   "scripts": {
-    "test": "node tests/baseline.test.js",
+    "test": "node tests/baseline.test.js && node tests/episodes.test.js",
     "audit": "node tests/baseline.test.js",
     "typecheck": "cd motion-engine && npx tsc --noEmit",
     "motion:build": "cd motion-engine && npm run build",

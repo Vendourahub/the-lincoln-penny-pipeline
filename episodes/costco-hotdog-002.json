@@ -1,0 +1,130 @@
+{
+  "episodeId": "costco-hotdog-002",
+  "format": "stickman-dialogue",
+  "status": "qa_passed",
+  "title": "Why Costco Sells Hot Dogs for $1.50",
+  "topic": "The $4.8B Costco Membership Monopoly",
+  "durationTargetSeconds": 40,
+  "characters": ["host", "insider"],
+  "factSeed": "costco-hotdog-cut.json",
+  "secondaryFactSeed": "costco-membership-cut.json",
+  "research": {
+    "centralQuestion": "Why has Costco refused to raise the $1.50 hot dog price since the mid-1980s?",
+    "businessMechanism": "Costco's retail merchandise is sold near cost; over 52% of total operating income is generated entirely by recurring annual membership card fees ($4.8 billion in 2024).",
+    "verifiedFacts": [
+      {
+        "claimId": "cos-01",
+        "claim": "Costco hot dog combo has remained $1.50 since the mid-1980s, selling nearly 200 million annually.",
+        "sourceUrl": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s",
+        "sourceType": "secondary",
+        "verified": true
+      },
+      {
+        "claimId": "cos-02",
+        "claim": "In FY2024 Costco collected $4.8 billion in membership fees, accounting for 52% of operating income.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/cost-20240901.htm",
+        "sourceType": "primary",
+        "verified": true
+      }
+    ],
+    "doNotClaim": [
+      "Do not state exact margin or loss on individual hot dog combos as Costco does not disclose item-level margins.",
+      "Do not give an exact launch year; say only 'mid-1980s'.",
+      "Do not compare fees to net income; compare to operating income only."
+    ],
+    "verifiedAt": "2026-11-11"
+  },
+  "dialogue": [
+    {
+      "speaker": "host",
+      "text": "Every time inflation hits, food prices double. But Costco's hot dog has stayed one dollar and fifty cents since the mid-nineteen eighties. How do they not go broke?",
+      "emotion": "inquisitive",
+      "intensity": 0.8
+    },
+    {
+      "speaker": "insider",
+      "text": "Because you aren't paying for the hot dog. You're paying for permission to buy it.",
+      "emotion": "confident",
+      "intensity": 0.85
+    },
+    {
+      "speaker": "host",
+      "text": "Wait... they sell nearly two hundred million hot dogs just to get us in the door?",
+      "emotion": "shock",
+      "intensity": 0.95
+    },
+    {
+      "speaker": "insider",
+      "text": "The hot dog is just the bait. In twenty twenty-four, Costco collected four point eight billion dollars purely in membership fees. That card is fifty-two percent of their entire operating income.",
+      "emotion": "explaining",
+      "intensity": 0.9
+    },
+    {
+      "speaker": "host",
+      "text": "So Costco makes over half their operating profit before selling a single item.",
+      "emotion": "curious",
+      "intensity": 0.85
+    },
+    {
+      "speaker": "insider",
+      "text": "Costco is a private subscription club that happens to have pallets of paper towels in the back.",
+      "emotion": "smirk",
+      "intensity": 0.95
+    }
+  ],
+  "narrativeCues": [
+    { "event": "inquiry_intro", "lineIndex": 0, "visualPriority": "speaker" },
+    { "event": "unexpected_revelation", "lineIndex": 1, "visualPriority": "speaker" },
+    { "event": "reaction_disbelief", "lineIndex": 2, "visualPriority": "listener_reaction" },
+    {
+      "event": "evidence_breakdown",
+      "lineIndex": 3,
+      "visualPriority": "evidence",
+      "evidence": {
+        "title": "COSTCO WHOLESALE // FY2024 10-K",
+        "subtitle": "MEMBERSHIP FEE CASH FLOW",
+        "statNumber": "$4,800,000,000",
+        "statLabel": "ANNUAL MEMBERSHIP REVENUE",
+        "imageSrc": "podcast/studio.jpg"
+      }
+    },
+    { "event": "clarifying_challenge", "lineIndex": 4, "visualPriority": "speaker" },
+    {
+      "event": "monopoly_payoff",
+      "lineIndex": 5,
+      "visualPriority": "speaker",
+      "evidence": {
+        "title": "OPERATING INCOME BREAKDOWN",
+        "subtitle": "MEMBERSHIP FEES VS GROCERY MARGIN",
+        "statNumber": "52%",
+        "statLabel": "OPERATING INCOME FROM ANNUAL CARDS"
+      }
+    }
+  ],
+  "evidenceCards": [
+    {
+      "title": "COSTCO WHOLESALE // FY2024 10-K",
+      "statNumber": "$4,800,000,000",
+      "statLabel": "ANNUAL MEMBERSHIP REVENUE"
+    }
+  ],
+  "audio": {
+    "provider": "edge-tts",
+    "voiceHost": "en-US-GuyNeural",
+    "voiceInsider": "en-US-ChristopherNeural",
+    "masterAudioFile": "podcast/costco_audio.mp3",
+    "durationSeconds": 38.5,
+    "lufsTarget": -15
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "compositionId": "DirectedPodcastScene"
+  },
+  "distribution": {
+    "approved": false,
+    "defaultPrivacy": "private",
+    "platforms": ["youtube", "instagram", "tiktok"]
+  }
+}
