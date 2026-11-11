@@ -8,7 +8,7 @@ import { compileKieRequest, KieVisualProvider } from '../packages/visual-generat
 const usage = 'Usage: node scripts/blackspot-visual.mjs path/to/shot.json [--execute --approve-spend] [--output path/to/manifest.json]';
 const args = process.argv.slice(2);
 const outIndex = args.indexOf('--output');
-const configPath = args.find((x, i) => !x.startsWith('--') && i !== outIndex + 1);
+const configPath = args.find((x, i) => !x.startsWith('--') && (outIndex < 0 || i !== outIndex + 1));
 if (!configPath || args.includes('--help')) { console.log(usage); process.exit(configPath ? 0 : 2); }
 const execute = args.includes('--execute');
 const approveSpend = args.includes('--approve-spend');
