@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "characters": {
+    "james": {
+      "locked": true,
+      "approvedAssetUrls": [
+        "https://assets.example.com/blackspot/james/character-sheet-v1.png"
+      ]
+    }
+  },
+  "job": {
+    "id": "roller-coaster-ep01-shot003-keyframe",
+    "kind": "image-edit",
+    "sceneId": "ep01-saturday-doorway",
+    "characterId": "james",
+    "approved": true,
+    "prompt": "Cinematic 2.5D neo-noir animation style, Saturday morning in a Lagos estate. Preserve the approved James character identity and clothing precisely. James, exhausted and suspicious, stands just inside his apartment doorway. Medium close-up, natural soft light, believable Nigerian setting, intentional eye line, quiet uncertainty. Do not alter facial identity or add characters.",
+    "referenceUrls": [
+      "https://assets.example.com/blackspot/james/character-sheet-v1.png"
+    ],
+    "aspectRatio": "16:9"
+  }
+}
