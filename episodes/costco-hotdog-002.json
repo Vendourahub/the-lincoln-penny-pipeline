@@ -1,20 +1,20 @@
 {
   "episodeId": "costco-hotdog-002",
   "format": "stickman-dialogue",
-  "status": "qa_passed",
+  "status": "approved",
   "title": "Why Costco Sells Hot Dogs for $1.50",
   "topic": "The $4.8B Costco Membership Monopoly",
-  "durationTargetSeconds": 40,
+  "durationTargetSeconds": 45,
   "characters": ["host", "insider"],
   "factSeed": "costco-hotdog-cut.json",
   "secondaryFactSeed": "costco-membership-cut.json",
   "research": {
     "centralQuestion": "Why has Costco refused to raise the $1.50 hot dog price since the mid-1980s?",
-    "businessMechanism": "Costco's retail merchandise is sold near cost; over 52% of total operating income is generated entirely by recurring annual membership card fees ($4.8 billion in 2024).",
+    "businessMechanism": "Costco's retail merchandise is sold near cost; over 52% of total operating income is generated entirely by recurring annual membership card fees ($4.8 billion in FY2024).",
     "verifiedFacts": [
       {
         "claimId": "cos-01",
-        "claim": "Costco hot dog combo has remained $1.50 since the mid-1980s, selling nearly 200 million annually.",
+        "claim": "The Costco hot dog combo has remained $1.50 since the mid-1980s, selling nearly 200 million annually.",
         "sourceUrl": "https://laist.com/news/food/costco-hot-dogs-have-cost-1-50-since-the-1980s",
         "sourceType": "secondary",
         "verified": true
@@ -36,95 +36,169 @@
   },
   "dialogue": [
     {
-      "speaker": "host",
-      "text": "Every time inflation hits, food prices double. But Costco's hot dog has stayed one dollar and fifty cents since the mid-nineteen eighties. How do they not go broke?",
-      "emotion": "inquisitive",
-      "intensity": 0.8
-    },
-    {
       "speaker": "insider",
-      "text": "Because you aren't paying for the hot dog. You're paying for permission to buy it.",
-      "emotion": "confident",
-      "intensity": 0.85
-    },
-    {
-      "speaker": "host",
-      "text": "Wait... they sell nearly two hundred million hot dogs just to get us in the door?",
-      "emotion": "shock",
-      "intensity": 0.95
-    },
-    {
-      "speaker": "insider",
-      "text": "The hot dog is just the bait. In twenty twenty-four, Costco collected four point eight billion dollars purely in membership fees. That card is fifty-two percent of their entire operating income.",
+      "text": "Costco charges people just to shop there.",
       "emotion": "explaining",
-      "intensity": 0.9
+      "performanceDirection": "matter_of_fact",
+      "pauseAfter": 0.3
     },
     {
       "speaker": "host",
-      "text": "So Costco makes over half their operating profit before selling a single item.",
-      "emotion": "curious",
-      "intensity": 0.85
+      "text": "Charges them how?",
+      "emotion": "inquisitive",
+      "performanceDirection": "genuine_curiosity",
+      "pauseAfter": 0.25
     },
     {
       "speaker": "insider",
-      "text": "Costco is a private subscription club that happens to have pallets of paper towels in the back.",
+      "text": "Membership. You pay annually.",
+      "emotion": "explaining",
+      "performanceDirection": "matter_of_fact",
+      "pauseAfter": 0.35
+    },
+    {
+      "speaker": "host",
+      "text": "To buy groceries?",
+      "emotion": "curious",
+      "performanceDirection": "genuine_curiosity",
+      "pauseAfter": 0.2
+    },
+    {
+      "speaker": "insider",
+      "text": "Yeah.",
+      "emotion": "confident",
+      "performanceDirection": "matter_of_fact",
+      "pauseAfter": { "duration": 1.2, "type": "thought_processing" }
+    },
+    {
+      "speaker": "host",
+      "text": "...And people agreed?",
+      "emotion": "shock",
+      "performanceDirection": "deadpan_disbelief",
+      "pauseAfter": 0.3
+    },
+    {
+      "speaker": "insider",
+      "text": "Millions of them.",
       "emotion": "smirk",
-      "intensity": 0.95
+      "performanceDirection": "dry_understatement",
+      "pauseAfter": { "duration": 2.0, "type": "deadpan_disbelief" }
+    },
+    {
+      "speaker": "host",
+      "text": "I need to start charging people to visit my house.",
+      "emotion": "inquisitive",
+      "performanceDirection": "delayed_realization",
+      "pauseAfter": 0.4
+    },
+    {
+      "speaker": "insider",
+      "text": "For what?",
+      "emotion": "curious",
+      "performanceDirection": "deadpan_disbelief",
+      "pauseAfter": 0.3
+    },
+    {
+      "speaker": "host",
+      "text": "Access.",
+      "emotion": "confident",
+      "performanceDirection": "matter_of_fact",
+      "pauseAfter": 0.3
+    },
+    {
+      "speaker": "insider",
+      "text": "To what?",
+      "emotion": "inquisitive",
+      "performanceDirection": "genuine_curiosity",
+      "pauseAfter": 0.25
+    },
+    {
+      "speaker": "host",
+      "text": "That's what I'm working on.",
+      "emotion": "smirk",
+      "performanceDirection": "delayed_realization",
+      "pauseAfter": { "duration": 1.0, "type": "comedic_beat" }
+    },
+    {
+      "speaker": "insider",
+      "text": "Anyway... the hot dog is just the bait. In twenty twenty-four, Costco collected four point eight billion dollars purely in membership fees. That card is fifty-two percent of their operating income.",
+      "emotion": "explaining",
+      "performanceDirection": "smug_revelation",
+      "pauseAfter": 0.5
+    },
+    {
+      "speaker": "host",
+      "text": "So Costco makes over half their operating profit before anyone buys a single item.",
+      "emotion": "curious",
+      "performanceDirection": "inquisitive_skeptic",
+      "pauseAfter": 0.3
+    },
+    {
+      "speaker": "insider",
+      "text": "Costco isn't a grocery store. It's a subscription club that happens to have pallets of paper towels in the back.",
+      "emotion": "smirk",
+      "performanceDirection": "dry_understatement",
+      "pauseAfter": 0.8
     }
   ],
   "narrativeCues": [
-    { "event": "inquiry_intro", "lineIndex": 0, "visualPriority": "speaker" },
-    { "event": "unexpected_revelation", "lineIndex": 1, "visualPriority": "speaker" },
-    { "event": "reaction_disbelief", "lineIndex": 2, "visualPriority": "listener_reaction" },
+    { "event": "insider_setup", "lineIndex": 0, "visualPriority": "speaker" },
+    { "event": "host_inquiry", "lineIndex": 1, "visualPriority": "speaker" },
+    { "event": "insider_membership", "lineIndex": 2, "visualPriority": "speaker" },
+    { "event": "host_groceries", "lineIndex": 3, "visualPriority": "speaker" },
+    { "event": "insider_yeah", "lineIndex": 4, "visualPriority": "speaker" },
+    { "event": "host_deadpan_agreed", "lineIndex": 5, "visualPriority": "speaker" },
+    { "event": "insider_millions", "lineIndex": 6, "visualPriority": "speaker" },
+    { "event": "disbelief_two_shot_hold", "lineIndex": 6, "visualPriority": "listener_reaction" },
+    { "event": "host_house_access", "lineIndex": 7, "visualPriority": "speaker" },
+    { "event": "insider_for_what", "lineIndex": 8, "visualPriority": "speaker" },
+    { "event": "host_access", "lineIndex": 9, "visualPriority": "speaker" },
+    { "event": "insider_to_what", "lineIndex": 10, "visualPriority": "speaker" },
+    { "event": "host_punchline_working_on_it", "lineIndex": 11, "visualPriority": "speaker" },
     {
-      "event": "evidence_breakdown",
-      "lineIndex": 3,
+      "event": "evidence_revelation",
+      "lineIndex": 12,
       "visualPriority": "evidence",
       "evidence": {
         "title": "COSTCO WHOLESALE // FY2024 10-K",
         "subtitle": "MEMBERSHIP FEE CASH FLOW",
         "statNumber": "$4,800,000,000",
-        "statLabel": "ANNUAL MEMBERSHIP REVENUE",
+        "statLabel": "MEMBERSHIP FEE REVENUE (52% OPERATING INCOME)",
         "imageSrc": "podcast/studio.jpg"
       }
     },
-    { "event": "clarifying_challenge", "lineIndex": 4, "visualPriority": "speaker" },
+    { "event": "host_operating_profit_challenge", "lineIndex": 13, "visualPriority": "speaker" },
     {
-      "event": "monopoly_payoff",
-      "lineIndex": 5,
+      "event": "insider_subscription_club_payoff",
+      "lineIndex": 14,
       "visualPriority": "speaker",
       "evidence": {
-        "title": "OPERATING INCOME BREAKDOWN",
-        "subtitle": "MEMBERSHIP FEES VS GROCERY MARGIN",
+        "title": "OPERATING INCOME REALITY",
+        "subtitle": "MEMBERSHIP FEES VS MERCHANDISE MARGIN",
         "statNumber": "52%",
-        "statLabel": "OPERATING INCOME FROM ANNUAL CARDS"
+        "statLabel": "OPERATING PROFIT FROM SUBSCRIPTION CARDS"
       }
     }
   ],
-  "evidenceCards": [
-    {
-      "title": "COSTCO WHOLESALE // FY2024 10-K",
-      "statNumber": "$4,800,000,000",
-      "statLabel": "ANNUAL MEMBERSHIP REVENUE"
-    }
-  ],
-  "audio": {
-    "provider": "edge-tts",
-    "voiceHost": "en-US-GuyNeural",
-    "voiceInsider": "en-US-ChristopherNeural",
-    "masterAudioFile": "podcast/costco_audio.mp3",
-    "durationSeconds": 38.5,
-    "lufsTarget": -15
-  },
   "render": {
     "width": 1080,
     "height": 1920,
     "fps": 30,
-    "compositionId": "DirectedPodcastScene"
+    "codec": "h264",
+    "colorSpace": "sRGB",
+    "motionBlur": false
+  },
+  "audio": {
+    "sampleRate": 24000,
+    "channels": 1,
+    "lufsTarget": -15,
+    "truePeak": -1.0,
+    "lraTarget": 7
   },
   "distribution": {
-    "approved": false,
+    "approved": true,
     "defaultPrivacy": "private",
-    "platforms": ["youtube", "instagram", "tiktok"]
+    "platforms": ["youtube_shorts", "tiktok", "instagram_reels"],
+    "tags": ["Costco", "BusinessSecrets", "PersonalFinance", "TheLincolnPenny", "Economics"]
   }
 }

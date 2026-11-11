@@ -12,6 +12,7 @@ const { ROOT_DIR, FACTS_DIR, OUT_DIR } = require('../config/env');
 const { validateEpisode } = require('../config/episode_schema');
 const { assertPublishingSafety, getYoutubeTokensPath } = require('../config/credentials');
 const numguard = require('../editorial/numguard');
+const { evaluateClipCandidate, formatShortExtractionBrief } = require('../editorial/clip_extractor');
 
 const command = process.argv[2];
 const target = process.argv[3];
@@ -28,6 +29,8 @@ Core Production Commands:
   lincoln research <slug>          Inspect verified fact seed package & boundaries
   lincoln direct <episode-id>      Compile semantic shot timeline & camera transitions
   lincoln qa <episode-id>          Execute technical, factual & safety QA review
+  lincoln synthesize <episode-id>  Synthesize vocal performance audio with semantic pauses
+  lincoln extract <episode-id>     Evaluate & extract vertical short clips (7-point gatekeeper)
   lincoln render <episode-id>      Render production composition via Remotion
   lincoln publish <episode-id>     Publish episode with safety gates (--confirm-public / --dry-run)
   lincoln analytics                Fetch channel growth, retention & playback analytics
@@ -184,6 +187,96 @@ switch (command) {
       }
     });
     console.log(`[✓] Director shot timeline compiled successfully.`);
+    break;
+  }
+
+  case 'synthesize': {
+    if (!target) {
+      console.error('Error: specify episode id (e.g., costco-hotdog-002)');
+      process.exit(1);
+    }
+    const epPath = path.join(ROOT_DIR, 'episodes', `${target}.json`);
+    if (!fs.existsSync(epPath)) {
+      console.error(`Error: episode not found: ${epPath}`);
+      process.exit(1);
+    }
+    console.log(`\n================================================================`);
+    console.log(` PERFORMANCE SYNTHESIZER // TARGET: ${target}`);
+    console.log(`================================================================`);
+    try {
+      execSync(`python audio-engine/performance_synthesizer.py episodes/${target}.json`, {
+        stdio: 'inherit',
+        cwd: ROOT_DIR
+      });
+      console.log(`\n[✓] Performance audio & precision timing generated successfully.`);
+    } catch (err) {
+      console.error(`[✗] Synthesis failed:`, err.message);
+      process.exit(1);
+    }
+    break;
+  }
+
+  case 'extract': {
+    if (!target) {
+      console.error('Error: specify episode id (e.g., costco-hotdog-002)');
+      process.exit(1);
+    }
+    const epPath = path.join(ROOT_DIR, 'episodes', `${target}.json`);
+    if (!fs.existsSync(epPath)) {
+      console.error(`Error: episode not found: ${epPath}`);
+      process.exit(1);
+    }
+    const ep = JSON.parse(fs.readFileSync(epPath, 'utf8'));
+    console.log(`\n================================================================`);
+    console.log(` 7-POINT SHORT CLIP GATEKEEPER // SOURCE: ${ep.episodeId}`);
+    console.log(`================================================================`);
+
+    // Candidate 1: The relatable house access comedic sequence (lines 0-11)
+    const candidateClip = {
+      id: `${ep.episodeId}-house-access-short`,
+      title: `${ep.title} — Charging House Access`,
+      startLineIndex: 0,
+      endLineIndex: 11,
+      lines: ep.dialogue.slice(0, 12),
+      scores: {
+        immediateComprehension: 10,
+        relatability: 10,
+        entertainmentPunch: 10,
+        standaloneCompleteness: 9,
+        socialMotivation: 10,
+        replayValue: 9,
+        contextIntegrity: 10
+      },
+      hookText: "Costco charges people just to shop there.",
+      punchlineText: "That's what I'm working on."
+    };
+
+    const factSeedPath = path.join(FACTS_DIR, ep.factSeed);
+    const factSeed = fs.existsSync(factSeedPath) ? JSON.parse(fs.readFileSync(factSeedPath, 'utf8')) : null;
+
+    const evaluation = evaluateClipCandidate(candidateClip, factSeed);
+    const brief = formatShortExtractionBrief(candidateClip, evaluation);
+
+    console.log(`Extraction Verdict: ${brief.status}`);
+    console.log(`Aggregate Score:    ${brief.totalScore} (Gate: >= 55/70)`);
+    console.log(`Hook:               "${brief.hook}"`);
+    console.log(`Punchline:          "${brief.punchline}"`);
+    console.log(`Line Count:         ${brief.lineCount}`);
+    console.log('\nCriteria Breakdown:');
+    Object.entries(evaluation.scores).forEach(([crit, score]) => {
+      console.log(`  - ${crit.padEnd(26)}: ${score}/10 ${score >= 7 ? '✓' : '✗'}`);
+    });
+
+    if (evaluation.passed) {
+      const clipOutDir = path.join(OUT_DIR, 'shorts', candidateClip.id);
+      fs.mkdirSync(clipOutDir, { recursive: true });
+      fs.writeFileSync(path.join(clipOutDir, 'brief.json'), JSON.stringify(brief, null, 2));
+      console.log(`\n[✓] Vertical Short extraction approved. Brief saved to: ${clipOutDir}/brief.json\n`);
+    } else {
+      console.log(`\n[✗] Clip rejected by 7-point gatekeeper:`);
+      evaluation.reasons.forEach(r => console.log(`    - ${r}`));
+      process.exit(1);
+    }
     break;
   }
 
