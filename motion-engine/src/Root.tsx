@@ -24,6 +24,7 @@ import { BlueprintInputProps, BlueprintStoryComposition } from "./BlueprintStory
 import { SonyForensicTeardownShort } from "./SonyForensicTeardownShort";
 import { McDonaldsFoundersShort } from "./McDonaldsFoundersShort";
 import { StickmanPodcastShort } from "./StickmanPodcastShort";
+import { SilentActingTest } from "./characters/SilentActingTest";
 import { VenWardMasterShort } from "./VenWardMasterShort";
 
 const AirlineHookMaster: React.FC = () => {
@@ -176,6 +177,15 @@ export const RemotionRoot: React.FC = () => {
         id="StickmanPodcastShort"
         component={StickmanPodcastShort}
         durationInFrames={1250}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="SilentActingTest"
+        component={SilentActingTest}
+        durationInFrames={450}
         fps={30}
         width={1080}
         height={1920}
