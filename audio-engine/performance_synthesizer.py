@@ -2,11 +2,17 @@
 """
 THE LINCOLN PENNY — HIGH-FIDELITY STUDIO VOICE & PERFORMANCE SYNTHESIZER
 Implements:
-1. Kokoro v1.0 Offline Neural Studio Voices (Host: am_adam, Insider: am_onyx)
-2. Groq Whisper Large-v3 High-Precision Forced Word Alignment
-3. Intentional Comedic Silence Injection (1.2s processing, 2.0s deadpan hold, 1.0s comedic beat)
-4. Fallback to Azure Neural (Edge-TTS) if Kokoro models are absent
-5. EBU R128 Broadcast Audio Normalization to -15 LUFS
+1. Neural Studio Voice Blends:
+   - Host: am_adam (50%) + am_puck (30%) + am_michael (20%) [charismatic, inquisitive, comedic timing]
+   - Insider: am_onyx (70%) + bm_george (30%) [authoritative, dry, understated deadpan]
+2. Actor Performance Directing (conversational punctuation, pitch inflections, colloquial delivery)
+3. Groq Whisper Large-v3 High-Precision Forced Alignment (0.01s word boundaries)
+4. Full Broadcast Audio DSP Suite:
+   - Shure SM7B Vocal Warmth EQ (180Hz proximity boost, 450Hz boxiness cut, 9.5kHz airy presence)
+   - Early Studio Reflections (14ms acoustic baffle room simulation)
+   - Dynamic Vocal Compression & Leveling
+   - Studio Ambient Noise Floor / Room Presence (-46 dB pink room tone)
+   - EBU R128 Broadcast Normalization (-15 LUFS)
 """
 
 import os
@@ -22,34 +28,63 @@ ROOT_DIR = os.environ.get("LINCOLN_ROOT", os.path.abspath(os.path.join(os.path.d
 KOKORO_MODEL = os.path.join(ROOT_DIR, "audio-engine", "tts-models", "kokoro-v1.0.onnx")
 KOKORO_VOICES = os.path.join(ROOT_DIR, "audio-engine", "tts-models", "voices-v1.0.bin")
 
-# Kokoro Voice Mapping
-KOKORO_VOICE_MAP = {
-    "host": "am_adam",       # Natural, charismatic, inquisitive podcast host
-    "insider": "am_onyx",     # Deep, authoritative, deadpan corporate insider
-    "guest": "am_onyx"
-}
-
 # Performance Speed Mapping
 SPEED_MAP = {
-    "deadpan_disbelief": 0.96,
-    "genuine_curiosity": 1.06,
+    "deadpan_disbelief": 0.94,
+    "genuine_curiosity": 1.05,
     "personal_offense": 1.08,
-    "delayed_realization": 0.98,
-    "dry_understatement": 0.95,
-    "matter_of_fact": 1.02,
-    "smug_revelation": 1.04,
-    "inquisitive_skeptic": 1.05,
+    "delayed_realization": 0.96,
+    "dry_understatement": 0.92,
+    "matter_of_fact": 0.98,
+    "smug_revelation": 1.02,
+    "inquisitive_skeptic": 1.04,
 }
 
-def get_kokoro_instance():
-    if os.path.exists(KOKORO_MODEL) and os.path.exists(KOKORO_VOICES):
-        try:
-            from kokoro_onnx import Kokoro
-            return Kokoro(KOKORO_MODEL, KOKORO_VOICES)
-        except Exception as e:
-            print(f"[!] Warning: Could not initialize Kokoro ({e}). Falling back to Edge-TTS.")
-            return None
-    return None
+class PerformanceVoiceDirector:
+    def __init__(self, model_path, voices_path):
+        import kokoro_onnx
+        self.kokoro = kokoro_onnx.Kokoro(model_path, voices_path)
+        
+        # Build composite persona voice vectors
+        print("  [*] Synthesizing vocal persona blends...")
+        # Host: Inquisitive podcast lead (Adam 50% + Puck 30% + Michael 20%)
+        style_adam = self.kokoro.get_voice_style("am_adam")
+        style_puck = self.kokoro.get_voice_style("am_puck")
+        style_michael = self.kokoro.get_voice_style("am_michael")
+        self.host_voice = style_adam * 0.50 + style_puck * 0.30 + style_michael * 0.20
+        
+        # Insider: Deadpan corporate insider (Onyx 70% + George 30%)
+        style_onyx = self.kokoro.get_voice_style("am_onyx")
+        style_george = self.kokoro.get_voice_style("bm_george")
+        self.insider_voice = style_onyx * 0.70 + style_george * 0.30
+        
+    def get_voice(self, speaker):
+        if speaker.lower() == "host":
+            return self.host_voice
+        return self.insider_voice
+
+    def create(self, text, speaker, speed=1.0):
+        voice = self.get_voice(speaker)
+        return self.kokoro.create(text, voice=voice, speed=speed, lang="en-us")
+
+def get_audio_duration(file_path):
+    cmd = [
+        "ffprobe", "-v", "error",
+        "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1",
+        file_path
+    ]
+    out = subprocess.check_output(cmd).decode("utf-8").strip()
+    return float(out)
+
+def parse_pause(val, default_sec=0.20):
+    if val is None:
+        return default_sec, "natural_turn"
+    if isinstance(val, (int, float)):
+        return float(val), "explicit"
+    if isinstance(val, dict):
+        return float(val.get("duration", default_sec)), val.get("type", "explicit")
+    return default_sec, "natural_turn"
 
 def align_line_with_whisper(wav_path, line_text, speaker, line_start_sec):
     groq_api_key = os.environ.get("GROQ_API_KEY")
@@ -103,38 +138,20 @@ def align_line_with_whisper(wav_path, line_text, speaker, line_start_sec):
         curr += w_dur
     return alignments
 
-def get_audio_duration(file_path):
-    cmd = [
-        "ffprobe", "-v", "error",
-        "-show_entries", "format=duration",
-        "-of", "default=noprint_wrappers=1:nokey=1",
-        file_path
-    ]
-    out = subprocess.check_output(cmd).decode("utf-8").strip()
-    return float(out)
-
-def parse_pause(val, default_sec=0.20):
-    if val is None:
-        return default_sec, "natural_turn"
-    if isinstance(val, (int, float)):
-        return float(val), "explicit"
-    if isinstance(val, dict):
-        return float(val.get("duration", default_sec)), val.get("type", "explicit")
-    return default_sec, "natural_turn"
-
 def synthesize_episode(episode_data, output_dir):
     os.makedirs(output_dir, exist_ok=True)
-    temp_dir = tempfile.mkdtemp(prefix="lincoln_kokoro_")
+    temp_dir = tempfile.mkdtemp(prefix="lincoln_directing_")
 
     dialogue = episode_data.get("dialogue", [])
-    print(f"[*] Synthesizing {len(dialogue)} dialogue lines with High-Fidelity Neural Voices...")
+    print(f"[*] Synthesizing {len(dialogue)} dialogue lines with Vocal Performance Engine...")
 
-    kokoro = get_kokoro_instance()
-    is_kokoro = kokoro is not None
-    if is_kokoro:
-        print("[OK] Engine: Kokoro v1.0 Studio Neural Voices (Host: am_adam, Insider: am_onyx)")
-    else:
-        print("[!] Engine: Microsoft Edge Neural TTS fallback")
+    director = None
+    if os.path.exists(KOKORO_MODEL) and os.path.exists(KOKORO_VOICES):
+        try:
+            director = PerformanceVoiceDirector(KOKORO_MODEL, KOKORO_VOICES)
+            print("[OK] Vocal Persona Blends initialized (Host: Adam+Puck+Michael, Insider: Onyx+George)")
+        except Exception as e:
+            print(f"[!] Warning: Could not initialize Kokoro persona director ({e}). Falling back to Edge-TTS.")
 
     segments = []
     line_timings = []
@@ -143,23 +160,24 @@ def synthesize_episode(episode_data, output_dir):
 
     for idx, line in enumerate(dialogue):
         speaker = line.get("speaker", "host").lower()
-        text = line.get("text", "")
+        clean_text = line.get("text", "")
+        # Prioritize performance text for emotion & phrasing
+        performance_text = line.get("performanceText", clean_text)
         direction = line.get("performanceDirection", "matter_of_fact")
-        speed = SPEED_MAP.get(direction, 1.02)
+        speed = SPEED_MAP.get(direction, 1.0)
         pause_val = line.get("pauseAfter", 0.25)
         pause_sec, pause_type = parse_pause(pause_val)
 
         line_wav = os.path.join(temp_dir, f"line_{idx:03d}.wav")
 
-        if is_kokoro:
-            voice_name = KOKORO_VOICE_MAP.get(speaker, "am_adam")
-            samples, sr = kokoro.create(text, voice=voice_name, speed=speed)
+        if director:
+            samples, sr = director.create(performance_text, speaker=speaker, speed=speed)
             sf.write(line_wav, samples, sr)
         else:
             # Edge-TTS fallback
-            voice_edge = "en-US-GuyNeural" if speaker == "host" else "en-US-ChristopherNeural"
+            voice_edge = "en-US-BrianMultilingualNeural" if speaker == "host" else "en-US-AndrewMultilingualNeural"
             import asyncio, edge_tts
-            communicate = edge_tts.Communicate(text=text, voice=voice_edge)
+            communicate = edge_tts.Communicate(text=performance_text, voice=voice_edge)
             asyncio.run(communicate.save(line_wav))
 
         line_dur = get_audio_duration(line_wav)
@@ -167,10 +185,10 @@ def synthesize_episode(episode_data, output_dir):
         line_end = round(cursor + line_dur, 3)
 
         segments.append(line_wav)
-        print(f"  Line {idx:02d} [{speaker.upper()}] ({direction}) -> {line_dur:.2f}s")
+        print(f"  Line {idx:02d} [{speaker.upper()}] ({direction}) -> \"{performance_text}\" ({line_dur:.2f}s)")
 
         # Whisper Forced Alignment
-        words = align_line_with_whisper(line_wav, text, speaker, line_start)
+        words = align_line_with_whisper(line_wav, clean_text, speaker, line_start)
         all_words.extend(words)
 
         cursor += line_dur
@@ -178,7 +196,8 @@ def synthesize_episode(episode_data, output_dir):
         line_timings.append({
             "lineIndex": idx,
             "speaker": speaker,
-            "text": text,
+            "text": clean_text,
+            "performanceText": performance_text,
             "performanceDirection": direction,
             "start": line_start,
             "end": line_end,
@@ -189,7 +208,6 @@ def synthesize_episode(episode_data, output_dir):
         # Insert exact silence beat if pause > 0.05
         if pause_sec > 0.05:
             silence_wav = os.path.join(temp_dir, f"silence_{idx:03d}.wav")
-            # Generate pure silence wave
             sr = 24000
             silence_samples = np.zeros(int(sr * pause_sec), dtype=np.float32)
             sf.write(silence_wav, silence_samples, sr)
@@ -197,7 +215,7 @@ def synthesize_episode(episode_data, output_dir):
             print(f"    [Silence] {pause_sec:.2f}s ({pause_type})")
             cursor += pause_sec
 
-    # Mux all segments into seamless master track with -15 LUFS broadcast mastering
+    # Mux all segments into seamless dialogue track
     concat_list = os.path.join(temp_dir, "concat.txt")
     with open(concat_list, "w", encoding="utf-8") as f:
         for seg in segments:
@@ -211,12 +229,52 @@ def synthesize_episode(episode_data, output_dir):
         unmastered_wav
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    master_mp3 = os.path.join(output_dir, "audio.mp3")
-    print(f"[*] Mastering dialogue to EBU R128 (-15 LUFS) -> {master_mp3}")
+    total_speech_dur = get_audio_duration(unmastered_wav)
+
+    # Apply Broadcast Studio DSP Chain:
+    # 1. Highpass 75Hz (rumble removal)
+    # 2. Warm low-shelf EQ at 180Hz (+3.5dB broadcast proximity)
+    # 3. Mid scoop at 450Hz (-2.2dB to remove nasal plastic resonance)
+    # 4. Air presence at 9.5kHz (+2.8dB)
+    # 5. Studio room baffle micro-reflection (aecho 14ms)
+    # 6. Dynamic vocal leveling compression
+    # 7. EBU R128 loudness normalization (-15 LUFS)
+    dsp_wav = os.path.join(temp_dir, "dsp_vocal.wav")
+    filter_chain = (
+        "highpass=f=75,"
+        "equalizer=f=180:width_type=o:w=1.2:g=3.5,"
+        "equalizer=f=450:width_type=o:w=1.0:g=-2.2,"
+        "equalizer=f=9500:width_type=o:w=1.0:g=2.8,"
+        "aecho=0.8:0.8:14:0.08,"
+        "acompressor=threshold=-16dB:ratio=3.2:attack=8:release=60:makeup=2.5dB,"
+        "loudnorm=I=-15:TP=-1.0:LRA=7"
+    )
     subprocess.check_call([
         "ffmpeg", "-y", "-i", unmastered_wav,
-        "-af", "loudnorm=I=-15:TP=-1.0:LRA=7",
-        "-c:a", "libmp3lame", "-b:a", "192k", "-ar", "48000",
+        "-af", filter_chain,
+        "-ar", "48000",
+        dsp_wav
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    # Generate subtle studio room ambience / presence bed (-46 dB pink room tone)
+    # So silences feel like a real physical studio room rather than dead synthetic zero-clipping
+    room_wav = os.path.join(temp_dir, "room_bed.wav")
+    subprocess.check_call([
+        "ffmpeg", "-y",
+        "-f", "lavfi", "-i", f"anoisesrc=d={total_speech_dur + 1.0}:c=pink:r=48000:a=0.0035",
+        "-af", "lowpass=f=1200,volume=-46dB",
+        "-ar", "48000",
+        room_wav
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+    master_mp3 = os.path.join(output_dir, "audio.mp3")
+    print(f"[*] Mixing Studio Room Atmosphere & Mastering -> {master_mp3}")
+    subprocess.check_call([
+        "ffmpeg", "-y",
+        "-i", dsp_wav,
+        "-i", room_wav,
+        "-filter_complex", "amix=inputs=2:duration=first:dropout_transition=2,loudnorm=I=-15:TP=-1.0:LRA=7",
+        "-c:a", "libmp3lame", "-b:a", "320k", "-ar", "48000",
         master_mp3
     ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
@@ -230,7 +288,7 @@ def synthesize_episode(episode_data, output_dir):
 
     total_dur = get_audio_duration(master_mp3)
     print("\n================================================================")
-    print(" [OK] HIGH-FIDELITY PERFORMANCE SYNTHESIS COMPLETE")
+    print(" [OK] VOCAL PERFORMANCE & STUDIO MASTERING COMPLETE")
     print("================================================================")
     print(f" Total Master Duration: {total_dur:.2f} seconds ({len(all_words)} aligned words)")
     print(f" Master Audio:          {master_mp3}")

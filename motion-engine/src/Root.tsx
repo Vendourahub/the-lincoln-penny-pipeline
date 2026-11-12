@@ -209,7 +209,7 @@ export const RemotionRoot: React.FC = () => {
         id="DirectedPodcastScene"
         component={DirectedPodcastScene}
         defaultProps={{ episodeId: "costco-hotdog-002" }}
-        durationInFrames={1476}
+        durationInFrames={1542}
         fps={30}
         width={1080}
         height={1920}
@@ -229,7 +229,7 @@ export const RemotionRoot: React.FC = () => {
         id="CostcoComedicShort"
         component={DirectedPodcastScene}
         defaultProps={{ episodeId: "costco-hotdog-002" }}
-        durationInFrames={750}
+        durationInFrames={798}
         fps={30}
         width={1080}
         height={1920}
