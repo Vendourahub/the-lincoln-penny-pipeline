@@ -34,3 +34,16 @@ export function evaluateMotion(keys:readonly MotionKey[],frame:number):ActorFram
  const reach=a.state==="reach"?1:0;
  return {position,state,facing,walkPhase:travel/38*Math.PI,seated,reach,target:a.target,travel};
 }
+
+/** Clamp a desired hand/foot target to a two-segment limb's reachable radius. */
+export function solveTwoBone(hip:Vec2,target:Vec2,upper:number,lower:number,bend:1|-1=1){
+ if(upper<=0||lower<=0)throw Error("Bone lengths must be positive");
+ const dx=target.x-hip.x,dy=target.y-hip.y,raw=Math.hypot(dx,dy);
+ const min=Math.abs(upper-lower)+0.001,max=upper+lower-0.001;
+ const d=Math.max(min,Math.min(raw,max));
+ const ux=raw>0?dx/raw:0,uy=raw>0?dy/raw:1;
+ const along=(upper*upper-lower*lower+d*d)/(2*d);
+ const height=Math.sqrt(Math.max(0,upper*upper-along*along));
+ return {knee:{x:hip.x+ux*along-bend*uy*height,y:hip.y+uy*along+bend*ux*height},
+  foot:{x:hip.x+ux*d,y:hip.y+uy*d},reachable:raw<=max&&raw>=min};
+}
