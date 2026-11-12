@@ -1,10 +1,9 @@
 import React from "react";
 import {AbsoluteFill,useCurrentFrame} from "remotion";
 import {evaluateMotion,MotionKey,ActorFrame,validateScene} from "./motion";
-const FPS=30;
 const host:MotionKey[]=[
  {frame:0,position:{x:500,y:740},state:"seated",facing:1},
- {frame:180,position:{x:500,y:740},state:"hold",facing:1},
+ {frame:180,position:{x:500,y:740},state:"seated",facing:1},
  {frame:210,position:{x:500,y:740},state:"stand",facing:1},
  {frame:250,position:{x:500,y:740},state:"hold",facing:1},
  {frame:370,position:{x:1140,y:740},state:"walk",facing:1},
@@ -22,10 +21,10 @@ function Actor({motion,kind}:{motion:ActorFrame;kind:"host"|"guest"}){
  const isHost=kind==="host";
  const legSwing=motion.state==="walk"?Math.sin(motion.walkPhase)*18:0;
  const armSwing=motion.state==="walk"?Math.sin(motion.walkPhase)*13:0;
- const sitting=motion.state==="seated";
+ const sitting=motion.seated;
  return <g transform={`translate(${motion.position.x} ${motion.position.y}) scale(${motion.facing} 1)`}>
   <ellipse cx="0" cy="12" rx="62" ry="10" fill="#101d2b" opacity=".25"/>
-  <g transform={`translate(0 ${sitting?42:0})`}>
+  <g transform={`translate(0 ${sitting*42})`}>
    <path d={`M -22 -112 Q -30 -66 ${-22+legSwing} 0`} fill="none" stroke="#243447" strokeWidth="17" strokeLinecap="round"/>
    <path d={`M 22 -112 Q 30 -66 ${22-legSwing} 0`} fill="none" stroke="#243447" strokeWidth="17" strokeLinecap="round"/>
    <path d="M -52 -210 Q -66 -166 -45 -108 Q 0 -90 45 -108 Q 65 -166 52 -210 Z" fill={isHost?"#e0ad57":"#7d98b3"} stroke="#1c2834" strokeWidth="7"/>
