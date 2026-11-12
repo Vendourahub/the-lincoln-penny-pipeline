@@ -29,6 +29,7 @@ import { DialogueSyncTest } from "./characters/DialogueSyncTest";
 import { DirectedPodcastScene } from "./director/DirectedPodcastScene";
 import { VenWardMasterShort } from "./VenWardMasterShort";
 import { MotionBlockingPilot } from "./pilot/MotionBlockingPilot";
+import { ScenePerformancePilot } from "./pilot/ScenePerformancePilot";
 
 const AirlineHookMaster: React.FC = () => {
   const frame = useCurrentFrame();
@@ -210,6 +211,15 @@ export const RemotionRoot: React.FC = () => {
         fps={30}
         width={1080}
         height={1920}
+      />
+
+      <Composition
+        id="LincolnScenePerformancePilot"
+        component={ScenePerformancePilot}
+        durationInFrames={600}
+        fps={30}
+        width={1920}
+        height={1080}
       />
 
       <Composition
