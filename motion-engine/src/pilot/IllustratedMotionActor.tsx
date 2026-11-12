@@ -1,21 +1,11 @@
 import React from "react";
-import {ActorFrame,Vec2} from "./motion";
+import {ActorFrame,Vec2,solveTwoBone} from "./motion";
 
 /** Temporary illustrated actor for motion mechanics QA. Replace with approved art assets. */
 type Kind="host"|"guest";
 const lerp=(a:number,b:number,t:number)=>a+(b-a)*t;
 const clamp=(x:number)=>Math.max(0,Math.min(1,x));
 const pt=(a:Vec2,b:Vec2)=>`M ${a.x} ${a.y} L ${b.x} ${b.y}`;
-/** Two-bone inverse kinematics in screen coordinates; returns knee and reachable foot. */
-export function solveTwoBone(hip:Vec2,foot:Vec2,upper:number,lower:number,bend:1|-1=1){
- const dx=foot.x-hip.x,dy=foot.y-hip.y;
- const raw=Math.hypot(dx,dy),d=Math.max(0.001,Math.min(raw,upper+lower-0.001));
- const ux=raw>0?dx/raw:0,uy=raw>0?dy/raw:1;
- const along=(upper*upper-lower*lower+d*d)/(2*d);
- const altitude=Math.sqrt(Math.max(0,upper*upper-along*along));
- const knee={x:hip.x+ux*along-bend*uy*altitude,y:hip.y+uy*along+bend*ux*altitude};
- return {knee,foot:{x:hip.x+ux*d,y:hip.y+uy*d}};
-}
 const armPath=(shoulder:Vec2,hand:Vec2,bend:number)=>{
  const mid={x:lerp(shoulder.x,hand.x,.55)+bend,y:lerp(shoulder.y,hand.y,.55)+12};
  return `M ${shoulder.x} ${shoulder.y} Q ${mid.x} ${mid.y} ${hand.x} ${hand.y}`;
@@ -23,7 +13,7 @@ const armPath=(shoulder:Vec2,hand:Vec2,bend:number)=>{
 export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kind}){
  const host=kind==="host",sit=clamp(motion.seated),walking=motion.state==="walk";
  const cycle=motion.walkPhase;
- // World-space feet are deliberately anchored to the floor during planted stance.
+ // Stationary feet remain on the floor. Walking gait remains provisional (no planted-foot world lock).
  const foot=(side:-1|1):Vec2=>{
   if(sit>.01)return {x:side*49,y:0};
   if(!walking)return {x:side*28,y:0};
@@ -36,9 +26,11 @@ export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kin
  const left=solveTwoBone(leftHip,foot(-1),75,76,-1);
  const right=solveTwoBone(rightHip,foot(1),75,76,1);
  const shoulderY=lerp(-199,-156,sit);
- const rightHand=motion.reach&&motion.target
+ const desiredHand=motion.reach&&motion.target
    ?{x:(motion.target.x-motion.position.x)*motion.facing,y:motion.target.y-motion.position.y}
    :{x:60+(walking?Math.sin(cycle)*12:0),y:shoulderY+91};
+ const shoulder={x:43,y:shoulderY+16};
+ const rightHand=solveTwoBone(shoulder,desiredHand,78,79,1).foot;
  const leftHand={x:-62-(walking?Math.sin(cycle)*12:0),y:shoulderY+92};
  const torsoColor=host?"#d7a151":"#7597ae";
  return <g transform={`translate(${motion.position.x} ${motion.position.y}) scale(${motion.facing} 1)`}>
