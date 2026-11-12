@@ -6,56 +6,57 @@ interface DialogueLine {
   text: string;
   start: number;
   end: number;
+  pauseAfter?: any;
 }
 
 const CAMERA_PRESETS: Record<string, CameraTransform> = {
   host_closeup: {
-    startScale: 1.20,
-    endScale: 1.24,
-    startPanX: 175,
-    endPanX: 185,
-    startPanY: -20,
-    endPanY: -22,
+    startScale: 1.34,
+    endScale: 1.37,
+    startPanX: 205,
+    endPanX: 210,
+    startPanY: -70,
+    endPanY: -72,
   },
   insider_closeup: {
-    startScale: 1.21,
-    endScale: 1.25,
-    startPanX: -175,
-    endPanX: -185,
-    startPanY: -20,
-    endPanY: -22,
+    startScale: 1.34,
+    endScale: 1.37,
+    startPanX: -205,
+    endPanX: -210,
+    startPanY: -70,
+    endPanY: -72,
   },
   host_reaction_shock: {
-    startScale: 1.36,
-    endScale: 1.40,
-    startPanX: 215,
-    endPanX: 220,
-    startPanY: -38,
-    endPanY: -42,
+    startScale: 1.48,
+    endScale: 1.51,
+    startPanX: 225,
+    endPanX: 228,
+    startPanY: -95,
+    endPanY: -98,
   },
   insider_reaction_smirk: {
-    startScale: 1.23,
-    endScale: 1.26,
-    startPanX: -165,
-    endPanX: -170,
-    startPanY: -20,
-    endPanY: -22,
+    startScale: 1.40,
+    endScale: 1.43,
+    startPanX: -215,
+    endPanX: -218,
+    startPanY: -80,
+    endPanY: -82,
   },
   evidence_split: {
     startScale: 1.02,
-    endScale: 1.06,
+    endScale: 1.05,
     startPanX: 0,
     endPanX: 0,
-    startPanY: 0,
-    endPanY: -10,
+    startPanY: 20,
+    endPanY: 15,
   },
   establishing_wide: {
-    startScale: 1.0,
-    endScale: 1.03,
+    startScale: 1.04,
+    endScale: 1.07,
     startPanX: 0,
     endPanX: 0,
-    startPanY: 0,
-    endPanY: 0,
+    startPanY: -15,
+    endPanY: -20,
   },
 };
 
@@ -71,110 +72,121 @@ export function compileEpisodeTimeline(
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const cue = cues.find((c) => c.lineIndex === i);
-    const startFrame = Math.round(line.start * fps);
-    // Expand endFrame to meet next line's startFrame to avoid dead frames between turns
-    const nextLine = lines[i + 1];
-    const endFrame = nextLine ? Math.round(nextLine.start * fps) : Math.round(line.end * fps);
+    const matchingCues = cues.filter((c) => c.lineIndex === i);
+    const primaryCue = matchingCues[0];
+    const secondaryCue = matchingCues[1];
 
     const isHost = line.speaker.toLowerCase() === "host";
+    const lineStartFrame = Math.round(line.start * fps);
+    const lineEndFrame = Math.round(line.end * fps);
+    const nextLine = lines[i + 1];
+    const turnEndFrame = nextLine ? Math.round(nextLine.start * fps) : lineEndFrame;
+    const pauseFrames = turnEndFrame - lineEndFrame;
 
-    if (!cue) {
-      // Default to speaker close-up
-      const shotType = isHost ? "host_closeup" : "insider_closeup";
-      compiledShots.push({
-        id: `shot_${i}_default`,
-        startFrame,
-        endFrame,
+    // Helper: resolve shot properties from cue and speaker
+    const resolveShot = (
+      cue: SemanticNarrativeCue | undefined,
+      startF: number,
+      endF: number,
+      idSuffix: string,
+      isReactionBeat: boolean = false
+    ): CompiledShot => {
+      let shotType: ShotType = isHost ? "host_closeup" : "insider_closeup";
+      let visualPriority = cue?.visualPriority || "speaker";
+      let hostAction = isHost ? "explaining" : "listening";
+      let insiderAction = isHost ? "listening" : "explaining";
+
+      if (cue?.shotType) {
+        shotType = cue.shotType;
+      } else if (cue?.evidence || visualPriority === "evidence") {
+        shotType = "evidence_split";
+        hostAction = "lean_forward";
+        insiderAction = "gesture_open";
+      } else if (cue?.event.includes("two_shot") || cue?.event.includes("wide") || cue?.event.includes("hold")) {
+        shotType = "establishing_wide";
+        hostAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
+        insiderAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
+      } else if (visualPriority === "listener_reaction" || isReactionBeat) {
+        if (isHost) {
+          shotType = "insider_reaction_smirk";
+          hostAction = "listening";
+          insiderAction = "smirk";
+        } else {
+          shotType = "host_reaction_shock";
+          hostAction = cue?.event.includes("deadpan") ? "deadpan" : "curious";
+          insiderAction = "listening";
+        }
+      } else if (isHost) {
+        shotType = "host_closeup";
+        if (cue?.event.includes("challenge") || cue?.event.includes("inquiry") || cue?.event.includes("groceries")) {
+          hostAction = "curious";
+        } else if (cue?.event.includes("punchline") || cue?.event.includes("access") || cue?.event.includes("house")) {
+          hostAction = "smirk";
+        } else if (cue?.event.includes("deadpan") || cue?.event.includes("agreed")) {
+          hostAction = "deadpan";
+        } else {
+          hostAction = "explaining";
+        }
+        insiderAction = "listening";
+      } else {
+        shotType = "insider_closeup";
+        if (cue?.event.includes("revelation") || cue?.event.includes("payoff") || cue?.event.includes("subscription")) {
+          insiderAction = "smirk";
+          hostAction = "curious";
+        } else if (cue?.event.includes("millions") || cue?.event.includes("yeah")) {
+          insiderAction = "smirk";
+          hostAction = "deadpan";
+        } else {
+          insiderAction = "explaining";
+          hostAction = "listening";
+        }
+      }
+
+      const camera = CAMERA_PRESETS[shotType] || CAMERA_PRESETS.establishing_wide;
+
+      return {
+        id: `shot_${i}_${idSuffix}`,
+        startFrame: startF,
+        endFrame: endF,
         shotType,
         speaker: isHost ? "host" : "insider",
         listener: isHost ? "insider" : "host",
-        visualPriority: "speaker",
-        camera: CAMERA_PRESETS[shotType],
-        hostAction: isHost ? "explaining" : "listening",
-        insiderAction: isHost ? "listening" : "explaining",
+        visualPriority,
+        camera,
+        hostAction: hostAction as any,
+        insiderAction: insiderAction as any,
+        evidenceCard: cue?.evidence,
         captionMode: "word_locked",
-      });
-      continue;
-    }
+      };
+    };
 
-    // Dynamic Semantic Shot Resolution
-    let shotType: ShotType = isHost ? "host_closeup" : "insider_closeup";
-    let visualPriority = cue.visualPriority || "speaker";
-    let hostAction = isHost ? "explaining" : "listening";
-    let insiderAction = isHost ? "listening" : "explaining";
+    // If there is an intentional silence beat (>= 0.4s / 12 frames) after the spoken line:
+    // Split into Spoken Shot + Comedic Reaction/Hold Shot!
+    if (pauseFrames >= 12) {
+      // 1. Spoken beat
+      compiledShots.push(resolveShot(primaryCue, lineStartFrame, lineEndFrame, "speech"));
 
-    if (cue.shotType) {
-      shotType = cue.shotType;
-    } else if (visualPriority === "evidence" || cue.evidence) {
-      shotType = "evidence_split";
-      hostAction = "lean_forward";
-      insiderAction = "gesture_open";
-    } else if (visualPriority === "listener_reaction") {
-      if (isHost) {
-        shotType = "insider_reaction_smirk";
-        hostAction = "listening";
-        insiderAction = "smirk";
-      } else {
-        shotType = "host_reaction_shock";
-        hostAction = "shock";
-        insiderAction = "smirk";
+      // 2. Silence / Reaction beat
+      const reactionCue = secondaryCue || primaryCue;
+      let holdCue = reactionCue;
+      // If the line has deadpan or disbelief pause: force two-shot deadpan hold
+      if (typeof line.pauseAfter === "object" || pauseFrames >= 25) {
+        holdCue = {
+          event: "deadpan_two_shot_hold",
+          lineIndex: i,
+          visualPriority: "listener_reaction",
+        };
       }
-    } else if (cue.event.includes("two_shot") || cue.event.includes("wide") || cue.event.includes("hold")) {
-      shotType = "establishing_wide";
-      hostAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
-      insiderAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
-    } else if (isHost) {
-      shotType = "host_closeup";
-      if (cue.event.includes("challenge") || cue.event.includes("inquiry") || cue.event.includes("groceries")) {
-        hostAction = "curious";
-      } else if (cue.event.includes("punchline") || cue.event.includes("access") || cue.event.includes("house")) {
-        hostAction = "smirk";
-      } else if (cue.event.includes("deadpan") || cue.event.includes("agreed")) {
-        hostAction = "deadpan";
-      } else {
-        hostAction = "explaining";
-      }
-      insiderAction = "listening";
+      compiledShots.push(resolveShot(holdCue, lineEndFrame, turnEndFrame, "hold", true));
     } else {
-      shotType = "insider_closeup";
-      if (cue.event.includes("revelation") || cue.event.includes("payoff") || cue.event.includes("subscription")) {
-        insiderAction = "smirk";
-        hostAction = "curious";
-      } else if (cue.event.includes("millions") || cue.event.includes("yeah")) {
-        insiderAction = "smirk";
-        hostAction = "deadpan";
-      } else {
-        insiderAction = "explaining";
-        hostAction = "listening";
-      }
+      // Single continuous shot covering line through natural micro-turn
+      compiledShots.push(resolveShot(primaryCue, lineStartFrame, turnEndFrame, "full"));
     }
-
-    const camera = CAMERA_PRESETS[shotType] || CAMERA_PRESETS.establishing_wide;
-
-    compiledShots.push({
-      id: `shot_${i}_${cue.event}`,
-      startFrame,
-      endFrame,
-      shotType,
-      speaker: isHost ? "host" : "insider",
-      listener: isHost ? "insider" : "host",
-      visualPriority,
-      camera,
-      hostAction: hostAction as any,
-      insiderAction: insiderAction as any,
-      evidenceCard: cue.evidence,
-      captionMode: "word_locked",
-    });
   }
 
   return compiledShots;
 }
 
-/**
- * Pure frame-addressable lookup helper
- * Remotion can request any frame out of order and receive deterministic camera transforms and character states.
- */
 export function getShotAtFrame(
   shots: CompiledShot[],
   frame: number

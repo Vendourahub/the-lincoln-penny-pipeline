@@ -75,25 +75,37 @@ export const IllustratedCutoutRig: React.FC<CutoutCharacterProps> = ({
     pupilOffsetY = 0;
   }
 
-  // Head tilt and offset based on pose
-  let headTiltDeg = 0;
+  // Active Speech Gestural Dynamics
+  const isSpeaking = mouthOpen > 0.05;
+  const speechEmphasisY = isSpeaking ? Math.sin((frame / 30) * Math.PI * 6) * 4.0 : 0;
+  const speechEmphasisRot = isSpeaking ? Math.sin((frame / 30) * Math.PI * 4) * 2.2 : 0;
+
+  // Organic Active Listening Nod (subtle natural acknowledgment while partner speaks)
+  const isDeadpan = expression === "deadpan";
+  const listeningNod = (!isSpeaking && !isDeadpan) ? Math.sin((frame / 30) * Math.PI * 2.0) * 2.0 : 0;
+
+  // Head tilt and offset based on pose and emotional acting
+  let headTiltDeg = listeningNod;
   let headOffsetX = 0;
   let headOffsetY = 0;
   let torsoSlouchDeg = 0;
 
   if (pose === "seated_lean_forward") {
-    headOffsetX = flipX ? -12 : 12;
-    headOffsetY = 8;
-    headTiltDeg = flipX ? 4 : -4;
-    torsoSlouchDeg = flipX ? 3 : -3;
+    headOffsetX = flipX ? -16 : 16;
+    headOffsetY = 10;
+    headTiltDeg = (flipX ? 6 : -6) + (isSpeaking ? speechEmphasisRot : listeningNod);
+    torsoSlouchDeg = flipX ? 5 : -5;
   } else if (pose === "seated_slouch") {
     headOffsetY = 12;
-    headTiltDeg = flipX ? -3 : 3;
+    headTiltDeg = (flipX ? -3 : 3) + listeningNod;
     torsoSlouchDeg = flipX ? -4 : 4;
   } else if (pose === "seated_chin_on_hand") {
-    headOffsetX = flipX ? -8 : 8;
-    headOffsetY = 6;
-    headTiltDeg = flipX ? 6 : -6;
+    headOffsetX = flipX ? -10 : 10;
+    headOffsetY = 8;
+    headTiltDeg = flipX ? 7 : -7;
+    torsoSlouchDeg = flipX ? 3 : -3;
+  } else if (isSpeaking) {
+    headTiltDeg = speechEmphasisRot;
   }
 
   // Helper: Render Hand
@@ -324,7 +336,9 @@ export const IllustratedCutoutRig: React.FC<CutoutCharacterProps> = ({
             rightHand === "chin_listen"
               ? "M 52,50 C 75,80 70,110 30,95 L 20,60"
               : rightHand === "point_forward"
-              ? "M 52,50 C 75,70 85,90 80,120"
+              ? `M 52,50 C 75,${70 + speechEmphasisY} 85,${90 + speechEmphasisY} 80,${120 + speechEmphasisY}`
+              : rightHand === "open_gesture"
+              ? `M 52,50 C 75,${75 + speechEmphasisY} 95,${100 + speechEmphasisY} 85,${130 + speechEmphasisY}`
               : "M 52,50 C 80,85 85,140 50,165"
           }
           fill="none"
@@ -336,8 +350,20 @@ export const IllustratedCutoutRig: React.FC<CutoutCharacterProps> = ({
         {/* Right Hand */}
         {renderHand(
           rightHand,
-          rightHand === "chin_listen" ? 18 : rightHand === "point_forward" ? 86 : 50,
-          rightHand === "chin_listen" ? 48 : rightHand === "point_forward" ? 120 : 170,
+          rightHand === "chin_listen"
+            ? 18
+            : rightHand === "point_forward"
+            ? 86
+            : rightHand === "open_gesture"
+            ? 92
+            : 50,
+          rightHand === "chin_listen"
+            ? 48
+            : rightHand === "point_forward"
+            ? 120 + speechEmphasisY
+            : rightHand === "open_gesture"
+            ? 130 + speechEmphasisY
+            : 170,
           false
         )}
       </g>

@@ -17,6 +17,7 @@ export interface EpisodeManifest {
     start: number;
     end: number;
     performanceDirection?: string;
+    pauseAfter?: any;
   }>;
   words: Array<{
     word: string;
@@ -37,6 +38,7 @@ function normalizeLines(rawLines: any[]): EpisodeManifest["lines"] {
     start: l.start,
     end: l.end,
     performanceDirection: l.performanceDirection,
+    pauseAfter: l.pauseAfter,
   }));
 }
 

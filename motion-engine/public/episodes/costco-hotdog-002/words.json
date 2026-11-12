@@ -1,659 +1,621 @@
 {
-  "duration": 63.698,
-  "totalWords": 109,
   "words": [
     {
       "word": "Costco",
-      "start": 0.0,
-      "end": 0.584,
+      "start": 0.02,
+      "end": 0.5,
       "speaker": "insider"
     },
     {
       "word": "charges",
-      "start": 0.584,
-      "end": 1.266,
+      "start": 0.5,
+      "end": 1.0,
       "speaker": "insider"
     },
     {
       "word": "people",
-      "start": 1.266,
-      "end": 1.851,
+      "start": 1.0,
+      "end": 1.42,
       "speaker": "insider"
     },
     {
       "word": "just",
-      "start": 1.851,
-      "end": 2.24,
+      "start": 1.42,
+      "end": 1.76,
       "speaker": "insider"
     },
     {
       "word": "to",
-      "start": 2.24,
-      "end": 2.435,
+      "start": 1.76,
+      "end": 1.92,
       "speaker": "insider"
     },
     {
       "word": "shop",
-      "start": 2.435,
-      "end": 2.825,
+      "start": 1.92,
+      "end": 2.24,
       "speaker": "insider"
     },
     {
       "word": "there.",
-      "start": 2.825,
-      "end": 3.312,
+      "start": 2.24,
+      "end": 2.52,
       "speaker": "insider"
     },
     {
       "word": "Charges",
-      "start": 3.612,
-      "end": 4.53,
+      "start": 3.519,
+      "end": 3.999,
       "speaker": "host"
     },
     {
       "word": "them",
-      "start": 4.53,
-      "end": 5.055,
+      "start": 3.999,
+      "end": 4.219,
       "speaker": "host"
     },
     {
       "word": "how?",
-      "start": 5.055,
-      "end": 5.58,
+      "start": 4.219,
+      "end": 4.619,
       "speaker": "host"
     },
     {
-      "word": "Membership.",
-      "start": 5.83,
-      "end": 7.36,
+      "word": "Membership",
+      "start": 5.065,
+      "end": 5.605,
       "speaker": "insider"
     },
     {
-      "word": "You",
-      "start": 7.36,
-      "end": 7.819,
+      "word": "you",
+      "start": 5.605,
+      "end": 5.805,
       "speaker": "insider"
     },
     {
       "word": "pay",
-      "start": 7.819,
-      "end": 8.278,
+      "start": 5.805,
+      "end": 5.985,
       "speaker": "insider"
     },
     {
       "word": "annually.",
-      "start": 8.278,
-      "end": 9.502,
+      "start": 5.985,
+      "end": 6.525,
       "speaker": "insider"
     },
     {
-      "word": "To",
-      "start": 9.852,
-      "end": 10.118,
+      "word": "to",
+      "start": 7.577,
+      "end": 7.697,
       "speaker": "host"
     },
     {
       "word": "buy",
-      "start": 10.118,
-      "end": 10.516,
+      "start": 7.697,
+      "end": 7.937,
       "speaker": "host"
     },
     {
-      "word": "groceries?",
-      "start": 10.516,
-      "end": 11.844,
+      "word": "groceries.",
+      "start": 7.937,
+      "end": 8.997,
       "speaker": "host"
     },
     {
       "word": "Yeah.",
-      "start": 12.044,
-      "end": 13.916,
+      "start": 9.135,
+      "end": 9.855,
       "speaker": "insider"
     },
     {
-      "word": "...And",
-      "start": 15.116,
-      "end": 15.53,
+      "word": "And",
+      "start": 10.79,
+      "end": 11.01,
       "speaker": "host"
     },
     {
       "word": "people",
-      "start": 15.53,
-      "end": 16.358,
+      "start": 11.01,
+      "end": 11.33,
       "speaker": "host"
     },
     {
-      "word": "agreed?",
-      "start": 16.358,
-      "end": 17.324,
+      "word": "agreed.",
+      "start": 11.33,
+      "end": 12.37,
       "speaker": "host"
     },
     {
       "word": "Millions",
-      "start": 17.624,
-      "end": 18.762,
+      "start": 12.489,
+      "end": 12.989,
       "speaker": "insider"
     },
     {
       "word": "of",
-      "start": 18.762,
-      "end": 19.047,
+      "start": 12.989,
+      "end": 13.349,
       "speaker": "insider"
     },
     {
       "word": "them.",
-      "start": 19.047,
-      "end": 19.616,
+      "start": 13.349,
+      "end": 14.069,
       "speaker": "insider"
     },
     {
       "word": "I",
-      "start": 21.616,
-      "end": 21.707,
+      "start": 16.226,
+      "end": 16.346,
       "speaker": "host"
     },
     {
       "word": "need",
-      "start": 21.707,
-      "end": 22.072,
+      "start": 16.346,
+      "end": 16.466,
       "speaker": "host"
     },
     {
       "word": "to",
-      "start": 22.072,
-      "end": 22.254,
+      "start": 16.466,
+      "end": 16.606,
       "speaker": "host"
     },
     {
       "word": "start",
-      "start": 22.254,
-      "end": 22.71,
+      "start": 16.606,
+      "end": 16.866,
       "speaker": "host"
     },
     {
       "word": "charging",
-      "start": 22.71,
-      "end": 23.44,
+      "start": 16.866,
+      "end": 17.386,
       "speaker": "host"
     },
     {
       "word": "people",
-      "start": 23.44,
-      "end": 23.987,
+      "start": 17.386,
+      "end": 17.806,
       "speaker": "host"
     },
     {
       "word": "to",
-      "start": 23.987,
-      "end": 24.17,
+      "start": 17.806,
+      "end": 18.006,
       "speaker": "host"
     },
     {
       "word": "visit",
-      "start": 24.17,
-      "end": 24.626,
+      "start": 18.006,
+      "end": 18.266,
       "speaker": "host"
     },
     {
       "word": "my",
-      "start": 24.626,
-      "end": 24.808,
+      "start": 18.266,
+      "end": 18.506,
       "speaker": "host"
     },
     {
       "word": "house.",
-      "start": 24.808,
-      "end": 25.264,
+      "start": 18.506,
+      "end": 18.886,
       "speaker": "host"
     },
     {
       "word": "For",
-      "start": 25.664,
-      "end": 26.366,
+      "start": 19.44,
+      "end": 19.64,
       "speaker": "insider"
     },
     {
       "word": "what?",
-      "start": 26.366,
-      "end": 27.536,
+      "start": 19.64,
+      "end": 20.06,
       "speaker": "insider"
     },
     {
-      "word": "Access.",
-      "start": 27.836,
-      "end": 29.708,
+      "word": "Access",
+      "start": 20.574,
+      "end": 21.014,
       "speaker": "host"
     },
     {
       "word": "To",
-      "start": 30.008,
-      "end": 30.543,
+      "start": 21.598,
+      "end": 21.758,
       "speaker": "insider"
     },
     {
       "word": "what?",
-      "start": 30.543,
-      "end": 31.88,
+      "start": 21.758,
+      "end": 22.578,
       "speaker": "insider"
     },
     {
       "word": "That's",
-      "start": 32.13,
-      "end": 32.785,
+      "start": 22.562,
+      "end": 22.822,
       "speaker": "host"
     },
     {
       "word": "what",
-      "start": 32.785,
-      "end": 33.221,
+      "start": 22.822,
+      "end": 22.982,
       "speaker": "host"
     },
     {
       "word": "I'm",
-      "start": 33.221,
-      "end": 33.548,
+      "start": 22.982,
+      "end": 23.162,
       "speaker": "host"
     },
     {
       "word": "working",
-      "start": 33.548,
-      "end": 34.312,
+      "start": 23.162,
+      "end": 23.462,
       "speaker": "host"
     },
     {
       "word": "on.",
-      "start": 34.312,
-      "end": 34.53,
+      "start": 23.462,
+      "end": 23.822,
       "speaker": "host"
     },
     {
-      "word": "Anyway...",
-      "start": 35.53,
-      "end": 36.035,
+      "word": "Anyway,",
+      "start": 24.949,
+      "end": 25.469,
       "speaker": "insider"
     },
     {
       "word": "the",
-      "start": 36.035,
-      "end": 36.287,
+      "start": 25.469,
+      "end": 25.569,
       "speaker": "insider"
     },
     {
       "word": "hot",
-      "start": 36.287,
-      "end": 36.54,
+      "start": 25.569,
+      "end": 25.909,
       "speaker": "insider"
     },
     {
       "word": "dog",
-      "start": 36.54,
-      "end": 36.792,
+      "start": 25.909,
+      "end": 26.049,
       "speaker": "insider"
     },
     {
       "word": "is",
-      "start": 36.792,
-      "end": 36.961,
+      "start": 26.049,
+      "end": 26.229,
       "speaker": "insider"
     },
     {
       "word": "just",
-      "start": 36.961,
-      "end": 37.297,
+      "start": 26.229,
+      "end": 26.489,
       "speaker": "insider"
     },
     {
       "word": "the",
-      "start": 37.297,
-      "end": 37.55,
+      "start": 26.489,
+      "end": 26.609,
       "speaker": "insider"
     },
     {
       "word": "bait.",
-      "start": 37.55,
-      "end": 37.886,
+      "start": 26.609,
+      "end": 27.229,
       "speaker": "insider"
     },
     {
       "word": "In",
-      "start": 37.886,
-      "end": 38.055,
+      "start": 27.229,
+      "end": 27.329,
       "speaker": "insider"
     },
     {
-      "word": "twenty",
-      "start": 38.055,
-      "end": 38.559,
-      "speaker": "insider"
-    },
-    {
-      "word": "twenty-four,",
-      "start": 38.559,
-      "end": 39.485,
+      "word": "2024,",
+      "start": 27.329,
+      "end": 28.389,
       "speaker": "insider"
     },
     {
       "word": "Costco",
-      "start": 39.485,
-      "end": 39.99,
+      "start": 28.389,
+      "end": 28.709,
       "speaker": "insider"
     },
     {
-      "word": "collected",
-      "start": 39.99,
-      "end": 40.747,
-      "speaker": "insider"
-    },
-    {
-      "word": "four",
-      "start": 40.747,
-      "end": 41.084,
-      "speaker": "insider"
-    },
-    {
-      "word": "point",
-      "start": 41.084,
-      "end": 41.505,
-      "speaker": "insider"
-    },
-    {
-      "word": "eight",
-      "start": 41.505,
-      "end": 41.925,
+      "word": "collected $4.8",
+      "start": 28.709,
+      "end": 30.029,
       "speaker": "insider"
     },
     {
       "word": "billion",
-      "start": 41.925,
-      "end": 42.514,
-      "speaker": "insider"
-    },
-    {
-      "word": "dollars",
-      "start": 42.514,
-      "end": 43.104,
+      "start": 30.029,
+      "end": 30.309,
       "speaker": "insider"
     },
     {
       "word": "purely",
-      "start": 43.104,
-      "end": 43.608,
+      "start": 30.129,
+      "end": 31.209,
       "speaker": "insider"
     },
     {
       "word": "in",
-      "start": 43.608,
-      "end": 43.777,
+      "start": 31.209,
+      "end": 31.409,
       "speaker": "insider"
     },
     {
       "word": "membership",
-      "start": 43.777,
-      "end": 44.618,
+      "start": 31.409,
+      "end": 31.789,
       "speaker": "insider"
     },
     {
       "word": "fees.",
-      "start": 44.618,
-      "end": 44.955,
+      "start": 31.789,
+      "end": 32.589,
       "speaker": "insider"
     },
     {
       "word": "That",
-      "start": 44.955,
-      "end": 45.291,
+      "start": 32.589,
+      "end": 32.769,
       "speaker": "insider"
     },
     {
       "word": "card",
-      "start": 45.291,
-      "end": 45.628,
+      "start": 32.769,
+      "end": 33.109,
       "speaker": "insider"
     },
     {
       "word": "is",
-      "start": 45.628,
-      "end": 45.796,
+      "start": 33.109,
+      "end": 33.249,
       "speaker": "insider"
     },
     {
-      "word": "fifty-two",
-      "start": 45.796,
-      "end": 46.554,
-      "speaker": "insider"
-    },
-    {
-      "word": "percent",
-      "start": 46.554,
-      "end": 47.143,
+      "word": "52%",
+      "start": 33.249,
+      "end": 34.049,
       "speaker": "insider"
     },
     {
       "word": "of",
-      "start": 47.143,
-      "end": 47.311,
+      "start": 34.049,
+      "end": 34.329,
       "speaker": "insider"
     },
     {
       "word": "their",
-      "start": 47.311,
-      "end": 47.732,
+      "start": 34.329,
+      "end": 34.449,
       "speaker": "insider"
     },
     {
       "word": "operating",
-      "start": 47.732,
-      "end": 48.489,
+      "start": 34.449,
+      "end": 34.849,
       "speaker": "insider"
     },
     {
       "word": "income.",
-      "start": 48.489,
-      "end": 48.994,
+      "start": 34.849,
+      "end": 35.209,
       "speaker": "insider"
     },
     {
       "word": "So",
-      "start": 49.494,
-      "end": 49.644,
+      "start": 36.457,
+      "end": 36.697,
       "speaker": "host"
     },
     {
       "word": "Costco",
-      "start": 49.644,
-      "end": 50.093,
+      "start": 36.697,
+      "end": 37.097,
       "speaker": "host"
     },
     {
       "word": "makes",
-      "start": 50.093,
-      "end": 50.467,
+      "start": 37.097,
+      "end": 37.437,
       "speaker": "host"
     },
     {
       "word": "over",
-      "start": 50.467,
-      "end": 50.766,
+      "start": 37.437,
+      "end": 37.637,
       "speaker": "host"
     },
     {
       "word": "half",
-      "start": 50.766,
-      "end": 51.065,
+      "start": 37.637,
+      "end": 37.937,
       "speaker": "host"
     },
     {
       "word": "their",
-      "start": 51.065,
-      "end": 51.439,
+      "start": 37.937,
+      "end": 38.157,
       "speaker": "host"
     },
     {
       "word": "operating",
-      "start": 51.439,
-      "end": 52.113,
+      "start": 38.157,
+      "end": 38.617,
       "speaker": "host"
     },
     {
       "word": "profit",
-      "start": 52.113,
-      "end": 52.562,
+      "start": 38.617,
+      "end": 39.097,
       "speaker": "host"
     },
     {
       "word": "before",
-      "start": 52.562,
-      "end": 53.011,
+      "start": 39.097,
+      "end": 39.577,
       "speaker": "host"
     },
     {
       "word": "anyone",
-      "start": 53.011,
-      "end": 53.46,
+      "start": 39.577,
+      "end": 39.957,
       "speaker": "host"
     },
     {
       "word": "buys",
-      "start": 53.46,
-      "end": 53.759,
+      "start": 39.957,
+      "end": 40.337,
       "speaker": "host"
     },
     {
       "word": "a",
-      "start": 53.759,
-      "end": 53.834,
+      "start": 40.337,
+      "end": 40.557,
       "speaker": "host"
     },
     {
       "word": "single",
-      "start": 53.834,
-      "end": 54.283,
+      "start": 40.557,
+      "end": 40.877,
       "speaker": "host"
     },
     {
       "word": "item.",
-      "start": 54.283,
-      "end": 54.582,
+      "start": 40.877,
+      "end": 41.677,
       "speaker": "host"
     },
     {
       "word": "Costco",
-      "start": 54.882,
-      "end": 55.411,
+      "start": 41.705,
+      "end": 42.165,
       "speaker": "insider"
     },
     {
       "word": "isn't",
-      "start": 55.411,
-      "end": 55.851,
+      "start": 42.165,
+      "end": 42.485,
       "speaker": "insider"
     },
     {
       "word": "a",
-      "start": 55.851,
-      "end": 55.939,
+      "start": 42.485,
+      "end": 42.585,
       "speaker": "insider"
     },
     {
       "word": "grocery",
-      "start": 55.939,
-      "end": 56.556,
+      "start": 42.585,
+      "end": 43.045,
       "speaker": "insider"
     },
     {
-      "word": "store.",
-      "start": 56.556,
-      "end": 56.996,
+      "word": "store,",
+      "start": 43.045,
+      "end": 43.825,
       "speaker": "insider"
     },
     {
-      "word": "It's",
-      "start": 56.996,
-      "end": 57.348,
+      "word": "it's",
+      "start": 43.825,
+      "end": 43.965,
       "speaker": "insider"
     },
     {
       "word": "a",
-      "start": 57.348,
-      "end": 57.437,
+      "start": 43.965,
+      "end": 44.065,
       "speaker": "insider"
     },
     {
       "word": "subscription",
-      "start": 57.437,
-      "end": 58.494,
+      "start": 44.065,
+      "end": 44.485,
       "speaker": "insider"
     },
     {
       "word": "club",
-      "start": 58.494,
-      "end": 58.846,
+      "start": 44.485,
+      "end": 44.905,
       "speaker": "insider"
     },
     {
       "word": "that",
-      "start": 58.846,
-      "end": 59.198,
+      "start": 44.905,
+      "end": 45.165,
       "speaker": "insider"
     },
     {
       "word": "happens",
-      "start": 59.198,
-      "end": 59.815,
+      "start": 45.165,
+      "end": 45.465,
       "speaker": "insider"
     },
     {
       "word": "to",
-      "start": 59.815,
-      "end": 59.991,
+      "start": 45.465,
+      "end": 45.685,
       "speaker": "insider"
     },
     {
       "word": "have",
-      "start": 59.991,
-      "end": 60.343,
+      "start": 45.685,
+      "end": 45.865,
       "speaker": "insider"
     },
     {
       "word": "pallets",
-      "start": 60.343,
-      "end": 60.96,
+      "start": 45.865,
+      "end": 46.285,
       "speaker": "insider"
     },
     {
       "word": "of",
-      "start": 60.96,
-      "end": 61.136,
+      "start": 46.285,
+      "end": 46.445,
       "speaker": "insider"
     },
     {
       "word": "paper",
-      "start": 61.136,
-      "end": 61.577,
+      "start": 46.445,
+      "end": 46.745,
       "speaker": "insider"
     },
     {
       "word": "towels",
-      "start": 61.577,
-      "end": 62.105,
+      "start": 46.745,
+      "end": 47.065,
       "speaker": "insider"
     },
     {
       "word": "in",
-      "start": 62.105,
-      "end": 62.281,
+      "start": 47.065,
+      "end": 47.305,
       "speaker": "insider"
     },
     {
       "word": "the",
-      "start": 62.281,
-      "end": 62.546,
+      "start": 47.305,
+      "end": 47.445,
       "speaker": "insider"
     },
     {
       "word": "back.",
-      "start": 62.546,
-      "end": 62.898,
+      "start": 47.445,
+      "end": 47.745,
       "speaker": "insider"
     }
   ]

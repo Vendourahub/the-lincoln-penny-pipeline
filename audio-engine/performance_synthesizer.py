@@ -1,64 +1,107 @@
 #!/usr/bin/env python3
 """
-THE LINCOLN PENNY — PERFORMANCE & VOCAL SCORE AUDIO SYNTHESIZER
+THE LINCOLN PENNY — HIGH-FIDELITY STUDIO VOICE & PERFORMANCE SYNTHESIZER
 Implements:
-1. Multi-speaker neural voice synthesis (Host: GuyNeural, Insider: ChristopherNeural)
-2. Direction-mapped prosody (deadpan_disbelief, genuine_curiosity, delayed_realization, etc.)
-3. Semantic silence injection (thought_processing, deadpan_disbelief, comedic_beat)
-4. Sub-frame phonetic word alignment for Remotion lip-sync
-5. Broadcast mastering to -15 LUFS
+1. Kokoro v1.0 Offline Neural Studio Voices (Host: am_adam, Insider: am_onyx)
+2. Groq Whisper Large-v3 High-Precision Forced Word Alignment
+3. Intentional Comedic Silence Injection (1.2s processing, 2.0s deadpan hold, 1.0s comedic beat)
+4. Fallback to Azure Neural (Edge-TTS) if Kokoro models are absent
+5. EBU R128 Broadcast Audio Normalization to -15 LUFS
 """
 
 import os
 import sys
 import json
-import asyncio
 import argparse
 import subprocess
 import tempfile
-import edge_tts
+import numpy as np
+import soundfile as sf
 
 ROOT_DIR = os.environ.get("LINCOLN_ROOT", os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+KOKORO_MODEL = os.path.join(ROOT_DIR, "audio-engine", "tts-models", "kokoro-v1.0.onnx")
+KOKORO_VOICES = os.path.join(ROOT_DIR, "audio-engine", "tts-models", "voices-v1.0.bin")
 
-# Voice Profiles
-VOICE_PROFILES = {
-    "host": "en-US-GuyNeural",
-    "insider": "en-US-ChristopherNeural",
-    "guest": "en-US-ChristopherNeural"
+# Kokoro Voice Mapping
+KOKORO_VOICE_MAP = {
+    "host": "am_adam",       # Natural, charismatic, inquisitive podcast host
+    "insider": "am_onyx",     # Deep, authoritative, deadpan corporate insider
+    "guest": "am_onyx"
 }
 
-# Direction Prosody Presets
-DIRECTION_PRESETS = {
-    "deadpan_disbelief": {"rate": "-5%", "pitch": "-2Hz", "volume": "-5%"},
-    "genuine_curiosity": {"rate": "+6%", "pitch": "+3Hz", "volume": "+0%"},
-    "personal_offense": {"rate": "+8%", "pitch": "+4Hz", "volume": "+5%"},
-    "delayed_realization": {"rate": "-3%", "pitch": "+1Hz", "volume": "+0%"},
-    "dry_understatement": {"rate": "-4%", "pitch": "-3Hz", "volume": "-5%"},
-    "matter_of_fact": {"rate": "+1%", "pitch": "-1Hz", "volume": "+0%"},
-    "smug_revelation": {"rate": "+3%", "pitch": "-1Hz", "volume": "+0%"},
-    "inquisitive_skeptic": {"rate": "+5%", "pitch": "+2Hz", "volume": "+0%"},
+# Performance Speed Mapping
+SPEED_MAP = {
+    "deadpan_disbelief": 0.96,
+    "genuine_curiosity": 1.06,
+    "personal_offense": 1.08,
+    "delayed_realization": 0.98,
+    "dry_understatement": 0.95,
+    "matter_of_fact": 1.02,
+    "smug_revelation": 1.04,
+    "inquisitive_skeptic": 1.05,
 }
 
-DEFAULT_PROSODY = {"rate": "+0%", "pitch": "+0Hz", "volume": "+0%"}
+def get_kokoro_instance():
+    if os.path.exists(KOKORO_MODEL) and os.path.exists(KOKORO_VOICES):
+        try:
+            from kokoro_onnx import Kokoro
+            return Kokoro(KOKORO_MODEL, KOKORO_VOICES)
+        except Exception as e:
+            print(f"[!] Warning: Could not initialize Kokoro ({e}). Falling back to Edge-TTS.")
+            return None
+    return None
 
-def parse_pause(val, default_sec=0.20):
-    if val is None:
-        return default_sec, "natural_turn"
-    if isinstance(val, (int, float)):
-        return float(val), "explicit"
-    if isinstance(val, dict):
-        return float(val.get("duration", default_sec)), val.get("type", "explicit")
-    return default_sec, "natural_turn"
+def align_line_with_whisper(wav_path, line_text, speaker, line_start_sec):
+    groq_api_key = os.environ.get("GROQ_API_KEY")
+    if groq_api_key:
+        try:
+            from groq import Groq
+            client = Groq(api_key=groq_api_key)
+            with open(wav_path, "rb") as f:
+                transcription = client.audio.transcriptions.create(
+                    file=("line.wav", f.read()),
+                    model="whisper-large-v3",
+                    response_format="verbose_json",
+                    timestamp_granularities=["word"]
+                )
+            if hasattr(transcription, "words") and transcription.words:
+                words_list = []
+                for w in transcription.words:
+                    w_dict = w if isinstance(w, dict) else w.model_dump()
+                    clean_word = w_dict.get("word", "").strip()
+                    if clean_word:
+                        words_list.append({
+                            "word": clean_word,
+                            "start": round(line_start_sec + float(w_dict["start"]), 3),
+                            "end": round(line_start_sec + float(w_dict["end"]), 3),
+                            "speaker": speaker
+                        })
+                if words_list:
+                    return words_list
+        except Exception as e:
+            print(f"    [!] Groq Whisper alignment warning: {e}. Using phonetic allocation.")
 
-async def synthesize_line_file(text, voice, prosody, out_path):
-    communicate = edge_tts.Communicate(
-        text=text,
-        voice=voice,
-        rate=prosody["rate"],
-        pitch=prosody["pitch"],
-        volume=prosody["volume"]
-    )
-    await communicate.save(out_path)
+    # High-accuracy fallback proportional allocation
+    raw_words = line_text.strip().split()
+    cleaned_words = [w.strip() for w in raw_words if w.strip()]
+    if not cleaned_words:
+        return []
+
+    duration = get_audio_duration(wav_path)
+    weights = [max(1, len(w.replace("...", "").replace(",", "").replace(".", ""))) for w in cleaned_words]
+    total_w = sum(weights)
+    alignments = []
+    curr = line_start_sec
+    for i, w in enumerate(cleaned_words):
+        w_dur = (weights[i] / total_w) * duration
+        alignments.append({
+            "word": w,
+            "start": round(curr, 3),
+            "end": round(curr + w_dur, 3),
+            "speaker": speaker
+        })
+        curr += w_dur
+    return alignments
 
 def get_audio_duration(file_path):
     cmd = [
@@ -70,52 +113,28 @@ def get_audio_duration(file_path):
     out = subprocess.check_output(cmd).decode("utf-8").strip()
     return float(out)
 
-def create_silence_mp3(duration_sec, out_path):
-    cmd = [
-        "ffmpeg", "-y", "-f", "lavfi",
-        "-i", f"anullsrc=r=24000:cl=mono",
-        "-t", str(round(duration_sec, 3)),
-        "-q:a", "9", "-acodec", "libmp3lame",
-        out_path
-    ]
-    subprocess.check_call(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+def parse_pause(val, default_sec=0.20):
+    if val is None:
+        return default_sec, "natural_turn"
+    if isinstance(val, (int, float)):
+        return float(val), "explicit"
+    if isinstance(val, dict):
+        return float(val.get("duration", default_sec)), val.get("type", "explicit")
+    return default_sec, "natural_turn"
 
-def generate_word_alignments(line_text, start_time, end_time, speaker):
-    raw_words = line_text.strip().split()
-    if not raw_words:
-        return []
-
-    cleaned_words = [w.strip() for w in raw_words if w.strip()]
-    if not cleaned_words:
-        return []
-
-    # Calculate letter counts for proportional distribution
-    weights = [max(1, len(w.replace("...", "").replace(",", "").replace(".", ""))) for w in cleaned_words]
-    total_weight = sum(weights)
-    total_duration = end_time - start_time
-
-    alignments = []
-    curr = start_time
-    for i, word in enumerate(cleaned_words):
-        w_dur = (weights[i] / total_weight) * total_duration
-        w_start = round(curr, 3)
-        w_end = round(curr + w_dur, 3)
-        alignments.append({
-            "word": word,
-            "start": w_start,
-            "end": w_end,
-            "speaker": speaker
-        })
-        curr += w_dur
-
-    return alignments
-
-async def synthesize_episode(episode_data, output_dir):
+def synthesize_episode(episode_data, output_dir):
     os.makedirs(output_dir, exist_ok=True)
-    temp_dir = tempfile.mkdtemp(prefix="lincoln_synth_")
+    temp_dir = tempfile.mkdtemp(prefix="lincoln_kokoro_")
 
     dialogue = episode_data.get("dialogue", [])
-    print(f"[*] Synthesizing {len(dialogue)} dialogue lines with Performance Scoring...")
+    print(f"[*] Synthesizing {len(dialogue)} dialogue lines with High-Fidelity Neural Voices...")
+
+    kokoro = get_kokoro_instance()
+    is_kokoro = kokoro is not None
+    if is_kokoro:
+        print("[OK] Engine: Kokoro v1.0 Studio Neural Voices (Host: am_adam, Insider: am_onyx)")
+    else:
+        print("[!] Engine: Microsoft Edge Neural TTS fallback")
 
     segments = []
     line_timings = []
@@ -124,34 +143,37 @@ async def synthesize_episode(episode_data, output_dir):
 
     for idx, line in enumerate(dialogue):
         speaker = line.get("speaker", "host").lower()
-        voice = VOICE_PROFILES.get(speaker, "en-US-GuyNeural")
         text = line.get("text", "")
         direction = line.get("performanceDirection", "matter_of_fact")
+        speed = SPEED_MAP.get(direction, 1.02)
+        pause_val = line.get("pauseAfter", 0.25)
+        pause_sec, pause_type = parse_pause(pause_val)
 
-        # Determine prosody
-        prosody = dict(DIRECTION_PRESETS.get(direction, DEFAULT_PROSODY))
-        if "vocalModifiers" in line and isinstance(line["vocalModifiers"], dict):
-            prosody.update(line["vocalModifiers"])
+        line_wav = os.path.join(temp_dir, f"line_{idx:03d}.wav")
 
-        # Handle pauseBefore
-        pause_before_sec, pb_type = parse_pause(line.get("pauseBefore"), default_sec=0.0)
-        if pause_before_sec > 0.01:
-            silence_path = os.path.join(temp_dir, f"silence_pre_{idx:03d}.mp3")
-            create_silence_mp3(pause_before_sec, silence_path)
-            segments.append(silence_path)
-            print(f"  [SILENCE] {pause_before_sec:.2f}s ({pb_type}) before line #{idx}")
-            cursor += pause_before_sec
+        if is_kokoro:
+            voice_name = KOKORO_VOICE_MAP.get(speaker, "am_adam")
+            samples, sr = kokoro.create(text, voice=voice_name, speed=speed)
+            sf.write(line_wav, samples, sr)
+        else:
+            # Edge-TTS fallback
+            voice_edge = "en-US-GuyNeural" if speaker == "host" else "en-US-ChristopherNeural"
+            import asyncio, edge_tts
+            communicate = edge_tts.Communicate(text=text, voice=voice_edge)
+            asyncio.run(communicate.save(line_wav))
 
-        # Synthesize speech line
-        line_path = os.path.join(temp_dir, f"line_{idx:03d}_{speaker}.mp3")
-        await synthesize_line_file(text, voice, prosody, line_path)
-        dur = get_audio_duration(line_path)
-        segments.append(line_path)
-
+        line_dur = get_audio_duration(line_wav)
         line_start = round(cursor, 3)
-        line_end = round(cursor + dur, 3)
+        line_end = round(cursor + line_dur, 3)
 
-        print(f"  [{speaker.upper()}] line #{idx} ({direction}): \"{text[:36]}...\" -> {dur:.2f}s")
+        segments.append(line_wav)
+        print(f"  Line {idx:02d} [{speaker.upper()}] ({direction}) -> {line_dur:.2f}s")
+
+        # Whisper Forced Alignment
+        words = align_line_with_whisper(line_wav, text, speaker, line_start)
+        all_words.extend(words)
+
+        cursor += line_dur
 
         line_timings.append({
             "lineIndex": idx,
@@ -160,88 +182,77 @@ async def synthesize_episode(episode_data, output_dir):
             "performanceDirection": direction,
             "start": line_start,
             "end": line_end,
-            "duration": round(dur, 3),
-            "pauseAfter": line.get("pauseAfter")
+            "duration": round(line_dur, 3),
+            "pauseAfter": pause_val
         })
 
-        # Generate word alignments
-        words = generate_word_alignments(text, line_start, line_end, speaker)
-        all_words.extend(words)
-        cursor += dur
+        # Insert exact silence beat if pause > 0.05
+        if pause_sec > 0.05:
+            silence_wav = os.path.join(temp_dir, f"silence_{idx:03d}.wav")
+            # Generate pure silence wave
+            sr = 24000
+            silence_samples = np.zeros(int(sr * pause_sec), dtype=np.float32)
+            sf.write(silence_wav, silence_samples, sr)
+            segments.append(silence_wav)
+            print(f"    [Silence] {pause_sec:.2f}s ({pause_type})")
+            cursor += pause_sec
 
-        # Handle pauseAfter
-        pause_after_sec, pa_type = parse_pause(line.get("pauseAfter"), default_sec=0.20)
-        if pause_after_sec > 0.01:
-            silence_post = os.path.join(temp_dir, f"silence_post_{idx:03d}.mp3")
-            create_silence_mp3(pause_after_sec, silence_post)
-            segments.append(silence_post)
-            print(f"  [SILENCE] {pause_after_sec:.2f}s ({pa_type}) after line #{idx}")
-            cursor += pause_after_sec
-
-    # Concat all segments via ffmpeg concat demuxer
-    concat_list_file = os.path.join(temp_dir, "concat.txt")
-    with open(concat_list_file, "w", encoding="utf-8") as f:
+    # Mux all segments into seamless master track with -15 LUFS broadcast mastering
+    concat_list = os.path.join(temp_dir, "concat.txt")
+    with open(concat_list, "w", encoding="utf-8") as f:
         for seg in segments:
-            f.write(f"file '{seg.replace('\\', '/')}'\n")
+            f.write(f"file '{seg.replace(chr(92), '/')}'\n")
 
-    raw_dialogue_mp3 = os.path.join(temp_dir, "raw_dialogue.mp3")
-    concat_cmd = [
+    unmastered_wav = os.path.join(temp_dir, "unmastered.wav")
+    subprocess.check_call([
         "ffmpeg", "-y", "-f", "concat", "-safe", "0",
-        "-i", concat_list_file, "-c", "copy", raw_dialogue_mp3
-    ]
-    subprocess.check_call(concat_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        "-i", concat_list,
+        "-c:a", "pcm_s16le", "-ar", "24000", "-ac", "1",
+        unmastered_wav
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    # Master to broadcast standard -15 LUFS with compressor
     master_mp3 = os.path.join(output_dir, "audio.mp3")
-    master_cmd = [
-        "ffmpeg", "-y", "-i", raw_dialogue_mp3,
-        "-af", "loudnorm=I=-15:TP=-1.0:LRA=7,acompressor=threshold=-21dB:ratio=2.5:attack=15:release=120",
-        "-b:a", "192k", master_mp3
-    ]
-    subprocess.check_call(master_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    print(f"[OK] Mastered audio produced ({cursor:.2f}s): {master_mp3}")
+    print(f"[*] Mastering dialogue to EBU R128 (-15 LUFS) -> {master_mp3}")
+    subprocess.check_call([
+        "ffmpeg", "-y", "-i", unmastered_wav,
+        "-af", "loudnorm=I=-15:TP=-1.0:LRA=7",
+        "-c:a", "libmp3lame", "-b:a", "192k", "-ar", "48000",
+        master_mp3
+    ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    # Write lines.json and words.json
-    lines_json_path = os.path.join(output_dir, "lines.json")
-    with open(lines_json_path, "w", encoding="utf-8") as f:
+    lines_json = os.path.join(output_dir, "lines.json")
+    with open(lines_json, "w", encoding="utf-8") as f:
         json.dump(line_timings, f, indent=2)
 
-    words_json_path = os.path.join(output_dir, "words.json")
-    with open(words_json_path, "w", encoding="utf-8") as f:
-        json.dump({
-            "duration": round(cursor, 3),
-            "totalWords": len(all_words),
-            "words": all_words
-        }, f, indent=2)
+    words_json = os.path.join(output_dir, "words.json")
+    with open(words_json, "w", encoding="utf-8") as f:
+        json.dump({"words": all_words}, f, indent=2)
 
-    print(f"[OK] Generated precision timing: {len(all_words)} words mapped across {len(line_timings)} dialogue lines.")
-    return {
-        "audioPath": master_mp3,
-        "linesPath": lines_json_path,
-        "wordsPath": words_json_path,
-        "totalDuration": round(cursor, 3),
-        "totalWords": len(all_words)
-    }
+    total_dur = get_audio_duration(master_mp3)
+    print("\n================================================================")
+    print(" [OK] HIGH-FIDELITY PERFORMANCE SYNTHESIS COMPLETE")
+    print("================================================================")
+    print(f" Total Master Duration: {total_dur:.2f} seconds ({len(all_words)} aligned words)")
+    print(f" Master Audio:          {master_mp3}")
+    print(f" Shot Alignment Data:   {lines_json}")
+    print(f" Precision Viseme Map:  {words_json}")
+    print("================================================================\n")
 
 def main():
-    parser = argparse.ArgumentParser(description="Performance Synthesizer for The Lincoln Penny")
-    parser.add_argument("episode_file", help="Path to canonical episode JSON file")
-    parser.add_argument("--out-dir", default=None, help="Output directory for generated assets")
+    parser = argparse.ArgumentParser(description="Lincoln Penny Voice & Performance Synthesizer")
+    parser.add_argument("episode", help="Path to episode JSON specification")
+    parser.add_argument("--out", "-o", help="Custom output directory")
     args = parser.parse_args()
 
-    ep_path = os.path.abspath(args.episode_file)
-    if not os.path.exists(ep_path):
-        print(f"Error: episode file not found: {ep_path}")
-        sys.exit(1)
+    if not os.path.exists(args.episode):
+        sys.exit(f"Episode file not found: {args.episode}")
 
-    with open(ep_path, "r", encoding="utf-8") as f:
-        ep_data = json.load(f)
+    with open(args.episode, "r", encoding="utf-8") as f:
+        episode_data = json.load(f)
 
-    out_dir = args.out_dir
-    if not out_dir:
-        out_dir = os.path.join(ROOT_DIR, "out", ep_data.get("episodeId", "production_episode"))
-
-    asyncio.run(synthesize_episode(ep_data, out_dir))
+    ep_id = episode_data.get("episodeId", "unnamed-episode")
+    out_dir = args.out or os.path.join(ROOT_DIR, "out", ep_id)
+    synthesize_episode(episode_data, out_dir)
 
 if __name__ == "__main__":
     main()

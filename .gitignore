@@ -33,3 +33,8 @@ ENV/
 # OS Artifacts
 .DS_Store
 Thumbs.db
+
+# Heavy Neural TTS Weights
+audio-engine/tts-models/
+*.onnx
+*.bin
