@@ -1,0 +1,26 @@
+name: Blackspot visual adapter
+on:
+  push:
+    branches:
+      - feature/blackspot-ai-visual-adapter
+  pull_request:
+    paths:
+      - 'packages/visual-generation/**'
+      - 'scripts/blackspot-visual.mjs'
+      - 'tests/blackspot-visual.test.mjs'
+      - 'config/blackspot-visual.example.json'
+      - '.github/workflows/blackspot-visual.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Test generation adapter (mock API; no charges)
+        run: node --test tests/blackspot-visual.test.mjs
+      - name: Run dry-run example (no API calls)
+        run: node scripts/blackspot-visual.mjs config/blackspot-visual.example.json

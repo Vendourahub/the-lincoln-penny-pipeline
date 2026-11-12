@@ -8,7 +8,8 @@
     "audit": "node tests/baseline.test.js",
     "typecheck": "cd motion-engine && npx tsc --noEmit",
     "motion:build": "cd motion-engine && npm run build",
-    "motion:render": "cd motion-engine && npx remotion render"
+    "motion:render": "cd motion-engine && npx remotion render",
+    "test:visual": "node --test tests/blackspot-visual.test.mjs"
   },
   "keywords": [
     "remotion",
