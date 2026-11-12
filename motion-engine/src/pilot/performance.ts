@@ -52,12 +52,17 @@ export function evaluatePerformance(cues:readonly PerformanceCue[],frame:number,
 }
 export function propPosition(cues:readonly PerformanceCue[],frame:number,propId:string,initial:Vec2,actorFrames:Record<"host"|"guest",ActorFrame>):{position:Vec2;owner?:string}{
  let owner:"host"|"guest"|undefined;
+ let lastPosition=initial;
  for(const c of cues){
-  if(c.propId!==propId||frame<c.end)continue;
-  if(c.kind==="pickup")owner=c.actor;
-  if(c.kind==="release"&&owner===c.actor)owner=undefined;
+  if(c.propId!==propId||c.start>frame)continue;
+  if(c.kind==="pickup"&&frame>=c.end)owner=c.actor;
+  if(c.kind==="release"&&frame>=c.end&&owner===c.actor){
+   const a=actorFrames[owner];
+   lastPosition={x:a.position.x+a.facing*66,y:a.position.y-115};
+   owner=undefined;
+  }
  }
- if(!owner)return {position:initial};
+ if(!owner)return {position:lastPosition};
  const a=actorFrames[owner];
  return {position:{x:a.position.x+a.facing*66,y:a.position.y-115},owner};
 }
