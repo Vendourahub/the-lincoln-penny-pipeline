@@ -5,7 +5,9 @@
   "description": "The Lincoln Penny — Programmatic Motion Graphics, Whiteboard & 2.5D Parallax Engine",
   "scripts": {
     "studio": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts AirlineHook out/airline_motion_v2.mp4 --codec=h264 --crf=18"
+    "render": "remotion render src/index.ts AirlineHook out/airline_motion_v2.mp4 --codec=h264 --crf=18",
+    "test:motion": "node tests/motion-regression.cjs",
+    "render:motion-pilot": "remotion render src/index.ts LincolnMotionBlockingPilot out/motion-blocking-pilot.mp4 --codec=h264"
   },
   "dependencies": {
     "@react-three/fiber": "^8.18.0",
