@@ -8,7 +8,7 @@ const filename=path.resolve(__dirname,"../src/pilot/motion.ts");
 const source=fs.readFileSync(filename,"utf8");
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
 const mod=new Module(filename,module);mod.filename=filename;mod.paths=module.paths;mod._compile(js,filename);
-const {evaluateMotion,validateScene}=mod.exports;
+const {evaluateMotion,validateScene,solveTwoBone}=mod.exports;
 const keys=[
  {frame:0,position:{x:0,y:0},state:"seated",facing:1},
  {frame:30,position:{x:0,y:0},state:"stand",facing:1},
@@ -28,4 +28,13 @@ assert.equal(evaluateMotion(keys,140).walkPhase,0);
 assert.deepEqual(evaluateMotion(keys,95),evaluateMotion(keys,95));
 assert.throws(()=>validateScene([{frame:1,position:{x:0,y:0},state:"hold"}],100));
 assert.throws(()=>validateScene([keys[0],keys[0]],100));
-console.log("Motion regression assertions passed");
+const hip={x:0,y:0};
+const unreachable=solveTwoBone(hip,{x:500,y:0},75,75);
+assert.equal(unreachable.reachable,false);
+assert.ok(Math.hypot(unreachable.foot.x,unreachable.foot.y)<150);
+const reachable=solveTwoBone(hip,{x:40,y:90},75,75);
+assert.equal(reachable.reachable,true);
+assert.ok(Math.abs(Math.hypot(reachable.knee.x,reachable.knee.y)-75)<0.01);
+assert.ok(Math.abs(Math.hypot(reachable.foot.x-reachable.knee.x,reachable.foot.y-reachable.knee.y)-75)<0.01);
+assert.throws(()=>solveTwoBone(hip,{x:1,y:1},0,50));
+console.log("Motion and IK regression assertions passed");
