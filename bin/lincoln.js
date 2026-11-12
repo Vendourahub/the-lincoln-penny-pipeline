@@ -280,6 +280,25 @@ switch (command) {
     break;
   }
 
+  case 'render': {
+    const epTarget = target || 'costco-hotdog-002';
+    const framesArg = process.argv.find((a) => a.startsWith('--frames='));
+    const framesFlag = framesArg ? framesArg : '';
+    console.log(`\n================================================================`);
+    console.log(` PRODUCTION RENDERER // TARGET: ${epTarget}`);
+    console.log(`================================================================`);
+    try {
+      execSync(`node scripts/render_review_video.cjs ${framesFlag}`, {
+        stdio: 'inherit',
+        cwd: path.join(ROOT_DIR, 'motion-engine')
+      });
+    } catch (err) {
+      console.error(`[✗] Render failed:`, err.message);
+      process.exit(1);
+    }
+    break;
+  }
+
   case 'publish': {
     const isDryRun = process.argv.includes('--dry-run');
     const isConfirmed = process.argv.includes('--confirm-public');
