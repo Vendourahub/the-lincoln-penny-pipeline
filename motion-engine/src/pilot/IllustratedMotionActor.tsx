@@ -1,4 +1,5 @@
 import React from "react";
+import {PerformanceFrame} from "./performance";
 import {ActorFrame,Vec2,solveTwoBone,gaitFoot} from "./motion";
 
 /** Temporary illustrated actor for motion mechanics QA. Replace with approved art assets. */
@@ -10,7 +11,7 @@ const armPath=(shoulder:Vec2,hand:Vec2,bend:number)=>{
  const mid={x:lerp(shoulder.x,hand.x,.55)+bend,y:lerp(shoulder.y,hand.y,.55)+12};
  return `M ${shoulder.x} ${shoulder.y} Q ${mid.x} ${mid.y} ${hand.x} ${hand.y}`;
 };
-export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kind}){
+export function IllustratedMotionActor({motion,kind,performance}:{motion:ActorFrame;kind:Kind;performance?:PerformanceFrame}){
  const host=kind==="host",sit=clamp(motion.seated),walking=motion.state==="walk";
  const cycle=motion.walkPhase;
  // Convert world-space stance anchors into the actor's facing-local coordinates.
@@ -24,7 +25,9 @@ export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kin
  const left=solveTwoBone(leftHip,foot(-1),75,76,-1);
  const right=solveTwoBone(rightHip,foot(1),75,76,1);
  const shoulderY=lerp(-199,-156,sit);
- const desiredHand=motion.reach&&motion.target
+ const desiredHand=performance?.handTarget
+   ?{x:(performance.handTarget.x-motion.position.x)*motion.facing,y:performance.handTarget.y-motion.position.y}
+   :motion.reach&&motion.target
    ?{x:(motion.target.x-motion.position.x)*motion.facing,y:motion.target.y-motion.position.y}
    :{x:60+(walking?Math.sin(cycle)*12:0),y:shoulderY+91};
  const shoulder={x:43,y:shoulderY+16};
@@ -51,10 +54,10 @@ export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kin
   <g transform={`translate(0 ${shoulderY+199})`}>
    <ellipse cx="0" cy="-269" rx={host?58:53} ry={host?63:57} fill="#f0dfc4" stroke="#253646" strokeWidth="7"/>
    {host?<path d="M -47 -305 Q -25 -352 10 -333 Q 42 -338 49 -299 Q 8 -318 -15 -309 Z" fill="#283949"/>:<path d="M -49 -304 Q 0 -353 49 -304" stroke="#283949" strokeWidth="14" fill="none" strokeLinecap="round"/>}
-   <ellipse cx="-19" cy="-275" rx="13" ry="16" fill="white"/><ellipse cx="19" cy="-275" rx="13" ry="16" fill="white"/>
+   <ellipse cx="-19" cy="-275" rx="13" ry={performance?.blink?2:16} fill="white"/><ellipse cx="19" cy="-275" rx="13" ry={performance?.blink?2:16} fill="white"/>
    <circle cx="-14" cy="-273" r="5" fill="#253646"/><circle cx="24" cy="-273" r="5" fill="#253646"/>
    <path d={host?"M -30 -299 L -7 -296 M 8 -297 L 32 -299":"M -30 -292 L -8 -292 M 10 -292 L 31 -292"} stroke="#253646" strokeWidth="5" fill="none" strokeLinecap="round"/>
-   <path d="M -12 -241 Q 0 -236 12 -241" stroke="#253646" strokeWidth="4" fill="none" strokeLinecap="round"/>
+   {performance?.mouth ? <ellipse cx="0" cy="-241" rx={10+performance.mouth*5} ry={2+performance.mouth*13} fill="#4b2930"/> : <path d="M -12 -241 Q 0 -236 12 -241" stroke="#253646" strokeWidth="4" fill="none" strokeLinecap="round"/>}
   </g>
  </g>;
 }
