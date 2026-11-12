@@ -1,0 +1,161 @@
+[
+  {
+    "lineIndex": 0,
+    "speaker": "insider",
+    "text": "Costco charges people just to shop there.",
+    "performanceDirection": "matter_of_fact",
+    "start": 0.0,
+    "end": 3.312,
+    "duration": 3.312,
+    "pauseAfter": 0.3
+  },
+  {
+    "lineIndex": 1,
+    "speaker": "host",
+    "text": "Charges them how?",
+    "performanceDirection": "genuine_curiosity",
+    "start": 3.612,
+    "end": 5.58,
+    "duration": 1.968,
+    "pauseAfter": 0.25
+  },
+  {
+    "lineIndex": 2,
+    "speaker": "insider",
+    "text": "Membership. You pay annually.",
+    "performanceDirection": "matter_of_fact",
+    "start": 5.83,
+    "end": 9.502,
+    "duration": 3.672,
+    "pauseAfter": 0.35
+  },
+  {
+    "lineIndex": 3,
+    "speaker": "host",
+    "text": "To buy groceries?",
+    "performanceDirection": "genuine_curiosity",
+    "start": 9.852,
+    "end": 11.844,
+    "duration": 1.992,
+    "pauseAfter": 0.2
+  },
+  {
+    "lineIndex": 4,
+    "speaker": "insider",
+    "text": "Yeah.",
+    "performanceDirection": "matter_of_fact",
+    "start": 12.044,
+    "end": 13.916,
+    "duration": 1.872,
+    "pauseAfter": {
+      "duration": 1.2,
+      "type": "thought_processing"
+    }
+  },
+  {
+    "lineIndex": 5,
+    "speaker": "host",
+    "text": "...And people agreed?",
+    "performanceDirection": "deadpan_disbelief",
+    "start": 15.116,
+    "end": 17.324,
+    "duration": 2.208,
+    "pauseAfter": 0.3
+  },
+  {
+    "lineIndex": 6,
+    "speaker": "insider",
+    "text": "Millions of them.",
+    "performanceDirection": "dry_understatement",
+    "start": 17.624,
+    "end": 19.616,
+    "duration": 1.992,
+    "pauseAfter": {
+      "duration": 2.0,
+      "type": "deadpan_disbelief"
+    }
+  },
+  {
+    "lineIndex": 7,
+    "speaker": "host",
+    "text": "I need to start charging people to visit my house.",
+    "performanceDirection": "delayed_realization",
+    "start": 21.616,
+    "end": 25.264,
+    "duration": 3.648,
+    "pauseAfter": 0.4
+  },
+  {
+    "lineIndex": 8,
+    "speaker": "insider",
+    "text": "For what?",
+    "performanceDirection": "deadpan_disbelief",
+    "start": 25.664,
+    "end": 27.536,
+    "duration": 1.872,
+    "pauseAfter": 0.3
+  },
+  {
+    "lineIndex": 9,
+    "speaker": "host",
+    "text": "Access.",
+    "performanceDirection": "matter_of_fact",
+    "start": 27.836,
+    "end": 29.708,
+    "duration": 1.872,
+    "pauseAfter": 0.3
+  },
+  {
+    "lineIndex": 10,
+    "speaker": "insider",
+    "text": "To what?",
+    "performanceDirection": "genuine_curiosity",
+    "start": 30.008,
+    "end": 31.88,
+    "duration": 1.872,
+    "pauseAfter": 0.25
+  },
+  {
+    "lineIndex": 11,
+    "speaker": "host",
+    "text": "That's what I'm working on.",
+    "performanceDirection": "delayed_realization",
+    "start": 32.13,
+    "end": 34.53,
+    "duration": 2.4,
+    "pauseAfter": {
+      "duration": 1.0,
+      "type": "comedic_beat"
+    }
+  },
+  {
+    "lineIndex": 12,
+    "speaker": "insider",
+    "text": "Anyway... the hot dog is just the bait. In twenty twenty-four, Costco collected four point eight billion dollars purely in membership fees. That card is fifty-two percent of their operating income.",
+    "performanceDirection": "smug_revelation",
+    "start": 35.53,
+    "end": 48.994,
+    "duration": 13.464,
+    "pauseAfter": 0.5
+  },
+  {
+    "lineIndex": 13,
+    "speaker": "host",
+    "text": "So Costco makes over half their operating profit before anyone buys a single item.",
+    "performanceDirection": "inquisitive_skeptic",
+    "start": 49.494,
+    "end": 54.582,
+    "duration": 5.088,
+    "pauseAfter": 0.3
+  },
+  {
+    "lineIndex": 14,
+    "speaker": "insider",
+    "text": "Costco isn't a grocery store. It's a subscription club that happens to have pallets of paper towels in the back.",
+    "performanceDirection": "dry_understatement",
+    "start": 54.882,
+    "end": 62.898,
+    "duration": 8.016,
+    "pauseAfter": 0.8
+  }
+]

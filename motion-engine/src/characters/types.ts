@@ -59,4 +59,5 @@ export type CharacterActionState =
   | "shock"
   | "lean_forward"
   | "smirk"
+  | "deadpan"
   | "listening";

@@ -1,4 +1,4 @@
-import { CompiledShot, SemanticNarrativeCue, CameraTransform } from "./types";
+import { CompiledShot, SemanticNarrativeCue, CameraTransform, ShotType } from "./types";
 
 interface DialogueLine {
   line: number;
@@ -98,105 +98,74 @@ export function compileEpisodeTimeline(
       continue;
     }
 
-    switch (cue.event) {
-      case "inquiry_intro":
-        compiledShots.push({
-          id: `shot_${i}_inquiry_intro`,
-          startFrame,
-          endFrame,
-          shotType: "host_closeup",
-          speaker: "host",
-          listener: "insider",
-          visualPriority: "speaker",
-          camera: CAMERA_PRESETS.host_closeup,
-          hostAction: "explaining",
-          insiderAction: "listening",
-          captionMode: "word_locked",
-        });
-        break;
+    // Dynamic Semantic Shot Resolution
+    let shotType: ShotType = isHost ? "host_closeup" : "insider_closeup";
+    let visualPriority = cue.visualPriority || "speaker";
+    let hostAction = isHost ? "explaining" : "listening";
+    let insiderAction = isHost ? "listening" : "explaining";
 
-      case "unexpected_revelation":
-        compiledShots.push({
-          id: `shot_${i}_revelation`,
-          startFrame,
-          endFrame,
-          shotType: "insider_closeup",
-          speaker: "insider",
-          listener: "host",
-          visualPriority: "speaker",
-          camera: CAMERA_PRESETS.insider_closeup,
-          hostAction: "curious",
-          insiderAction: "explaining",
-          captionMode: "word_locked",
-        });
-        break;
-
-      case "reaction_disbelief":
-        compiledShots.push({
-          id: `shot_${i}_shock`,
-          startFrame,
-          endFrame,
-          shotType: "host_reaction_shock",
-          speaker: "host",
-          listener: "insider",
-          visualPriority: "listener_reaction",
-          camera: CAMERA_PRESETS.host_reaction_shock,
-          hostAction: "shock",
-          insiderAction: "smirk",
-          captionMode: "word_locked",
-        });
-        break;
-
-      case "evidence_breakdown":
-        compiledShots.push({
-          id: `shot_${i}_evidence`,
-          startFrame,
-          endFrame,
-          shotType: "evidence_split",
-          speaker: "insider",
-          listener: "host",
-          visualPriority: "evidence",
-          camera: CAMERA_PRESETS.evidence_split,
-          hostAction: "lean_forward",
-          insiderAction: "gesture_open",
-          evidenceCard: cue.evidence,
-          captionMode: "word_locked",
-        });
-        break;
-
-      case "clarifying_challenge":
-        compiledShots.push({
-          id: `shot_${i}_challenge`,
-          startFrame,
-          endFrame,
-          shotType: "host_closeup",
-          speaker: "host",
-          listener: "insider",
-          visualPriority: "speaker",
-          camera: CAMERA_PRESETS.host_closeup,
-          hostAction: "curious",
-          insiderAction: "listening",
-          captionMode: "word_locked",
-        });
-        break;
-
-      case "monopoly_payoff":
-        compiledShots.push({
-          id: `shot_${i}_payoff`,
-          startFrame,
-          endFrame,
-          shotType: "insider_reaction_smirk",
-          speaker: "insider",
-          listener: "host",
-          visualPriority: "speaker",
-          camera: CAMERA_PRESETS.insider_reaction_smirk,
-          hostAction: "listening",
-          insiderAction: "smirk",
-          evidenceCard: cue.evidence,
-          captionMode: "word_locked",
-        });
-        break;
+    if (cue.shotType) {
+      shotType = cue.shotType;
+    } else if (visualPriority === "evidence" || cue.evidence) {
+      shotType = "evidence_split";
+      hostAction = "lean_forward";
+      insiderAction = "gesture_open";
+    } else if (visualPriority === "listener_reaction") {
+      if (isHost) {
+        shotType = "insider_reaction_smirk";
+        hostAction = "listening";
+        insiderAction = "smirk";
+      } else {
+        shotType = "host_reaction_shock";
+        hostAction = "shock";
+        insiderAction = "smirk";
+      }
+    } else if (cue.event.includes("two_shot") || cue.event.includes("wide") || cue.event.includes("hold")) {
+      shotType = "establishing_wide";
+      hostAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
+      insiderAction = cue.event.includes("disbelief") || cue.event.includes("deadpan") ? "deadpan" : "listening";
+    } else if (isHost) {
+      shotType = "host_closeup";
+      if (cue.event.includes("challenge") || cue.event.includes("inquiry") || cue.event.includes("groceries")) {
+        hostAction = "curious";
+      } else if (cue.event.includes("punchline") || cue.event.includes("access") || cue.event.includes("house")) {
+        hostAction = "smirk";
+      } else if (cue.event.includes("deadpan") || cue.event.includes("agreed")) {
+        hostAction = "deadpan";
+      } else {
+        hostAction = "explaining";
+      }
+      insiderAction = "listening";
+    } else {
+      shotType = "insider_closeup";
+      if (cue.event.includes("revelation") || cue.event.includes("payoff") || cue.event.includes("subscription")) {
+        insiderAction = "smirk";
+        hostAction = "curious";
+      } else if (cue.event.includes("millions") || cue.event.includes("yeah")) {
+        insiderAction = "smirk";
+        hostAction = "deadpan";
+      } else {
+        insiderAction = "explaining";
+        hostAction = "listening";
+      }
     }
+
+    const camera = CAMERA_PRESETS[shotType] || CAMERA_PRESETS.establishing_wide;
+
+    compiledShots.push({
+      id: `shot_${i}_${cue.event}`,
+      startFrame,
+      endFrame,
+      shotType,
+      speaker: isHost ? "host" : "insider",
+      listener: isHost ? "insider" : "host",
+      visualPriority,
+      camera,
+      hostAction: hostAction as any,
+      insiderAction: insiderAction as any,
+      evidenceCard: cue.evidence,
+      captionMode: "word_locked",
+    });
   }
 
   return compiledShots;

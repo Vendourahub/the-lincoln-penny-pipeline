@@ -44,14 +44,9 @@ export interface CompiledShot {
 }
 
 export interface SemanticNarrativeCue {
-  event:
-    | "inquiry_intro"
-    | "unexpected_revelation"
-    | "reaction_disbelief"
-    | "evidence_breakdown"
-    | "clarifying_challenge"
-    | "monopoly_payoff";
+  event: string;
   lineIndex: number;
   visualPriority: VisualPriority;
+  shotType?: ShotType;
   evidence?: EvidenceCardConfig;
 }

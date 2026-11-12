@@ -1,0 +1,130 @@
+{
+  "episodeId": "mcdonalds-real-estate-001",
+  "format": "stickman-dialogue",
+  "status": "qa_passed",
+  "title": "How McDonald's Really Makes Money",
+  "topic": "McDonald's $10 Billion Real Estate Empire",
+  "durationTargetSeconds": 42,
+  "characters": ["host", "insider"],
+  "factSeed": "mcdonalds-rent-cut.json",
+  "secondaryFactSeed": "mcdonalds-kroc-cut.json",
+  "research": {
+    "centralQuestion": "How does McDonald's generate billions when selling cheap burgers?",
+    "businessMechanism": "McDonald's operates primarily as a commercial real estate landlord; 39% of total company revenue ($10 billion) is pure rent paid by franchisees on land owned under restaurants.",
+    "verifiedFacts": [
+      {
+        "claimId": "mcd-01",
+        "claim": "McDonald's 2024 rent revenue from franchisees was $10,017 million.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+        "sourceType": "primary",
+        "verified": true
+      },
+      {
+        "claimId": "mcd-02",
+        "claim": "Over ninety five percent of McDonald's restaurants worldwide are franchised.",
+        "sourceUrl": "https://www.sec.gov/Archives/edgar/data/63908/000006390825000012/mcd-20241231.htm",
+        "sourceType": "primary",
+        "verified": true
+      }
+    ],
+    "doNotClaim": [
+      "Rent is the 10-K 'Rents' revenue line, not profit.",
+      "Do not say McDonald's owns every restaurant."
+    ],
+    "verifiedAt": "2026-11-11"
+  },
+  "dialogue": [
+    {
+      "speaker": "host",
+      "text": "Our last video about McDonald's blew up, and the comments are fighting over Ray Kroc. But almost nobody knows where their money actually comes from.",
+      "emotion": "inquisitive",
+      "intensity": 0.8
+    },
+    {
+      "speaker": "insider",
+      "text": "Because McDonald's isn't a burger chain. They're a ten billion dollar real estate landlord.",
+      "emotion": "confident",
+      "intensity": 0.85
+    },
+    {
+      "speaker": "host",
+      "text": "Wait... what? They sell burgers!",
+      "emotion": "shock",
+      "intensity": 0.95
+    },
+    {
+      "speaker": "insider",
+      "text": "The burgers are just the bait. Ray Kroc's genius was buying the physical land under every restaurant. If a franchisee wants to sell fries, they have to pay McDonald's rent first.",
+      "emotion": "explaining",
+      "intensity": 0.85
+    },
+    {
+      "speaker": "host",
+      "text": "So they make more from rent than burgers?",
+      "emotion": "skeptical",
+      "intensity": 0.8
+    },
+    {
+      "speaker": "insider",
+      "text": "Thirty-nine percent of their entire revenue is pure rent. Over ninety-five percent of restaurants are franchised. McDonald's is a real estate monopoly in disguise.",
+      "emotion": "smirk",
+      "intensity": 0.9
+    }
+  ],
+  "narrativeCues": [
+    { "event": "inquiry_intro", "lineIndex": 0, "visualPriority": "speaker" },
+    { "event": "unexpected_revelation", "lineIndex": 1, "visualPriority": "speaker" },
+    { "event": "reaction_disbelief", "lineIndex": 2, "visualPriority": "listener_reaction" },
+    {
+      "event": "evidence_breakdown",
+      "lineIndex": 3,
+      "visualPriority": "evidence",
+      "evidence": {
+        "title": "FRANCHISE REALTY CORPORATION // 1956",
+        "subtitle": "REAL ESTATE MONOPOLY DEED",
+        "statNumber": "$10,000,000,000",
+        "statLabel": "ANNUAL FRANCHISE RENT REVENUE",
+        "imageSrc": "podcast/deed.jpg"
+      }
+    },
+    { "event": "clarifying_challenge", "lineIndex": 4, "visualPriority": "speaker" },
+    {
+      "event": "monopoly_payoff",
+      "lineIndex": 5,
+      "visualPriority": "speaker",
+      "evidence": {
+        "title": "SEC 10-K REVENUE BREAKDOWN",
+        "subtitle": "RENT REVENUE OF TOTAL BUSINESS",
+        "statNumber": "39%",
+        "statLabel": "TWO FIFTHS OF TOTAL REVENUES"
+      }
+    }
+  ],
+  "evidenceCards": [
+    {
+      "title": "FRANCHISE REALTY CORPORATION // 1956",
+      "statNumber": "$10,000,000,000",
+      "statLabel": "ANNUAL FRANCHISE RENT REVENUE",
+      "imageSrc": "podcast/deed.jpg"
+    }
+  ],
+  "audio": {
+    "provider": "edge-tts",
+    "voiceHost": "en-US-GuyNeural",
+    "voiceInsider": "en-US-ChristopherNeural",
+    "masterAudioFile": "podcast/audio.mp3",
+    "durationSeconds": 41.65,
+    "lufsTarget": -15
+  },
+  "render": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "compositionId": "DirectedPodcastScene"
+  },
+  "distribution": {
+    "approved": false,
+    "defaultPrivacy": "private",
+    "platforms": ["youtube", "instagram", "tiktok"]
+  }
+}

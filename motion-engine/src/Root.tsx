@@ -208,6 +208,27 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="DirectedPodcastScene"
         component={DirectedPodcastScene}
+        defaultProps={{ episodeId: "costco-hotdog-002" }}
+        durationInFrames={1912}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="CostcoHotdogShort"
+        component={DirectedPodcastScene}
+        defaultProps={{ episodeId: "costco-hotdog-002" }}
+        durationInFrames={1912}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="McDonaldsMonopolyShort"
+        component={DirectedPodcastScene}
+        defaultProps={{ episodeId: "mcdonalds-real-estate-001" }}
         durationInFrames={1250}
         fps={30}
         width={1080}
