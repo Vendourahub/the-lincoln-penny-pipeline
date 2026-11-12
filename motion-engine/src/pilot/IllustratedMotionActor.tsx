@@ -1,5 +1,5 @@
 import React from "react";
-import {ActorFrame,Vec2,solveTwoBone} from "./motion";
+import {ActorFrame,Vec2,solveTwoBone,gaitFoot} from "./motion";
 
 /** Temporary illustrated actor for motion mechanics QA. Replace with approved art assets. */
 type Kind="host"|"guest";
@@ -13,13 +13,11 @@ const armPath=(shoulder:Vec2,hand:Vec2,bend:number)=>{
 export function IllustratedMotionActor({motion,kind}:{motion:ActorFrame;kind:Kind}){
  const host=kind==="host",sit=clamp(motion.seated),walking=motion.state==="walk";
  const cycle=motion.walkPhase;
- // Stationary feet remain on the floor. Walking gait remains provisional (no planted-foot world lock).
+ // Convert world-space stance anchors into the actor's facing-local coordinates.
  const foot=(side:-1|1):Vec2=>{
   if(sit>.01)return {x:side*49,y:0};
-  if(!walking)return {x:side*28,y:0};
-  const phase=cycle+(side===1?Math.PI:0);
-  const swing=Math.sin(phase);
-  return {x:side*28+Math.cos(phase)*29,y:-Math.max(0,swing)*23};
+  const world=gaitFoot(motion,side);
+  return {x:(world.x-motion.position.x)*motion.facing,y:world.y-motion.position.y};
  };
  const hipY=lerp(-116,-72,sit);
  const leftHip={x:-22,y:hipY},rightHip={x:22,y:hipY};
