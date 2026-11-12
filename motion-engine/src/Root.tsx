@@ -28,6 +28,7 @@ import { SilentActingTest } from "./characters/SilentActingTest";
 import { DialogueSyncTest } from "./characters/DialogueSyncTest";
 import { DirectedPodcastScene } from "./director/DirectedPodcastScene";
 import { VenWardMasterShort } from "./VenWardMasterShort";
+import { CharacterLineupTest } from "./characters/CharacterLineupTest";
 
 const AirlineHookMaster: React.FC = () => {
   const frame = useCurrentFrame();
@@ -224,6 +225,35 @@ export const RemotionRoot: React.FC = () => {
         id="VenWardLaunchReel"
         component={VenWardMasterShort}
         durationInFrames={600}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="CharacterLineupStudio"
+        component={CharacterLineupTest}
+        defaultProps={{ viewMode: "studio_two_shot" }}
+        durationInFrames={300}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="CharacterLineupSilhouette"
+        component={CharacterLineupTest}
+        defaultProps={{ viewMode: "silhouette_gate" }}
+        durationInFrames={300}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="CharacterLineupExpressions"
+        component={CharacterLineupTest}
+        defaultProps={{ viewMode: "expression_sheets" }}
+        durationInFrames={300}
         fps={30}
         width={1080}
         height={1920}
